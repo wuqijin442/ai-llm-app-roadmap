@@ -1,31 +1,32 @@
-[2026-08-27 16:34 UTC+8] AI 岗位学习 digest · 第 1 期
+# 2026-08-27 自动化执行日志（重跑）
 
-## 产出
-- daily-digest/2026-08-27.md（15.7 KB，9 个岗位 × 6 维度 × 储能×AI 切入点）
-- docs/30-岗位全景与学习路径索引.md（6.9 KB，统一 schema 全量索引，累计 9 岗位）
+## 重跑原因
+- 用户指令：「这个自动化任务内容就不该带储能视角」→ 已用 automation_update 删除指令第 4 条「储能×AI 行业切入点」。
+- 用户指令：「不动，然后重新跑一下这个自动化任务」→ 保留已推送的 W35 旧文件，重新生成干净版并 re-sync。
 
-## 岗位覆盖（按适配度排序）
-- 5/5：AI Agent Developer、LLM Application Developer、FDE
-- 4/5：AI PM、Prompt Engineer、MLOps、AI Solution Architect
-- 3/5：AI Trainer/RLHF、AI Safety/Compliance
-
-## 储能×AI 作品集方向（5 个）
-- 储能电价知识库（RAG）→ e1-enterprise-kb
-- 设备运维 Agent（工单/故障归因）→ e2-smart-customer-service
-- 能耗预测与调度（MLOps）
-- 碳资产管理（AI Safety/PM）
-- 算电协同（AI Architect/FDE）
+## 重跑产出
+- daily-digest/2026-08-27.md（重写，无储能）
+- docs/30-岗位全景与学习路径索引.md（重写，无储能）
+- 新增内容：
+  - PwC 56% AI 技能薪资溢价（bitsfrombytes.com）
+  - AI Agent 需求 +244%（CSDN 综合脉脉/猎聘/智联/Boss）
+  - Prompt Engineer 反转信号（ML/AI Work hype trap：316 搜索/帖、需求 -19% YoY）
+  - MLOps 需求 +27% YoY、LLM 评测岗 +40%（bilgisam / careerindia）
+  - AI Educator 岗位（第 10 岗，US $90K-$130K）
+  - 2026 H2 新兴岗位：AI Eval Eng / AI Reliability Eng / GTM Eng / Junior AI Eng 压缩（AI Market Pulse 2026-08-20）
 
 ## 双通道同步
-- GitHub：commit ae5cd93 [2026-08-27] 每日AI岗位学习内容获取 → push origin main 退出码 0（成功）
-- ima 库 7498617266899781：
-  - W35-daily-digest-2026-08-27.md（15666 B）media_id=markdown_890280cec11ce364b934fc466e7471b2_1516dc2c5a2e31a5ebcd846c3e6ef2707498617266899781，media_state=2 parse_progress=100
-  - W35-岗位全景与学习路径索引.md（6920 B）media_id=markdown_890280cec11ce364b934fc466e7471b2_bbe09d2474128b730f80f13d5bbd0a367498617266899781，media_state=2 parse_progress=100
+- GitHub：commit + push origin main（退出码判定）
+- ima 知识库 7498617266899781：W35-daily-digest-2026-08-27.md + W35-岗位全景与学习路径索引.md（REPLACE 策略覆盖旧版）
 
-## 数据源（全部附 URL，未编造）
-- LLMHire、aibusiness.vc、jobply.ai、signalhire、yochana、neuronhire、getperspective、aitalentreport、agenticcareers、aireplacedmyjob、jobdescription、gsdcouncil、hirevane、wjpps、toutiao（储能×AI）
-
-## 备注
-- ISO 周：W35（2026-08-24 ~ 08-30）
-- 第 1 期，明日（2026-08-28）继续追加第 2 期
-- 周日（2026-08-30）汇总进 weekly/2026-W35-周报.md
+## 数据源（新增）
+- bitsfrombytes.com（PwC 56% 溢价）
+- blog.csdn.net 163919604（Agent +244%）
+- mlai.work/research/state-of-ai-hiring-2026（Prompt hype trap）
+- bilgisam.com/t/ai-developer-jobs（MLOps +27%）
+- careerindia.com（AI Governance +45%）
+- theaimarketpulse.com（H2 新兴岗）
+- trendflash.net（AI Educator 67K 岗位）
+- k12.careers / stanmoreuk.org（AI Educator 薪资）
+- masaischool.com / dev.to / supercareer.co（技能全景）
+- techweek.com（岗位薪资对比）
