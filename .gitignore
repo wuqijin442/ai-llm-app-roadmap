@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+
+# 本地数据（不要提交你的真实文档/密钥）
+data/
+.env
+*.db
+chroma_db/
+kb_chroma/
+cs_agent.log
+best_prompt.json
+
+# 系统
+.DS_Store
+Thumbs.db

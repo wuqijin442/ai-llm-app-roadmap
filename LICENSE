@@ -1,0 +1,12 @@
+Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)
+
+本仓库内容（文档、路线图、说明）采用 CC BY-NC 4.0 许可：
+- 署名（BY）：使用时请注明出处与作者。
+- 非商业（NC）：不得用于商业用途。
+
+代码骨架（projects/ 下各 .py / 项目）可自由用于个人学习与作品集展示。
+
+完整条款见：https://creativecommons.org/licenses/by-nc/4.0/
+
+---
+SPDX-License-Identifier: CC-BY-NC-4.0
