@@ -1,0 +1,27 @@
+[2026-08-28 07:00 GMT+8] 自动化任务 automation-1787809410721 启动
+[2026-08-28 07:00] 模式判定：周五 → 工作日模式（第 2 期）
+[2026-08-28 07:00] ISO 周：W35（2026-08-24 ~ 08-30），前缀 W35-
+[2026-08-28 07:00] 读取仓库：README.md、docs/00-11、docs/20、docs/30（第 1 期）、projects/ 结构
+[2026-08-28 07:00] 主线确立：「Agentic 时代角色分化 + 中国应用层爆发」（与第 1 期「岗位市场全景」互补）
+[2026-08-28 07:00] WebSearch × 5 轮 + WebFetch × 1 轮，覆盖：
+  - frontiernews.ai（Agentic 岗位 +280% / 90K 量级 / 传统 developer -27.5%）
+  - whatsthebigdata（AI Engineer +143% / AI Solutions Architect +109.3% / AI PM +89.7% / CAIO 76%）
+  - artificialintelligencemax.com（AI 安全 $152K-$210K / MCP 漏洞 / MCP Auditor $130K-$175K）
+  - practical-devsecops.com（MCP 安全技能 / 简历写法）
+  - securitycareers.help（Agentic AI 安全职业路径）
+  - blog.ogwilliam.com（AI 安全岗位 100+ 清单）
+  - agenticcareers.co（AI Agent Security 角色指南）
+  - iternal.ai / techjacksolutions / futureproofing.dev / shawnkanungo / usaii.org（CAIO 5 源交叉验证）
+  - blog.csdn.net/2301_76168381（国内应用层 / Agent +244% / RAG +180% / LLMOps +120%）
+  - aitrendshub.net（国内非技术岗）
+  - crmcurator.com（企业级 AI 缺口 / 94 天填补）
+  - jobzonerisk.com（AI 集成岗 CRM/ERP）
+  - daily.dev/recruiter（招聘策略 / 5 个 reqs 分化）
+  - llmhire.com（Agent 招聘 1247 清单）
+  - signalhire.com（非技术岗）
+[2026-08-28 07:00] 产出 1：daily-digest/2026-08-28.md（21496 B，10 岗位 + 行动清单 + 来源汇总）
+[2026-08-28 07:00] 产出 2：docs/30-岗位全景与学习路径索引.md 追加第 2 期 10 条目（13758 B，累计 20 岗）
+[2026-08-28 07:00] 10 岗：Agentic AI Architect / LLM Fine-tuning / AI Security / MCP Auditor / AI Integration / AI Ops / AI BA / CAIO / LLMOps / RAG Engineer
+[2026-08-28 07:00] 适配度分布：5/5 × 4（Architect / Integration / LLMOps / RAG）、4/5 × 5（Fine-tuning / Security / MCP Auditor / Ops / BA）、2/5 × 1（CAIO）
+[2026-08-28 07:00] GitHub commit + push 开始...
+[2026-08-28 07:00] ima 推送开始（W35- 前缀 × 2 文件）...
