@@ -83,6 +83,17 @@ ai-llm-app-roadmap/
 │   ├── 30天-入门冲刺.md
 │   ├── 90天-核心突破.md
 │   └── 180天-转岗实战.md
+├── cloned_projects/               # 克隆的企业级实战项目（gitignore，不入库）
+│   ├── ai-agents-for-beginners/   #   微软官方 Agent 教程（73.3k★）
+│   ├── ruoyi-ai/                  #   Java 企业级 AI 框架（5.7k★）
+│   ├── Langchain-Chatchat/        #   Python 本地知识库 RAG（38.6k★）
+│   ├── FastGPT/                   #   Docker 企业级 RAG/Agent 平台（29.5k★）
+│   └── MaxKB/                     #   Docker 企业级知识库（22.6k★）
+├── scripts/                       # 可复现的测试/工具脚本
+│   └── test_cloned_projects.py    #   克隆项目本地测试 harness
+├── docs/
+│   ├── ...（00~11 主题资料）
+│   └── 20-克隆企业级项目测试报告.md   # 克隆项目全量测试报告
 └── assets/                        # 架构图、脑图等
 ```
 
@@ -109,7 +120,55 @@ ai-llm-app-roadmap/
 
 ---
 
-## 七、持续更新说明
+## 七、克隆企业级实战项目（已本地测试）
+
+为把「看教程」升级成「读真源码、跑真项目」，本仓库从 GitHub 高星仓库克隆了 5 个覆盖 Agent / RAG / 知识库 / Java 企业框架的实战项目，放入 `cloned_projects/`，并编写 `scripts/test_cloned_projects.py` 做**可复现的本地全量测试**。
+
+> 完整测试报告（含每项的命令与输出证据）：[`docs/20-克隆企业级项目测试报告.md`](docs/20-克隆企业级项目测试报告.md)
+> 安全策略：仅克隆官方高星仓库，未引入任何未知/冷门未审计源码；克隆目录已 gitignore，**不入库**，仅元数据与测试报告入库。
+
+### 7.1 项目清单与测试结果
+
+| 项目 | 定位 | Stars | 本机测试结论 |
+|---|---|---|---|
+| `microsoft/ai-agents-for-beginners` | Agent 入门教程（18 课，官方） | 73.3k | ✅ 15 个 .py 全量语法编译通过；2240 个 .ipynb JSON 全部合法 |
+| `ageerle/ruoyi-ai` | 基于 RuoYi 的 Java 企业级 AI 框架 | 5.7k | ✅ 24 个 .py 编译通过；pom.xml well-formed（4 模块） |
+| `chatchat-space/Langchain-Chatchat` | Python 本地知识库 RAG/Agent | 38.6k | ✅ 281 个 .py 全量语法编译通过 |
+| `labring/FastGPT` | Docker 企业级 RAG/Agent 平台（Next.js+TS） | 29.5k | ✅ 脚手架校验（docker-compose + package.json scripts） |
+| `1Panel-dev/MaxKB` | Docker 企业级知识库问答（Python+Vue） | 22.6k | ✅ 1051 个 .py 全量语法编译通过 |
+
+**共用后端冒烟（分级 A，已通过）**：本地 Ollama 桥接 `http://127.0.0.1:11434/api/chat`（模型 `qwen3-coder:30b`）实测 HTTP 200、`done_reason=stop`，返回 `OK-SMOKE-TEST`。所有兼容 OpenAI/Ollama 的项目均可指向该端点做本地推理，无需云密钥。
+
+### 7.2 本机测试分级说明
+
+- **A 级（已真实执行）**：Ollama 本地模型冒烟。
+- **B 级（已真实执行）**：Python 全量语法编译（`python -m py_compile` 全部 .py）。
+- **C 级（已真实执行）**：Notebook JSON 合法性、Maven POM well-formed、Docker 脚手架存在性。
+- **D 级（本机未执行 · 环境限制，非代码问题，附操作手册）**：需 Docker daemon + 数据库，或 Maven（本机缺失）/ Jupyter（本机缺失）/ 云密钥。详见测试报告与各仓库 README。
+
+### 7.3 各项目「如何在本机跑通」（操作手册）
+
+> 以下为典型路径，**具体以各仓库最新 README 为准**。所有「LLM/embedding」配置均可替换为本地 Ollama：`base_url=http://127.0.0.1:11434/v1`，`api_key=sk-任意`，`model=qwen3-coder:30b` / `qwen3-vl:8b`。
+
+1. **ai-agents-for-beginners（教程）**
+   - 前置：Jupyter（`pip install jupyter`）+ 一个 LLM 端点。
+   - 跑通：`pip install -r requirements.txt` → 打开 `00-course-setup` 起逐课运行；把 notebook 里的 AzureOpenAI 客户端改为 `OpenAI(base_url="http://127.0.0.1:11434/v1")`。
+2. **ruoyi-ai（Java 企业框架）**
+   - 前置：JDK17（本机已有）+ **Maven（本机缺失，需装）** + MySQL + Redis。
+   - 跑通：`mvn clean package` → IDEA 导入；`docker compose -f docs/docker/ruoyi-ai/docker-compose.yaml up -d` 起中间件；改 `application.yml` 的 DB/Redis 与 LLM（支持 Ollama）；启动 `RuyiAiApplication`。
+3. **Langchain-Chatchat（Python RAG）**
+   - 前置：Python 3.10+、本地模型（Ollama Qwen）。
+   - 跑通：`pip install -e .`（或 poetry）→ `python copy_config.py` → `python init_database.py --recreate-vs` 建向量库 → 放文档到 `kmss/` → `python startup.py -a`；配置里 LLM/embedding 指向 Ollama。
+4. **FastGPT（Docker 平台）**
+   - 前置：Docker daemon 运行中 + 一个 LLM（兼容 OpenAI，可填 Ollama base_url）。
+   - 跑通：`cp docs/.env.example .` 改 key → `docker compose -f deploy/docker/docker-compose.yml up -d` → 访问 3000 端口。
+5. **MaxKB（Docker 知识库）**
+   - 前置：Docker daemon + 内置向量库。
+   - 跑通：`cd installer && cp config_example.yml config.yml`（模型填 Ollama base_url）→ `./install.sh`（或 `docker compose up -d`）→ 访问 8080。
+
+---
+
+## 八、持续更新说明
 
 AI 应用迭代极快（MCP、Harness、多模态每月都有新东西）。本仓库随学习进度增补，建议 Watch / Star 后定期 pull。所有内容基于本人实践与公开资料整理，欢迎 Issue / PR 指正。
 

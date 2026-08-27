@@ -14,6 +14,28 @@ kb_chroma/
 cs_agent.log
 best_prompt.json
 
+# 克隆的企业级实战项目（体积大、不入库；仅测试报告/元数据入库）
+cloned_projects/
+
+# Node / 前端构建
+node_modules/
+dist/
+.vite/
+.ipynb_checkpoints/
+
+# Python 构建/缓存
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+__pycache__/
+*.pyc
+
+# 模型权重 / 大文件
+*.bin
+*.gguf
+models/
+chroma/
+
 # 系统
 .DS_Store
 Thumbs.db
