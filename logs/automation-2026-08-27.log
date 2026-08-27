@@ -15,9 +15,11 @@
   - AI Educator 岗位（第 10 岗，US $90K-$130K）
   - 2026 H2 新兴岗位：AI Eval Eng / AI Reliability Eng / GTM Eng / Junior AI Eng 压缩（AI Market Pulse 2026-08-20）
 
-## 双通道同步
-- GitHub：commit + push origin main（退出码判定）
-- ima 知识库 7498617266899781：W35-daily-digest-2026-08-27.md + W35-岗位全景与学习路径索引.md（REPLACE 策略覆盖旧版）
+## 双通道同步（最终结果）
+- GitHub：commit bf59916 [2026-08-27] 每日AI岗位学习内容获取（去储能重跑版）→ push origin main 退出码 **0**
+- ima 知识库 7498617266899781（REPLACE 策略覆盖旧版）：
+  - W35-daily-digest-2026-08-27.md（19297 B）→ media_state=2 parse_progress=100
+  - W35-岗位全景与学习路径索引.md（7720 B）→ media_state=1 parse_progress=75（解析中，可接受）
 
 ## 数据源（新增）
 - bitsfrombytes.com（PwC 56% 溢价）
