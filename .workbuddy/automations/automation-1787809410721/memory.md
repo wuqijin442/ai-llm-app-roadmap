@@ -4,6 +4,17 @@
 
 ## 执行历史（倒序）
 
+### 2026-08-28（周五，W35）· 第 2 期
+- 产出：`daily-digest/2026-08-28.md`（21496 B）+ `docs/30-岗位全景与学习路径索引.md` 追加第 2 期 10 条目（13758 B，累计 20 岗）
+- 主线：「Agentic 时代角色分化 + 中国应用层爆发」（与第 1 期「岗位市场全景」互补，不重叠）
+- 岗位：Agentic AI Architect(5/5)、LLM Fine-tuning(4/5)、AI Security(4/5)、MCP Auditor(4/5)、AI Integration(5/5)、AI Ops(4/5)、AI BA(4/5)、CAIO(2/5)、LLMOps(5/5)、RAG Engineer(5/5)
+- 新增观察：Agentic 岗位 +280%（90K 量级，US）vs 传统 developer -27.5%（Stanford AI Index 2026）；CAIO 采用率 11%→26%→76%（3 年，IBM CEO Study 2026）；MCP 安全岗位「供给近零」（$130K-$175K）；AI 安全工程师 $152K-$210K（OpenClaw Claw Hub 供应链攻击 230+ 恶意扩展案例）
+- 关键分化信号：「AI Engineer」标签下实际是 5 个不同 reqs（Applied / ML / MLOps / Prompt / Applied AI），增速各不相同
+- GitHub：commit 1701510 [2026-08-28] 每日AI岗位学习内容获取 → push origin main 退出码 0 ✓
+- ima（REPLACE 策略）：W35-daily-digest-2026-08-28.md（21496 B，media_state=2 parse_progress=100）+ W35-岗位全景与学习路径索引.md（13758 B，media_state=1 parse_progress=74 解析中）
+- 数据源（新增）：frontiernews.ai / whatsthebigdata / artificialintelligencemax.com / practical-devsecops.com / securitycareers.help / blog.ogwilliam.com / agenticcareers.co / iternal.ai / techjacksolutions / futureproofing.dev / shawnkanungo / usaii.org / CSDN 163919604 / aitrendshub.net / crmcurator.com / jobzonerisk.com / daily.dev/recruiter / llmhire.com / signalhire.com
+- ISO 周：W35（2026-08-24 ~ 08-30）
+
 ### 2026-08-27（周四，W35）· 第 1 期 · 重跑（去储能版）
 - 产出：`daily-digest/2026-08-27.md`（19.3 KB，重写）+ `docs/30-岗位全景与学习路径索引.md`（7.7 KB，重写）
 - 岗位：AI Agent Dev(5/5)、LLM App Dev(5/5)、FDE(5/5)、AI PM(4/5)、Prompt Eng(4/5)、MLOps(4/5)、AI Architect(4/5)、AI Trainer(3/5)、AI Safety(3/5)、AI Educator(2/5，补充)
