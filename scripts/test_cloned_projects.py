@@ -19,11 +19,24 @@ CLONED = os.path.join(BASE, "cloned_projects")
 OUT = os.path.join(BASE, "docs", "20-克隆企业级项目测试报告.md")
 
 REPOS = [
+    # —— 第 1 期（2026-08-27）：5 个 ——
     ("microsoft/ai-agents-for-beginners", "ai-agents-for-beginners", "Agent 入门教程（微软官方，多语言）"),
     ("ageerle/ruoyi-ai", "ruoyi-ai", "基于 RuoYi 的 Java 企业级 AI 开发框架"),
     ("chatchat-space/Langchain-Chatchat", "Langchain-Chatchat", "Python 本地知识库问答（RAG）"),
     ("labring/FastGPT", "FastGPT", "Docker 一键部署的企业级 RAG/Agent 平台（Next.js+TS）"),
     ("1Panel-dev/MaxKB", "MaxKB", "Docker 部署的企业级知识库问答（Python+Vue）"),
+    # —— 第 2 期（2026-08-28）：11 个（Agentic 时代角色分化对标仓库）——
+    ("langchain-ai/langgraph", "langgraph", "Agentic AI Architect：LangGraph 状态机 + 多 Agent 编排"),
+    ("crewAIInc/crewAI", "crewAI", "Agentic AI Architect：CrewAI 多 Agent 协作框架"),
+    ("microsoft/autogen", "autogen", "Agentic AI Architect：Microsoft AutoGen 多 Agent 对话框架"),
+    ("huggingface/peft", "peft", "LLM Fine-tuning：HF PEFT（LoRA/QLoRA/IA3）"),
+    ("vllm-project/vllm", "vllm", "LLMOps：vLLM 高吞吐 LLM 推理引擎"),
+    ("nvidia/NeMo-Guardrails", "NeMo-Guardrails", "AI Security：NVIDIA NeMo Guardrails（LLM 安全护栏）"),
+    ("protectai/rebuff", "rebuff", "AI Security：Rebuff（LLM 提示注入防御）"),
+    ("protectai/llm-guard", "llm-guard", "AI Security：LLM Guard（LLM I/O 安全检查）"),
+    ("modelcontextprotocol/servers", "mcp-servers", "MCP Auditor：MCP 官方参考服务器集合（TypeScript+Python）"),
+    ("modelcontextprotocol/typescript-sdk", "mcp-typescript-sdk", "MCP Auditor：MCP TypeScript SDK"),
+    ("modelcontextprotocol/python-sdk", "mcp-python-sdk", "MCP Auditor：MCP Python SDK"),
 ]
 
 def api_meta(full_name):

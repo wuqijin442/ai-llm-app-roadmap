@@ -30,3 +30,13 @@
   - W35-岗位全景与学习路径索引.md（13758 B）→ create_media → COS 200 → add_knowledge REPLACE → media_state=1 parse_progress=74（解析中，可接受）
 [2026-08-28 07:00] 任务结束，本次产出 10 岗（与第 1 期 10 岗互补），累计 20 岗
 [2026-08-28 07:00] 双通道同步：GitHub ✓ + ima ✓
+
+[2026-08-28 08:21 GMT+8] 补做：对标开源仓库 clone + 测试（老大指出第 2 期漏走仓库既有纪律）
+[2026-08-28 08:21] 追加 11 仓库到 scripts/test_cloned_projects.py REPOS 列表
+[2026-08-28 08:21] git clone --depth 1 × 11：langgraph / crewAI / autogen / peft / vllm / NeMo-Guardrails / rebuff / llm-guard / mcp-servers / mcp-typescript-sdk / mcp-python-sdk
+[2026-08-28 09:04] 跑 scripts/test_cloned_projects.py（耗时 41m59s，Python 3.13.12 托管）
+[2026-08-28 09:04] 测试结论：9401 个 .py 编译通过 9393（crewAI CLI 模板占位符 8 个失败，预期）→ 有效通过率 99.92%
+[2026-08-28 09:04] 更新 docs/20-克隆企业级项目测试报告.md（11000 B，含第 1 期 5 + 第 2 期 11 = 16 仓库全量明细）
+[2026-08-28 09:04] 补 daily-digest/2026-08-28.md「三·补、对标开源仓库 · 本地 clone + 测试」小节（24971 B）
+[2026-08-28 09:04] GitHub commit + push（含新增 3 文件：daily-digest/2026-08-28.md 更新 + docs/20 报告更新 + logs 补录）
+[2026-08-28 09:04] ima 推送：W35-daily-digest-2026-08-28.md（REPLACE）+ W35-岗位全景与学习路径索引.md（REPLACE）+ W35-克隆企业级项目测试报告.md（REPLACE）
