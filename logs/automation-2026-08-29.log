@@ -33,3 +33,12 @@
 [2026-08-29 11:52] GitHub 二次补推（含对标仓库 + 报告 + 索引更新）：git add -A && git commit && git push origin main
 [2026-08-29 11:53] ima 知识库推送：待配置 ima 凭证后补推（~/.config/ima/ 凭证仍缺失）
 [2026-08-29 11:53] 补做任务完成（对标仓库已 clone+test+报告入库，GitHub 已二次推送，ima 待凭证）
+
+=== 收尾（13:57 用户「继续」）===
+[2026-08-29 13:58] GitHub 三次推送：commit 0f32e35（automation memory + 工作区日志，2 文件 +37）→ push 成功（75f65c6..0f32e35，exit 0）
+[2026-08-29 14:00] ima 通道二次确认：Skill 加载 ima-skills → 凭证检查输出「⚠️ NO CREDENTIALS — setup required before any API call」；ToolSearch 确认 mcp__ima-mcp__* 工具不存在 → ima 推送本环境硬阻塞，无法绕过
+[2026-08-29 14:05] 发现 README 遗漏：第 7 节「克隆企业级实战项目」仍写「5 个」（第 1 期口径），实际已累计 25 个 → 与 docs/20 不同步
+[2026-08-29 14:06] 更新 README 第 7.1（25 项目按三期分组：第 1 期 5 + 第 2 期 11 + 第 3 期 9，含 stars/测试结论）+ 7.3（补第 2/3 期 20 项目运行方式指引：Python 走 pip install -e .、Rust/Go 走 docker compose、C 扩展走 make）
+[2026-08-29 14:07] GitHub 四次推送：commit a26d98c（README 同步，1 文件 +37）→ push 成功（0f32e35..a26d98c，exit 0）
+[2026-08-29 14:08] 本次任务闭环完成：产出（digest+索引+报告+脚本+README）✓ GitHub ✓ ima ✗（待凭证）
+[2026-08-29 14:08] 遗留待办：① ima 凭证配置后补推 W35 两份文件 ② 明日（2026-08-30 周日）W35 周报（weekly/ 目录尚未创建）
