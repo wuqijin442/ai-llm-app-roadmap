@@ -4,6 +4,18 @@
 
 ## 执行历史（倒序）
 
+### 2026-08-28（周五，W35）· 第 2 期 · 补做对标仓库 clone+test
+- 老大指出第 2 期漏走仓库既有纪律（对标仓库必须 clone + test + 报告入库）
+- 补做 11 个对标仓库：langgraph / crewAI / autogen / peft / vllm / NeMo-Guardrails / rebuff / llm-guard / mcp-servers / mcp-typescript-sdk / mcp-python-sdk
+- 全部 `git clone --depth 1` 到 `cloned_projects/`（gitignore，不入库）
+- 跑 `scripts/test_cloned_projects.py`（41m59s，Python 3.13.12 托管）
+- 测试结论：9401 个 .py 编译通过 9393（crewAI CLI 模板占位符 8 个失败，预期）→ 有效通过率 99.92%
+- 关键发现：vllm 90250★ 是本期最高星仓库（4324 个 .py 全量编译通过）；MCP 三件套（servers 89915★ / typescript-sdk 13262★ / python-sdk 24138★）全部克隆并验证
+- 更新文件：`daily-digest/2026-08-28.md`（21496 → 24971 B，加「三·补、对标开源仓库 · 本地 clone + 测试」小节）+ `docs/20-克隆企业级项目测试报告.md`（重写，16 仓库全量明细）+ `scripts/test_cloned_projects.py`（REPOS 追加 11 仓库）+ `logs/automation-2026-08-28.log`
+- GitHub：commit 39aeada [2026-08-28] 补做对标仓库 clone+test → push origin main 退出码 0 ✓（首次网络抖动 128，重试成功）
+- ima（REPLACE 策略）：W35-daily-digest-2026-08-28.md（24971 B，media_state=2 parse_progress=100）+ W35-克隆企业级项目测试报告.md（11000 B，media_state=1 parse_progress=75 解析中）+ W35-岗位全景与学习路径索引.md（13758 B，media_state=2 parse_progress=100）
+- 教训：每日任务必须把「对标仓库 clone + test + 报告」纳入产出闭环，不能只列仓库不测试
+
 ### 2026-08-28（周五，W35）· 第 2 期
 - 产出：`daily-digest/2026-08-28.md`（21496 B）+ `docs/30-岗位全景与学习路径索引.md` 追加第 2 期 10 条目（13758 B，累计 20 岗）
 - 主线：「Agentic 时代角色分化 + 中国应用层爆发」（与第 1 期「岗位市场全景」互补，不重叠）
