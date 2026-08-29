@@ -122,20 +122,53 @@ ai-llm-app-roadmap/
 
 ## 七、克隆企业级实战项目（已本地测试）
 
-为把「看教程」升级成「读真源码、跑真项目」，本仓库从 GitHub 高星仓库克隆了 5 个覆盖 Agent / RAG / 知识库 / Java 企业框架的实战项目，放入 `cloned_projects/`，并编写 `scripts/test_cloned_projects.py` 做**可复现的本地全量测试**。
+为把「看教程」升级成「读真源码、跑真项目」，本仓库从 GitHub 高星仓库克隆了 **25 个**覆盖 Agent / RAG / 知识库 / 多 Agent 编排 / 微调 / 部署 / 安全 / MCP / 向量库 / 评测 / 可观测 / 治理 / 具身智能的实战项目，放入 `cloned_projects/`，并编写 `scripts/test_cloned_projects.py` 做**可复现的本地全量测试**。
 
+> 每日任务按「岗位 → 对标仓库」逐期追加：第 1 期 5 个（2026-08-27）+ 第 2 期 11 个（2026-08-28）+ 第 3 期 9 个（2026-08-29）= **累计 25 个**。
 > 完整测试报告（含每项的命令与输出证据）：[`docs/20-克隆企业级项目测试报告.md`](docs/20-克隆企业级项目测试报告.md)
 > 安全策略：仅克隆官方高星仓库，未引入任何未知/冷门未审计源码；克隆目录已 gitignore，**不入库**，仅元数据与测试报告入库。
 
 ### 7.1 项目清单与测试结果
 
+**第 1 期（2026-08-27）· Agent / RAG / 企业框架基础**
+
 | 项目 | 定位 | Stars | 本机测试结论 |
 |---|---|---|---|
-| `microsoft/ai-agents-for-beginners` | Agent 入门教程（18 课，官方） | 73.3k | ✅ 15 个 .py 全量语法编译通过；2240 个 .ipynb JSON 全部合法 |
+| `microsoft/ai-agents-for-beginners` | Agent 入门教程（18 课，官方） | 73.4k | ✅ 15 个 .py 全量语法编译通过；2240 个 .ipynb JSON 全部合法 |
 | `ageerle/ruoyi-ai` | 基于 RuoYi 的 Java 企业级 AI 框架 | 5.7k | ✅ 24 个 .py 编译通过；pom.xml well-formed（4 模块） |
 | `chatchat-space/Langchain-Chatchat` | Python 本地知识库 RAG/Agent | 38.6k | ✅ 281 个 .py 全量语法编译通过 |
 | `labring/FastGPT` | Docker 企业级 RAG/Agent 平台（Next.js+TS） | 29.5k | ✅ 脚手架校验（docker-compose + package.json scripts） |
 | `1Panel-dev/MaxKB` | Docker 企业级知识库问答（Python+Vue） | 22.6k | ✅ 1051 个 .py 全量语法编译通过 |
+
+**第 2 期（2026-08-28）· Agentic 时代角色分化（编排 / 微调 / 部署 / 安全 / MCP）**
+
+| 项目 | 定位 | Stars | 本机测试结论 |
+|---|---|---|---|
+| `langchain-ai/langgraph` | LangGraph 状态机 + 多 Agent 编排 | 40.6k | ✅ 452 个 .py 编译通过；35 个 .ipynb 合法 |
+| `crewAIInc/crewAI` | CrewAI 多 Agent 协作框架 | 57.8k | ⚠️ 1314/1319 通过（5 个 CLI 模板占位符 `{{folder_name}}`，预期） |
+| `microsoft/autogen` | AutoGen 多 Agent 对话框架 | 60.7k | ✅ 546 个 .py 编译通过；49 个 .ipynb 合法 |
+| `huggingface/peft` | HF PEFT（LoRA/QLoRA/IA3） | 21.6k | ✅ 443 个 .py 编译通过；48 个 .ipynb 合法 |
+| `vllm-project/vllm` | vLLM 高吞吐 LLM 推理引擎 | 90.4k | ✅ 4324 个 .py 编译通过（本期最大） |
+| `nvidia/NeMo-Guardrails` | LLM 安全护栏 | 7.0k | ✅ 938 个 .py 编译通过；19 个 .ipynb 合法 |
+| `protectai/rebuff` | LLM 提示注入防御 | 1.5k | ✅ 13 个 .py 编译通过 |
+| `protectai/llm-guard` | LLM I/O 安全检查 | 3.2k | ✅ 217 个 .py 编译通过；6 个 .ipynb 合法 |
+| `modelcontextprotocol/servers` | MCP 官方参考服务器集合 | 89.9k | ✅ 14 个 .py 编译通过 |
+| `modelcontextprotocol/typescript-sdk` | MCP TypeScript SDK | 13.3k | ✅ 脚手架校验（package.json scripts） |
+| `modelcontextprotocol/python-sdk` | MCP Python SDK | 24.1k | ✅ 835 个 .py 编译通过 |
+
+**第 3 期（2026-08-29）· 生产链路落地（保 / 测 / 架 / 管）**
+
+| 项目 | 定位 | Stars | 本机测试结论 |
+|---|---|---|---|
+| `openvla/openvla` | OpenVLA（VLA 机器人模型） | 6.9k | ✅ 97 个 .py 编译通过 |
+| `explodinggradients/ragas` | Ragas（LLM 应用评测框架） | 15.5k | ✅ 387 个 .py 编译通过；23 个 .ipynb 合法 |
+| `qdrant/qdrant` | Qdrant 向量数据库（Rust） | 34.3k | ✅ 225 个 .py 编译通过；docker-compose + Dockerfile |
+| `pgvector/pgvector` | PostgreSQL 向量检索扩展（C） | 22.8k | ✅ 结构校验（Dockerfile） |
+| `open-telemetry/opentelemetry-python` | OpenTelemetry Python（Agent 可观测） | 2.6k | ✅ 750 个 .py 编译通过 |
+| `huggingface/datasets` | HF Datasets（训练数据管理） | 21.9k | ✅ 237 个 .py 编译通过 |
+| `huggingface/huggingface_hub` | HF Hub（模型/数据集管理） | 3.9k | ✅ 286 个 .py 编译通过 |
+| `microsoft/responsible-ai-toolbox` | Responsible AI Toolbox（AI 治理） | 1.8k | ✅ 288 个 .py 编译通过；28 个 .ipynb 合法 |
+| `weaviate/weaviate` | Weaviate 向量数据库（Go） | 16.8k | ✅ 54 个 .py 编译通过；docker-compose + Dockerfile |
 
 **共用后端冒烟（分级 A，已通过）**：本地 Ollama 桥接 `http://127.0.0.1:11434/api/chat`（模型 `qwen3-coder:30b`）实测 HTTP 200、`done_reason=stop`，返回 `OK-SMOKE-TEST`。所有兼容 OpenAI/Ollama 的项目均可指向该端点做本地推理，无需云密钥。
 
@@ -148,7 +181,8 @@ ai-llm-app-roadmap/
 
 ### 7.3 各项目「如何在本机跑通」（操作手册）
 
-> 以下为典型路径，**具体以各仓库最新 README 为准**。所有「LLM/embedding」配置均可替换为本地 Ollama：`base_url=http://127.0.0.1:11434/v1`，`api_key=sk-任意`，`model=qwen3-coder:30b` / `qwen3-vl:8b`。
+> 以下为第 1 期 5 个项目的典型路径，**具体以各仓库最新 README 为准**。所有「LLM/embedding」配置均可替换为本地 Ollama：`base_url=http://127.0.0.1:11434/v1`，`api_key=sk-任意`，`model=qwen3-coder:30b` / `qwen3-vl:8b`。
+> 第 2/3 期追加的 20 个项目（编排 / 微调 / 部署 / 安全 / MCP / 向量库 / 评测 / 可观测 / 治理 / 具身智能）运行方式详见 [`docs/20-克隆企业级项目测试报告.md`](docs/20-克隆企业级项目测试报告.md) 与各自仓库 README；其中 Python 仓库统一走 `pip install -e .`，Rust/Go 仓库（qdrant / weaviate）走 `docker compose up -d`，C 扩展（pgvector）走 `make && make install`（需本地 PostgreSQL）。
 
 1. **ai-agents-for-beginners（教程）**
    - 前置：Jupyter（`pip install jupyter`）+ 一个 LLM 端点。
