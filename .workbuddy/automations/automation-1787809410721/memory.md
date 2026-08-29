@@ -4,6 +4,18 @@
 
 ## 执行历史（倒序）
 
+### 2026-08-29（周六，W35）· 第 3 期 · 生产链路落地（保/测/架/管）
+- 产出：`daily-digest/2026-08-29.md`（8 岗位，与第 1/2 期 20 岗不重叠）+ `docs/30-岗位全景与学习路径索引.md` 追加第 3 期 8 条目（累计 28 岗/3 期）+ `logs/automation-2026-08-29.log`
+- 主线：「保（AgentOps）+ 测（AI QA）+ 架（基础设施/平台）+ 管（治理/红队）」——Agentic 系统从 Demo 走向生产后的四个岗位簇
+- 岗位：具身智能/多模态算法(3/5)、AI 测试/质量(5/5)、AgentOps(5/5)、AI Governance 深化(4/5)、Agent/RAG 基础设施(5/5)、AI 数据工程(4/5)、AI 平台(5/5)、AI 安全红队(4/5)
+- 新增观察：AI 智能体开发 +244%（智联/CSDN）、需供比 2.62:1、具身智能多模态算法 60-150W / 具身智能最高 200W / VLA 80-120W、AI 训练师 +2250%、AgentOps base $168K-$220K（The Hartford）/ +280% YoY（LinkedIn）、AI Governance 中位 $158,750（Axial）、RAG Infra $170K-$240K / Agent Infra $180K-$275K、AI Safety $287.5K 最高（AI Market Pulse）
+- 合规侧时间窗：EU AI Act Article 50 透明度 2026-08-02 生效；高风险义务经 Digital Omnibus（2026-07-08）延迟至 2027-12
+- GitHub：commit 9a2a19b [2026-08-29] 每日AI岗位学习内容获取（4 文件，281 插入）→ push origin main **失败**（两次均 exit 128：Connection was reset / Could not connect to server，github.com:443 网络不可达）→ 本地提交成功，待网络恢复后 `git push origin main` 补推
+- ima 推送：**未执行**（凭证缺失：~/.config/ima/ 不存在 + 无 IMA_CLIENT_ID/IMA_API_KEY 环境变量 + 无 ima MCP 工具），待配置 ima 凭证后补推 W35-daily-digest-2026-08-29.md + W35-岗位全景与学习路径索引.md
+- 数据源（新增）：CSDN 163335325/163919604、toutiao 7647847862449062400、tencent 2685549、qaskills.sh、aliyun 1752547、aicoding.csdn.net、joinnextdev.com、notify.careers、agenticcareers.co、danilchenko.dev、themoneyzoo.com、aitechconnect.in、orbit.reconn.io、cogitodaily.com、f5hiringsolutions.com、llmhire.com、theaimarketpulse.com、aitrendshub.net、crmcurator.com、artificialintelligencemax、practical-devsecops、securitycareers.help、ogwilliam.com
+- ISO 周：W35（2026-08-24 ~ 08-30）
+- 教训：GitHub push 网络抖动 exit 128 为已知问题（2026-08-28 曾出现，重试成功）；本次连续两次失败判为网络不可达，未继续重试；ima 凭证需在 ~/.config/ima/ 配置 client_id + api_key（来源 https://ima.qq.com/agent-interface）
+
 ### 2026-08-28（周五，W35）· 第 2 期 · 补做对标仓库 clone+test
 - 老大指出第 2 期漏走仓库既有纪律（对标仓库必须 clone + test + 报告入库）
 - 补做 11 个对标仓库：langgraph / crewAI / autogen / peft / vllm / NeMo-Guardrails / rebuff / llm-guard / mcp-servers / mcp-typescript-sdk / mcp-python-sdk

@@ -37,6 +37,16 @@ REPOS = [
     ("modelcontextprotocol/servers", "mcp-servers", "MCP Auditor：MCP 官方参考服务器集合（TypeScript+Python）"),
     ("modelcontextprotocol/typescript-sdk", "mcp-typescript-sdk", "MCP Auditor：MCP TypeScript SDK"),
     ("modelcontextprotocol/python-sdk", "mcp-python-sdk", "MCP Auditor：MCP Python SDK"),
+    # —— 第 3 期（2026-08-29）：9 个（生产链路落地对标仓库，3 个仓库路径失效已移除）——
+    ("openvla/openvla", "openvla", "具身智能/多模态算法：OpenVLA（Vision-Language-Action 机器人 VLA 模型）"),
+    ("explodinggradients/ragas", "ragas", "AI QA：Ragas（LLM 应用评测框架）"),
+    ("qdrant/qdrant", "qdrant", "Agent/RAG 基础设施：Qdrant（向量数据库，Rust 后端）"),
+    ("pgvector/pgvector", "pgvector", "Agent/RAG 基础设施：pgvector（PostgreSQL 向量检索扩展）"),
+    ("open-telemetry/opentelemetry-python", "opentelemetry-python", "AgentOps：OpenTelemetry Python SDK（Agent 可观测性）"),
+    ("huggingface/datasets", "datasets", "AI 数据工程：HuggingFace Datasets（训练数据管理）"),
+    ("huggingface/huggingface_hub", "huggingface-hub", "AI 数据工程：HuggingFace Hub（模型/数据集管理）"),
+    ("microsoft/responsible-ai-toolbox", "responsible-ai-toolbox", "AI 治理：Microsoft Responsible AI Toolbox（AI 治理工具集）"),
+    ("weaviate/weaviate", "weaviate", "Agent/RAG 基础设施 / AI 平台：Weaviate（向量数据库 + 平台级 AI 服务，Rust 后端）"),
 ]
 
 def api_meta(full_name):
