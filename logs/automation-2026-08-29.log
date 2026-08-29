@@ -42,3 +42,22 @@
 [2026-08-29 14:07] GitHub 四次推送：commit a26d98c（README 同步，1 文件 +37）→ push 成功（0f32e35..a26d98c，exit 0）
 [2026-08-29 14:08] 本次任务闭环完成：产出（digest+索引+报告+脚本+README）✓ GitHub ✓ ima ✗（待凭证）
 [2026-08-29 14:08] 遗留待办：① ima 凭证配置后补推 W35 两份文件 ② 明日（2026-08-30 周日）W35 周报（weekly/ 目录尚未创建）
+
+=== ima 连接 + 自动化任务更新（14:45 用户指令「已连接 ima，更新企业级项目任务到自动化」）===
+[2026-08-29 14:46] 核查 ima 连接状态：connector-status 无 ima、ToolSearch 查不到 mcp__ima-mcp__*、~/.config/ima/ 凭证仍不存在
+[2026-08-29 14:47] 发现 ima-mcp 存在于 connectors-marketplace（市场已装），但 ~/.workbuddy/mcp.json 无 ima 条目 → 判定「市场已装但尚未启用到会话」
+[2026-08-29 14:48] 合并写入 ~/.workbuddy/mcp.json：ima-mcp（type=streamableHttp, url=https://ima.qq.com/mcp, timeout=20000, disabled=false），JSON 校验通过（5 servers：odoo/twitter-mcp/github/lighthouse-ops/ima-mcp）
+[2026-08-29 14:49] 再次 ToolSearch：工具索引仍未加载 ima（MCP 需重启会话才生效，属正常机制）→ 本次 ima 补推仍无法执行，配置已就位待下会话生效
+[2026-08-29 14:50] 更新自动化任务 automation-1787809410721 的 prompt，把「企业级对标项目」固化为每日任务第 3 步（原 3/4 顺延为 4/5）：
+  - 3.1 选仓（每岗 1-2 个官方高星仓库）
+  - 3.2 克隆（--depth 1 到 cloned_projects/；网络抖动重试 1-2 次；路径不存在换替代仓，禁止猜路径，附历史踩坑清单 portainer/llm-gateway 等）
+  - 3.3 登记（追加 scripts/test_cloned_projects.py 的 REPOS，标注期数日期）
+  - 3.4 测试（托管 Python 跑全量，40 分钟级，后台任务，重写 docs/20）
+  - 3.5 回写 digest（加「三·补、对标开源仓库 · 本地 clone + 测试」小节）
+  - 3.6 同步 README（第 7 节总数与清单必须与 docs/20 一致，附「25 vs 5」踩坑）
+  - 3.7 同步索引（docs/30 累计统计维护「对标仓库 clone+test 总数」）
+  - 周日任务新增第 2 条：汇总本周新增对标仓库（clone 数/测试通过率/最大最高星仓库）
+  - 产出纪律新增「汇总型文档同步回查」+ log 需记录克隆成功失败原因
+  - ima 兜底新增：工具索引查不到时检查 mcp.json 是否含 ima-mcp，缺失则合并写入并提示需在连接器页点「信任」+ 重启会话
+[2026-08-29 14:51] 自动化任务更新成功（status=ACTIVE，rrule FREQ=DAILY;BYHOUR=7;BYMINUTE=0，nextRunAt=1788044400000）
+[2026-08-29 14:52] 遗留待办更新：① 重启会话后 ima MCP 生效 → 补推 W35-daily-digest-2026-08-29.md + W35-岗位全景与学习路径索引.md ② 明日周日 W35 周报（weekly/ 目录待建）
