@@ -1,0 +1,56 @@
+[2026-08-30 周日 · W35 汇总模式] AI 大模型应用开发转岗学习仓库 · 自动化任务日志
+
+## 本次任务
+周日汇总模式：读取本周（2026-08-27 ~ 2026-08-30）daily-digest/*.md，产出 weekly/2026-W35-周报.md，同步 docs/30 累计统计，回查 README，双通道同步（GitHub + ima 知识库）。
+
+## 做了什么
+1. 读取仓库结构（README / docs/00-11 / docs/20 / docs/30 / projects/ / daily-digest/ 三期）
+2. 产出 weekly/2026-W35-周报.md（28 岗位 / 25 仓库 / 99.92% 编译通过 / 5 大趋势 / 7 项 docs 缺口 / 3 个 P1 修订建议 / 3 个新增项目建议）
+3. 同步 docs/30-岗位全景与学习路径索引.md 累计统计（追加 W35 周汇总行 + 维护规则更新）
+4. 回查 README 第 4 节仓库导航（补 weekly/ 目录说明）+ 第 7 节项目总数（25 已同步）
+5. GitHub 提交 + 推送（成功）
+6. ima 知识库「ai study road」推送（4 个文件，W35 前缀，全部成功）
+
+## 岗位采集
+- 本周覆盖 3 期（第 1/2/3 期），共 28 个岗位（第 1 期 10 + 第 2 期 10 + 第 3 期 8）
+- 5 大趋势：薪资天花板向基础设施+安全上移 / Prompt hype trap / AgentOps 独立成类 / EU AI Act 时间窗 / 具身智能爆发
+- 5 大能力簇：保 Agent（AgentOps）/ 测 Agent（AI QA）/ 架 Agent（基础设施/平台）/ 管 Agent（治理/红队）/ 写 Agent（Agent/微调）
+
+## 对标仓库（本周累计）
+- 总 clone 数：25（第 1 期 5 + 第 2 期 11 + 第 3 期 9）
+- 测试通过率：99.92%（9393/9401，8 个失败全部为 crewAI CLI 模板占位符，预期）
+- 最大仓库：weaviate 5509 files / qdrant 2279 files
+- 最高星仓库：vllm 90355★ / mcp-servers 89940★
+- 全部浅克隆 + B/C 级测试，报告入 docs/20
+
+## docs 缺口（周报列出，未直接大改）
+- P1：docs/03（Prompt hype trap）/ docs/05（Harness 岗位映射 + MCP 安全）/ docs/09（EU AI Act 时间窗 + AI 平台）
+- P2：docs/08（具身智能进阶）/ docs/11（已验证仓库）/ 新建 docs/12（月度追踪）
+
+## GitHub 同步
+- git add -A && git commit -m "[2026-08-30] W35 周报与索引同步" → rc=0
+- git push origin main → rc=0（94cd8f2..f565c80 main -> main），成功
+- remote: github.com/wuqijin442/ai-llm-app-roadmap.git
+
+## ima 知识库推送
+- 库 id：7498617266899781（ai study road）
+- 周前缀：W35-
+- 推送 4 个文件（全部 media_state=2 / parse_progress=100）：
+  - W35-daily-digest-2026-08-27.md（19297 bytes）
+  - W35-daily-digest-2026-08-28.md（24971 bytes）
+  - W35-daily-digest-2026-08-29.md（27322 bytes）
+  - W35-2026-W35-周报.md（17586 bytes）
+- 三步流程（create_media → COS 上传 → add_knowledge）全部成功，REPLACE 策略去重
+- 校验：get_knowledge_list 确认 4 个新文件 title 命中 + media_state=2 + parse_progress=100
+
+## 诚实说明
+- 本周数据来自公开招聘平台/行业报告，部分为厂商/猎头/培训机构口径，建议交叉验证后再用于简历/薪资谈判
+- 25 个对标仓库测试为 B/C 级（Python 全量语法编译 + 结构合法性），D 级（Docker/DB/云密钥运行时）本机未执行，附操作手册见 docs/20
+- 具身智能/多模态方向门槛在「领域深度」（视觉/控制），非工程主线，建议作为「可选进阶」
+
+## 下周（W36）行动
+- P1 修订：docs/03 + docs/05 + docs/09（W36 周一）
+- P2 新增：docs/08 + docs/11 + 新建 docs/12（W36 周三前）
+- 项目：开始 e4-agent-ops-dashboard（对齐 AgentOps / AI QA）
+- 第 4 期采集：补「AI 教育 / AI GTM / AI Reliability」三个未深拆岗位
+- W36 周报：2026-09-06
