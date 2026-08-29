@@ -83,12 +83,15 @@ ai-llm-app-roadmap/
 │   ├── 30天-入门冲刺.md
 │   ├── 90天-核心突破.md
 │   └── 180天-转岗实战.md
-├── cloned_projects/               # 克隆的企业级实战项目（gitignore，不入库）
+├── cloned_projects/               # 克隆的企业级实战项目（gitignore，不入库，累计 25 个见第 7 节）
 │   ├── ai-agents-for-beginners/   #   微软官方 Agent 教程（73.3k★）
 │   ├── ruoyi-ai/                  #   Java 企业级 AI 框架（5.7k★）
 │   ├── Langchain-Chatchat/        #   Python 本地知识库 RAG（38.6k★）
 │   ├── FastGPT/                   #   Docker 企业级 RAG/Agent 平台（29.5k★）
-│   └── MaxKB/                     #   Docker 企业级知识库（22.6k★）
+│   ├── MaxKB/                     #   Docker 企业级知识库（22.6k★）
+│   └── ...（第 2/3 期 20 个，见第 7 节清单）
+├── weekly/                        # 周度汇总报告（每周日产出）
+│   └── 2026-W35-周报.md           #   W35 周报：28 岗位 / 25 仓库 / 99.92% 编译通过
 ├── scripts/                       # 可复现的测试/工具脚本
 │   └── test_cloned_projects.py    #   克隆项目本地测试 harness
 ├── docs/
