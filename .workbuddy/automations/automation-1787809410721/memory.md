@@ -10,8 +10,15 @@
 - 岗位：具身智能/多模态算法(3/5)、AI 测试/质量(5/5)、AgentOps(5/5)、AI Governance 深化(4/5)、Agent/RAG 基础设施(5/5)、AI 数据工程(4/5)、AI 平台(5/5)、AI 安全红队(4/5)
 - 新增观察：AI 智能体开发 +244%（智联/CSDN）、需供比 2.62:1、具身智能多模态算法 60-150W / 具身智能最高 200W / VLA 80-120W、AI 训练师 +2250%、AgentOps base $168K-$220K（The Hartford）/ +280% YoY（LinkedIn）、AI Governance 中位 $158,750（Axial）、RAG Infra $170K-$240K / Agent Infra $180K-$275K、AI Safety $287.5K 最高（AI Market Pulse）
 - 合规侧时间窗：EU AI Act Article 50 透明度 2026-08-02 生效；高风险义务经 Digital Omnibus（2026-07-08）延迟至 2027-12
-- GitHub：commit 9a2a19b [2026-08-29] 每日AI岗位学习内容获取（4 文件，281 插入）→ push origin main **失败**（两次均 exit 128：Connection was reset / Could not connect to server，github.com:443 网络不可达）→ 本地提交成功，待网络恢复后 `git push origin main` 补推
-- ima 推送：**未执行**（凭证缺失：~/.config/ima/ 不存在 + 无 IMA_CLIENT_ID/IMA_API_KEY 环境变量 + 无 ima MCP 工具），待配置 ima 凭证后补推 W35-daily-digest-2026-08-29.md + W35-岗位全景与学习路径索引.md
+- GitHub：commit 9a2a19b [2026-08-29] 每日AI岗位学习内容获取（4 文件，281 插入）→ push **失败**（exit 128 网络不可达）→ **09:00 补推成功**（39aeada..9a2a19b，exit 0）
+- **补做对标仓库（老大指令「企业级项目没有看到」）**：第 3 期 8 岗位需 clone+test+报告入库，原定 12 仓库
+  - 成功 9 个：openvla(6912★/97.py) / ragas(15524★/387.py) / qdrant(34250★/225.py) / pgvector(22805★/C) / opentelemetry-python(2603★/750.py) / datasets(21874★/237.py) / huggingface-hub(3852★/286.py) / responsible-ai-toolbox(1826★/288.py) / weaviate(16759★/54.py)
+  - 失败 3 个（仓库路径不存在，非网络）：portainer/llm-gateway、labelbox/labelbox（正确名 labelbox-python-sdk 亦失败）、owasp/www-project-llm-top-10
+  - 网络抖动 4 个（openvla/ragas/qdrant/huggingface-hub）→ 重试后成功
+  - 测试：scripts/test_cloned_projects.py 跑 25 仓库全量，43m32s，exit 0 → docs/20 重写 15643 B；第 3 期 .py 全量编译通过 2259/2259
+  - 更新：daily-digest/2026-08-29.md 加「三·补」小节、scripts/test_cloned_projects.py 追加 9 仓库、docs/30 累计统计加「对标仓库 25」
+  - GitHub：commit 75f65c6 [2026-08-29] 补做第3期对标仓库 clone+test（9仓库/25累计），6 文件 166 插入 → push 成功（9a2a19b..75f65c6，exit 0）✓
+- ima 推送：**两次均未执行**（凭证缺失：~/.config/ima/ 不存在 + 无 IMA_CLIENT_ID/IMA_API_KEY 环境变量 + 无 ima MCP 工具——ToolSearch 确认 mcp__ima-mcp__* 不存在），待配置 ima 凭证后补推 W35-daily-digest-2026-08-29.md + W35-岗位全景与学习路径索引.md
 - 数据源（新增）：CSDN 163335325/163919604、toutiao 7647847862449062400、tencent 2685549、qaskills.sh、aliyun 1752547、aicoding.csdn.net、joinnextdev.com、notify.careers、agenticcareers.co、danilchenko.dev、themoneyzoo.com、aitechconnect.in、orbit.reconn.io、cogitodaily.com、f5hiringsolutions.com、llmhire.com、theaimarketpulse.com、aitrendshub.net、crmcurator.com、artificialintelligencemax、practical-devsecops、securitycareers.help、ogwilliam.com
 - ISO 周：W35（2026-08-24 ~ 08-30）
 - 教训：GitHub push 网络抖动 exit 128 为已知问题（2026-08-28 曾出现，重试成功）；本次连续两次失败判为网络不可达，未继续重试；ima 凭证需在 ~/.config/ima/ 配置 client_id + api_key（来源 https://ima.qq.com/agent-interface）
