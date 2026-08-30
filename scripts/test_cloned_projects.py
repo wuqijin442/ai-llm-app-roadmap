@@ -47,6 +47,9 @@ REPOS = [
     ("huggingface/huggingface_hub", "huggingface-hub", "AI 数据工程：HuggingFace Hub（模型/数据集管理）"),
     ("microsoft/responsible-ai-toolbox", "responsible-ai-toolbox", "AI 治理：Microsoft Responsible AI Toolbox（AI 治理工具集）"),
     ("weaviate/weaviate", "weaviate", "Agent/RAG 基础设施 / AI 平台：Weaviate（向量数据库 + 平台级 AI 服务，Rust 后端）"),
+    # —— 第 4 期（2026-08-31）：2 个（AI 应用落地最后一公里对标仓库）——
+    ("langfuse/langfuse", "langfuse", "AI Reliability / LLM Observability：Langfuse（LLM 可观测性平台，MIT 许可，ClickHouse 旗下）"),
+    ("n8n-io/n8n", "n8n", "AI GTM / AI Workflow Automation：n8n（工作流自动化 + AI Agent 节点，Sustainable Use License）"),
 ]
 
 def api_meta(full_name):

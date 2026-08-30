@@ -125,9 +125,9 @@ ai-llm-app-roadmap/
 
 ## 七、克隆企业级实战项目（已本地测试）
 
-为把「看教程」升级成「读真源码、跑真项目」，本仓库从 GitHub 高星仓库克隆了 **25 个**覆盖 Agent / RAG / 知识库 / 多 Agent 编排 / 微调 / 部署 / 安全 / MCP / 向量库 / 评测 / 可观测 / 治理 / 具身智能的实战项目，放入 `cloned_projects/`，并编写 `scripts/test_cloned_projects.py` 做**可复现的本地全量测试**。
+为把「看教程」升级成「读真源码、跑真项目」，本仓库从 GitHub 高星仓库克隆了 **27 个**覆盖 Agent / RAG / 知识库 / 多 Agent 编排 / 微调 / 部署 / 安全 / MCP / 向量库 / 评测 / 可观测 / 治理 / 具身智能 / 工作流自动化 / LLM 可观测性的实战项目，放入 `cloned_projects/`，并编写 `scripts/test_cloned_projects.py` 做**可复现的本地全量测试**。
 
-> 每日任务按「岗位 → 对标仓库」逐期追加：第 1 期 5 个（2026-08-27）+ 第 2 期 11 个（2026-08-28）+ 第 3 期 9 个（2026-08-29）= **累计 25 个**。
+> 每日任务按「岗位 → 对标仓库」逐期追加：第 1 期 5 个（2026-08-27）+ 第 2 期 11 个（2026-08-28）+ 第 3 期 9 个（2026-08-29）+ 第 4 期 2 个（2026-08-31）= **累计 27 个**。
 > 完整测试报告（含每项的命令与输出证据）：[`docs/20-克隆企业级项目测试报告.md`](docs/20-克隆企业级项目测试报告.md)
 > 安全策略：仅克隆官方高星仓库，未引入任何未知/冷门未审计源码；克隆目录已 gitignore，**不入库**，仅元数据与测试报告入库。
 
@@ -172,6 +172,15 @@ ai-llm-app-roadmap/
 | `huggingface/huggingface_hub` | HF Hub（模型/数据集管理） | 3.9k | ✅ 286 个 .py 编译通过 |
 | `microsoft/responsible-ai-toolbox` | Responsible AI Toolbox（AI 治理） | 1.8k | ✅ 288 个 .py 编译通过；28 个 .ipynb 合法 |
 | `weaviate/weaviate` | Weaviate 向量数据库（Go） | 16.8k | ✅ 54 个 .py 编译通过；docker-compose + Dockerfile |
+
+**第 4 期（2026-08-31）· AI 应用落地最后一公里（教育 + 可靠性 + GTM）**
+
+| 项目 | 定位 | Stars | 本机测试结论 |
+|---|---|---|---|
+| `langfuse/langfuse` | LLM 可观测性平台（MIT，ClickHouse 旗下） | 33.9k | ✅ 5 个 .py 全量语法编译通过；docker-compose + Dockerfile + package.json scripts |
+| `n8n-io/n8n` | 工作流自动化 + AI Agent 节点（Sustainable Use License） | 202.9k | ✅ 69 个 .py 全量语法编译通过（本期最大）；docker-compose + Dockerfile + package.json scripts |
+
+> 第 4 期 2 个仓库覆盖 5 个岗位（AI Reliability、LLM Observability、AI GTM、AI Workflow Automation、AI 教育），n8n 202.9k stars 为本仓库历史最高（超过 vllm 90.4k stars）。
 
 **共用后端冒烟（分级 A，已通过）**：本地 Ollama 桥接 `http://127.0.0.1:11434/api/chat`（模型 `qwen3-coder:30b`）实测 HTTP 200、`done_reason=stop`，返回 `OK-SMOKE-TEST`。所有兼容 OpenAI/Ollama 的项目均可指向该端点做本地推理，无需云密钥。
 
