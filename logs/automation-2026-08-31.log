@@ -24,27 +24,41 @@
 - 累计 27 个仓库
 
 ### 4. 测试执行（scripts/test_cloned_projects.py）
-- 状态：后台任务 IXsGbf，运行中（已 31+ 分钟，全量重跑 27 个仓库）
-- 预期：TypeScript 仓库（langfuse / n8n）做 C 级结构校验 + B 级 Python 全量编译（若有 .py 子模块）
-- 完成后自动回写 `docs/20-克隆企业级项目测试报告.md`
+- 状态：后台任务 IXsGbf，已完成（耗时 33m 49s，全量重跑 27 个仓库）
+- 结果：
+  - langfuse/langfuse：33,940 stars / TypeScript / 5 个 .py 全通过 / docker-compose + Dockerfile + package.json scripts
+  - n8n-io/n8n：202,889 stars / TypeScript / 69 个 .py 全通过（本期最大） / docker-compose + Dockerfile + package.json scripts
+- 已自动回写 `docs/20-克隆企业级项目测试报告.md`
 
-### 5. digest / docs/30 / README 同步
+## 5. digest / docs/30 / README 同步
 - `daily-digest/2026-08-31.md`：已创建（第 4 期 6 岗位 + 2 仓库 + 来源汇总）
 - `docs/30-岗位全景与学习路径索引.md`：已追加第 4 期 6 岗位 + 累计统计更新（34 岗位 / 27 仓库 / 第 4 期主线）
-- `README.md`：第 7 节已更新为 27 仓库 + 第 4 期 2 仓库行（stars 待测试完成后回填）
+- `README.md`：第 7 节已更新为 27 仓库 + 第 4 期 2 仓库行（stars / .py 编译数已回填）
+
+## 6. GitHub 推送
+- commit：99995f6（6 files changed, 349 insertions(+), 36 deletions(-)）
+- push：rc=0（1b2a960..99995f6 main -> main），成功
+
+## 7. ima 知识库推送
+- 文件：W36-daily-digest-2026-08-31.md（31060 bytes）
+- create_media：成功（media_id: markdown_890280cec11ce364b934fc466e7471b2_0665d3f3c9bd8e90e940aec19ca119fc7498617266899781）
+- COS 上传：HTTP 200，rc=0
+- add_knowledge：成功
+- 校验：get_knowledge_list 确认 title=W36-daily-digest-2026-08-31.md，media_state=2 / parse_progress=100
 
 ## 待办
-- [ ] 等待测试完成 → 回写 README 第 4 期 2 仓库的 stars / .py 编译数
-- [ ] git add -A && git commit && git push（以退出码判定）
-- [ ] ima 知识库推送 W36-daily-digest-2026-08-31.md（MCP 通道）
-- [ ] 更新 automation memory 文件
+- [x] 等待测试完成 → 回写 README 第 4 期 2 仓库的 stars / .py 编译数
+- [x] git add -A && git commit && git push（以退出码判定，rc=0）
+- [x] ima 知识库推送 W36-daily-digest-2026-08-31.md（MCP 通道，media_state=2 / parse_progress=100）
+- [x] 更新 automation memory 文件
 
 ## 关键决策
 - 第 4 期主线选「AI 应用落地最后一公里」（教育 + 可靠性 + GTM），补前三期轻描淡写的三块拼图
 - 对标仓库选 langfuse + n8n（高星 + 与岗位强相关 + 官方 org），覆盖 5 个岗位
 - 2 个仓库均为 TypeScript 主导，与第 2/3 期 Python 主导形成互补，覆盖「AI 应用全栈」
+- n8n 202.9k stars 为本仓库历史最高（超过 vllm 90.4k stars）
 
 ## 风险/限制
-- 测试脚本全量重跑 27 个仓库耗时长（31+ 分钟），阻塞最终提交
-- langfuse / n8n 均为 TypeScript 主导，B 级测试覆盖有限（仅 Python 子模块）
+- 测试脚本全量重跑 27 个仓库耗时长（33m 49s），阻塞最终提交
+- langfuse / n8n 均为 TypeScript 主导，B 级测试覆盖有限（仅 Python 子模块：langfuse 5 个 / n8n 69 个）
 - 数据多源交叉验证，标注「未交叉验证」的薪资带宽为单源推算

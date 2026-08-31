@@ -1,5 +1,34 @@
 # 自动化任务执行记忆（automation-1787809410721）
 
+## 2026-08-31（W36 周一 · 第 4 期）
+- 模式：工作日（周一，W36 第 1 天）
+- 产出：
+  - `daily-digest/2026-08-31.md`（第 4 期 6 岗位 / 2 仓库 / 来源汇总）
+  - `docs/30-岗位全景与学习路径索引.md`（追加第 4 期 6 岗位 + 累计统计更新）
+  - `README.md`（第 7 节 27 仓库已同步 + 第 4 期 2 仓库行）
+  - `scripts/test_cloned_projects.py`（追加 2 条 REPOS：langfuse + n8n）
+  - `docs/20-克隆企业级项目测试报告.md`（测试脚本自动回写）
+  - `logs/automation-2026-08-31.log`
+- 双通道同步：
+  - GitHub：commit 99995f6 + push rc=0（1b2a960..99995f6 main -> main），成功
+  - ima 知识库 7498617266899781：W36-daily-digest-2026-08-31.md（media_state=2 / parse_progress=100）
+- 关键决策：
+  - 第 4 期主线「AI 应用落地最后一公里」（教育 + 可靠性 + GTM），补前三期轻描淡写的三块拼图
+  - 对标仓库选 langfuse（AI Reliability / LLM Observability）+ n8n（AI GTM / AI Workflow Automation）
+  - n8n 202.9k stars 为本仓库历史最高（超过 vllm 90.4k stars）
+- 数据亮点：
+  - 6 个岗位：AI Reliability（Anthropic AIRE $325K–$485K）、AI GTM（中位 $176K / +205% YoY）、AI Educator 深化（Corporate AI Trainer $110K–$165K）、LLM Observability（Langfuse 33.9k stars）、AI Workflow Automation（n8n 202.9k stars）、AI Learning PM（中位 $120K）
+  - 累计：34 岗位 / 27 仓库 / 4 期
+- 经验教训：
+  - langfuse / n8n 首次克隆均网络抖动失败（curl 28 timeout / curl 56 connection reset），第 2 次重试成功（1-2 次重试自愈）
+  - 测试脚本全量重跑 27 个仓库耗时 33m 49s，比预期 40 分钟略短
+  - TypeScript 仓库（langfuse / n8n）B 级测试仅覆盖 Python 子模块（5 / 69 个 .py）
+- 待办（W36）：
+  - W36 周二 / 周三 / 周四 / 周五 / 周六继续每日采集（第 5-9 期）
+  - W36 周日（2026-09-06）汇总周报
+  - P1 修订 docs/03 + docs/05 + docs/09（W35 遗留，可结合 W36 周一执行）
+  - P2 新增 docs/08 + docs/11 + 新建 docs/12（月度追踪）
+
 ## 2026-08-30（W35 周日汇总 · 首次记录）
 - 模式：周日汇总（2026-08-27 ~ 2026-08-30，ISO W35）
 - 产出：
