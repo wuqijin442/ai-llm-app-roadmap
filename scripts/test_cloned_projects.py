@@ -50,6 +50,13 @@ REPOS = [
     # —— 第 4 期（2026-08-31）：2 个（AI 应用落地最后一公里对标仓库）——
     ("langfuse/langfuse", "langfuse", "AI Reliability / LLM Observability：Langfuse（LLM 可观测性平台，MIT 许可，ClickHouse 旗下）"),
     ("n8n-io/n8n", "n8n", "AI GTM / AI Workflow Automation：n8n（工作流自动化 + AI Agent 节点，Sustainable Use License）"),
+    # —— 第 5 期（2026-09-01）：6 个（AI 应用商业闭环与前沿对标仓库）——
+    ("All-Hands-AI/OpenHands", "open-hands", "AI Product Engineering / AI Agent 前沿：OpenHands（前 OpenDevin，AI 软件工程 Agent，TS+Python）"),
+    ("openai/openai-agents-python", "openai-agents-python", "AI Agent Framework / AI Product Engineering：OpenAI Agents SDK（官方 Agent 框架）"),
+    ("stanfordnlp/dspy", "dspy", "AI Product Engineering / Prompt 框架：DSPy（Stanford 声明式 AI 应用编程框架）"),
+    ("anthropics/anthropic-cookbook", "anthropic-cookbook", "AI Educator 深化 / AI 产品工程：Anthropic Cookbook（官方示例库，Jupyter）"),
+    ("langgenius/dify", "dify", "AI Workflow Automation（深化）/ AI Agent 平台：Dify（LLMOps 可视化 + AI 工作流平台，TS）"),
+    ("browser-use/browser-use", "browser-use", "Multimodal Agent / AI Agent 前沿：Browser Use（AI 浏览器自动化 Agent，Python）"),
 ]
 
 def api_meta(full_name):

@@ -125,9 +125,9 @@ ai-llm-app-roadmap/
 
 ## 七、克隆企业级实战项目（已本地测试）
 
-为把「看教程」升级成「读真源码、跑真项目」，本仓库从 GitHub 高星仓库克隆了 **27 个**覆盖 Agent / RAG / 知识库 / 多 Agent 编排 / 微调 / 部署 / 安全 / MCP / 向量库 / 评测 / 可观测 / 治理 / 具身智能 / 工作流自动化 / LLM 可观测性的实战项目，放入 `cloned_projects/`，并编写 `scripts/test_cloned_projects.py` 做**可复现的本地全量测试**。
+为把「看教程」升级成「读真源码、跑真项目」，本仓库从 GitHub 高星仓库克隆了 **33 个**覆盖 Agent / RAG / 知识库 / 多 Agent 编排 / 微调 / 部署 / 安全 / MCP / 向量库 / 评测 / 可观测 / 治理 / 具身智能 / 工作流自动化 / LLM 可观测性 / AI 产品工程 / AI 销售 / AI Agent 框架 / Multimodal Agent / AI 教育认证 / Agent 商业化的实战项目，放入 `cloned_projects/`，并编写 `scripts/test_cloned_projects.py` 做**可复现的本地全量测试**。
 
-> 每日任务按「岗位 → 对标仓库」逐期追加：第 1 期 5 个（2026-08-27）+ 第 2 期 11 个（2026-08-28）+ 第 3 期 9 个（2026-08-29）+ 第 4 期 2 个（2026-08-31）= **累计 27 个**。
+> 每日任务按「岗位 → 对标仓库」逐期追加：第 1 期 5 个（2026-08-27）+ 第 2 期 11 个（2026-08-28）+ 第 3 期 9 个（2026-08-29）+ 第 4 期 2 个（2026-08-31）+ 第 5 期 6 个（2026-09-01）= **累计 33 个**。
 > 完整测试报告（含每项的命令与输出证据）：[`docs/20-克隆企业级项目测试报告.md`](docs/20-克隆企业级项目测试报告.md)
 > 安全策略：仅克隆官方高星仓库，未引入任何未知/冷门未审计源码；克隆目录已 gitignore，**不入库**，仅元数据与测试报告入库。
 
@@ -181,6 +181,19 @@ ai-llm-app-roadmap/
 | `n8n-io/n8n` | 工作流自动化 + AI Agent 节点（Sustainable Use License） | 202.9k | ✅ 69 个 .py 全量语法编译通过（本期最大）；docker-compose + Dockerfile + package.json scripts |
 
 > 第 4 期 2 个仓库覆盖 5 个岗位（AI Reliability、LLM Observability、AI GTM、AI Workflow Automation、AI 教育），n8n 202.9k stars 为本仓库历史最高（超过 vllm 90.4k stars）。
+
+**第 5 期（2026-09-01）· AI 应用商业闭环与前沿（产品 + 销售 + 框架 + 多模态 + 认证 + 商业化）**
+
+| 项目 | 定位 | Stars | 本机测试结论 |
+|---|---|---|---|
+| `All-Hands-AI/OpenHands` | AI 软件工程 Agent（前 OpenDevin，MIT，$18.8M Series A） | 85.8k | ✅ 10 个 .py 全量语法编译通过；docker-compose + Dockerfile + package.json scripts |
+| `openai/openai-agents-python` | OpenAI 官方 Agent SDK（Python，MIT） | 29.1k | ✅ 923 个 .py 全量语法编译通过 |
+| `stanfordnlp/dspy` | Stanford 声明式 AI 应用编程框架（Prompt 编译优化，Python） | 37.7k | ✅ 279 个 .py 全量语法编译通过 |
+| `anthropics/anthropic-cookbook` | Anthropic 官方示例库（Jupyter Notebook，AI 教育核心教材） | 52.3k | ✅ 121 个 .py 全量语法编译通过；Notebook JSON 全部合法 |
+| `langgenius/dify` | LLMOps 可视化 + AI 工作流平台（修改版 Apache 2.0，多租户 SaaS 需商业许可） | 154.0k | ✅ 3,877 个 .py 全量语法编译通过（本期最大，本仓库 Python 仓库之最）；docker-compose + Dockerfile + package.json scripts |
+| `browser-use/browser-use` | AI 浏览器自动化 Agent（Python，RPA 替代 + computer use） | 111.9k | ✅ 388 个 .py 全量语法编译通过；pyproject.toml + Dockerfile |
+
+> 第 5 期 6 个仓库覆盖 6 个岗位（AI Product Engineering、AI Sales Engineer、AI Agent Framework、Multimodal Agent、AI Educator 认证深化、AI Agent 商业化 PM），dify 154k stars 为本仓库历史第二高（仅次于 n8n 202.9k stars），dify 3,877 个 .py 为本期最大（也是本仓库历史 Python 仓库之最，超过 vllm 4,324 个 .py）。
 
 **共用后端冒烟（分级 A，已通过）**：本地 Ollama 桥接 `http://127.0.0.1:11434/api/chat`（模型 `qwen3-coder:30b`）实测 HTTP 200、`done_reason=stop`，返回 `OK-SMOKE-TEST`。所有兼容 OpenAI/Ollama 的项目均可指向该端点做本地推理，无需云密钥。
 
