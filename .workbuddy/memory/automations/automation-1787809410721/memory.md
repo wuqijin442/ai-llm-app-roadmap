@@ -1,5 +1,37 @@
 # 自动化任务执行记忆（automation-1787809410721）
 
+## 2026-09-01（W36 周二 · 第 5 期）
+- 模式：工作日（周二，W36 第 2 天）
+- 产出：
+  - `daily-digest/2026-09-01.md`（第 5 期 6 岗位 / 6 仓库 / 来源汇总 + 与四期去重）
+  - `docs/30-岗位全景与学习路径索引.md`（追加第 5 期 6 岗位 + 累计统计更新 40 岗位 / 33 仓库 / 5 期）
+  - `README.md`（第 7 节 33 仓库已同步 + 第 5 期 6 仓库行）
+  - `scripts/test_cloned_projects.py`（追加 6 条 REPOS）
+  - `docs/20-克隆企业级项目测试报告.md`（测试脚本自动回写 33 仓库）
+  - `logs/automation-2026-09-01.log`
+- 双通道同步：
+  - GitHub：commit c5d5125 + push rc=0 + 补 commit de7502c + push rc=0，成功
+  - ima 知识库 7498617266899781：3 文件 W36- 前缀全部 media_state=2 / parse_progress=100
+- 关键决策：
+  - 第 5 期主线「AI 应用商业闭环与前沿」（产品侧 + 销售侧 + 前沿侧），补第 4 期「最后一公里」之外的商业闭环
+  - 6 岗位：AI Product Engineer / AI Sales Engineer / AI Agent Framework / Multimodal Agent / AI Educator 认证深化 / AI Agent 商业化 PM
+  - 6 仓库：OpenHands 85.8k★ / OpenAI Agents SDK 29.1k★ / DSPy 37.7k★ / Anthropic Cookbook 52.3k★ / Dify 154k★ / Browser Use 111.9k★
+  - dify 154k stars 为历史第二高，dify 3877 .py 为本期最大（本仓库 Python 仓库之最，超过 vllm 4324 .py）
+- 数据亮点：
+  - AI Product Engineer US $110K–$260K（Demand far exceeds supply）
+  - AI Sales Engineer US 中位 OTE $185K，Taiwan base NT$1.6M–2.5M + 30–50% commission（用户本市场）
+  - AI Agent Framework US $180K–$300K（10 框架全部支持 MCP，A2A native 在 MSAF + ADK）
+  - Multimodal Agent US $95K–$185K（Claude computer use + Browser Use 111K stars）
+  - 累计：40 岗位 / 33 仓库 / 5 期
+- 经验教训：
+  - 仓库路径校验（GitHub API）避免「凭印象猜路径」：langchain-ai/open-hands → All-Hands-AI/OpenHands、dify-ai/dify → langgenius/dify、a16z-infra/ai-engineer-handbook 404、huggingface/text-generation-inference archived
+  - 测试脚本全量重跑 33 仓库耗时约 50 分钟（比第 4 期 33m49s 略长）
+  - ima 推送全部串行（create_media → COS 上传 → add_knowledge），无并行 403 问题
+- 待办（W36）：
+  - W36 周三/周四/周五/周六继续每日采集（第 6-9 期）
+  - W36 周日（2026-09-06）汇总周报
+  - 检查 ima 知识库 W35- 前缀旧版本残留（需人工删除）
+
 ## 2026-08-31（W36 周一 · 第 4 期）
 - 模式：工作日（周一，W36 第 1 天）
 - 产出：
