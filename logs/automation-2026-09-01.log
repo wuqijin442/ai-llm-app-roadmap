@@ -1,0 +1,65 @@
+# 2026-09-01 自动化执行日志
+
+## 基本信息
+- 日期：2026-09-01（周二，W36 第 2 天，第 5 期）
+- 模式：工作日（周二）
+- 开始时间：约 07:00
+- 结束时间：约 08:10
+
+## 产出文件
+- `daily-digest/2026-09-01.md`（第 5 期 6 岗位 + 6 仓库 + 来源汇总 + 与四期去重）
+- `docs/30-岗位全景与学习路径索引.md`（追加第 5 期 6 岗位 + 累计统计更新 40 岗位 / 33 仓库 / 5 期）
+- `README.md`（第 7 节 33 仓库已同步 + 第 5 期 6 仓库行）
+- `scripts/test_cloned_projects.py`（追加 6 条 REPOS：OpenHands + OpenAI Agents SDK + DSPy + Anthropic Cookbook + Dify + Browser Use）
+- `docs/20-克隆企业级项目测试报告.md`（测试脚本自动回写，33 仓库全量）
+
+## 岗位采集
+- 共 6 个岗位：
+  1. AI Product Engineer（US $110K–$260K，Demand far exceeds supply）
+  2. AI Sales Engineer（US 中位 OTE $185K，Taiwan base NT$1.6M–2.5M + 30–50% commission）
+  3. AI Agent Framework Engineer（US $180K–$300K，10 框架全部支持 MCP，A2A native 在 MSAF + ADK）
+  4. Multimodal Agent Engineer（US $95K–$185K，Claude computer use + Browser Use 111K stars）
+  5. AI Educator / 企业 AI 架构师认证（AI 相关岗位 +40% YoY，Claude Certified Architect 免费认证）
+  6. AI Agent 商业化产品经理（US $168K–$250K，OpenHands $18.8M Series A）
+
+## 对标仓库 clone + test
+- 共 6 个仓库（全部成功克隆 + 100% 测试通过）：
+  1. All-Hands-AI/OpenHands（85.8k stars，10 .py，TS+Python）
+  2. openai/openai-agents-python（29.1k stars，923 .py，Python）
+  3. stanfordnlp/dspy（37.7k stars，279 .py，Python）
+  4. anthropics/anthropic-cookbook（52.3k stars，121 .py，Jupyter）
+  5. langgenius/dify（154k stars，3877 .py，TS+Python，本期最大）
+  6. browser-use/browser-use（111.9k stars，388 .py，Python）
+- 测试通过率：6/6 = 100%
+- 最大仓库：dify（154k stars，3877 .py）
+- 失败仓库：0
+
+## 双通道同步
+- GitHub：commit c5d5125 + push rc=0（c1eb1f5..c5d5125 main -> main），成功
+- ima 知识库 7498617266899781：
+  - W36-daily-digest-2026-09-01.md（42175 bytes，media_state=2 / parse_progress=100）
+  - W36-岗位全景与学习路径索引.md（38475 bytes，media_state=2 / parse_progress=100）
+  - W36-克隆企业级项目测试报告.md（21132 bytes，media_state=2 / parse_progress=100）
+- 全部串行推送（create_media → COS 上传 → add_knowledge），无并行 403 问题
+
+## 关键决策
+- 第 5 期主线「AI 应用商业闭环与前沿」（产品侧 + 销售侧 + 前沿侧），补第 4 期「最后一公里」之外的商业闭环
+- 对标仓库选 6 个（OpenHands + OpenAI Agents SDK + DSPy + Anthropic Cookbook + Dify + Browser Use），覆盖 AI 产品工程 / AI 销售 / AI Agent 框架 / Multimodal Agent / AI 教育认证 / Agent 商业化
+- dify 154k stars 为本仓库历史第二高（仅次于 n8n 202.9k stars），dify 3877 .py 为本期最大（也是本仓库 Python 仓库之最，超过 vllm 4324 .py）
+- 累计：40 岗位 / 33 仓库 / 5 期
+
+## 经验教训
+- 仓库路径校验（通过 GitHub API）避免了「凭印象猜路径」的历史踩坑：
+  - `langchain-ai/open-hands` → 实际 `All-Hands-AI/OpenHands`（85.8k stars）
+  - `dify-ai/dify` → 实际 `langgenius/dify`（154k stars）
+  - `a16z-infra/ai-engineer-handbook` → 404 不存在
+  - `stanford-oval/gpt-4v` → 404 不存在
+  - `huggingface/text-generation-inference` → archived=true（不克隆）
+- 测试脚本全量重跑 33 仓库耗时约 50 分钟（比第 4 期 33m49s 略长，因新增 6 个仓库）
+- Python 仓库（OpenAI Agents SDK 923 .py / DSPy 279 .py / Browser Use 388 .py / Dify 3877 .py）B 级测试全部 100% 通过
+- TypeScript 仓库（OpenHands / Dify）B 级测试仅覆盖 Python 子模块（OpenHands 10 .py / Dify 3877 .py）
+
+## 待办（W36）
+- W36 周三 / 周四 / 周五 / 周六继续每日采集（第 6-9 期）
+- W36 周日（2026-09-06）汇总周报
+- 检查 ima 知识库中 W35- 前缀旧版本是否残留（需人工删除）
