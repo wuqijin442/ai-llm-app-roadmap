@@ -1,0 +1,75 @@
+# 自动化执行日志 · 2026-09-02（第 6 期）
+
+> 自动化 ID：automation-1787809410721
+> 执行时间：2026-09-02 07:01 (GMT+8)
+> ISO 周：W36（2026-08-31 ~ 09-06）
+> 执行模式：工作日（周一至周六）
+
+## 一、任务清单
+
+| # | 任务 | 状态 | 备注 |
+|---|---|---|---|
+| 1 | 研究第 6 期 AI 岗位趋势数据 | ✅ | 8 次 WebSearch，覆盖 6 个差异化岗位方向 |
+| 2 | 选定 3 个对标仓库并 clone | ✅ | GitHub 直连不可达，改用 codeload tarball |
+| 3 | 更新 test_cloned_projects.py REPOS | ✅ | 追加第 6 期 3 条 |
+| 4 | 后台跑测试脚本全量重跑 | ⏳ | 运行中（预计 50-60 分钟） |
+| 5 | 撰写 daily-digest/2026-09-02.md | ✅ | 6 岗位拆解 + 行动清单 + 对标仓库 + 去重说明 + 来源汇总 |
+| 6 | 更新 docs/30 索引 + README 第 7 节 | ✅ | 追加第 6 期条目 + 累计统计（46 岗位 / 36 仓库 / 6 期） |
+| 7 | Git commit + push + ima 推送 | ⏳ | 等待测试完成后执行 |
+| 8 | 写 logs/automation-2026-09-02.log | ✅ | 本文件 |
+| 9 | 写 memory.md 执行摘要 | ⏳ | 任务完成后追加 |
+
+## 二、第 6 期主线
+
+**「生产级 Agent 的 5 条工程化路径」**——安全侧（AI Agent Security）+ 成本侧（AI Agent Cost）+ 性能侧（LLM Inference）+ 数据侧（AI Data for RAG）+ 评测侧（AI Agent Evaluation）+ 编译侧（AI Prompt Compiler）。
+
+## 三、第 6 期 6 个岗位
+
+| 岗位 | 一句话定义 | 适配度 | 对标仓库 |
+|---|---|---|---|
+| AI Agent Security Engineer | MCP 工具毒化 + 影子工具 + excessive agency + prompt injection 防御 | 4/5 | guardrails + NeMo-Guardrails + rebuff + llm-guard |
+| AI Agent Cost Engineer | Token 经济学 + 模型路由 + Prompt Caching + 批处理 + 自托管 | 5/5 | openai-python + dspy |
+| LLM Inference Optimization Engineer | KV Cache + 量化 + CUDA 内核级优化 + 张量并行 + 投机解码 | 4/5 | vllm（已克隆） |
+| AI Data Engineer for RAG | 向量库 + embedding 生命周期 + 数据新鲜度 + 数据血缘 | 5/5 | milvus + qdrant + pgvector |
+| AI Agent Evaluation Engineer | 评测基础设施 + 生产漂移监控 + 离线/在线 eval harness | 4/5 | ragas + dspy + langfuse |
+| AI Prompt Compiler Engineer | DSPy Signatures / Modules / Optimizers + prompt 版本化 + CI/CD | 5/5 | dspy（已克隆） |
+
+## 四、本期新增 3 个仓库
+
+| 仓库 | Stars | 语言 | 对齐岗位 |
+|---|---|---|---|
+| `guardrails-ai/guardrails` | 7,341 | Python | AI Agent Security |
+| `openai/openai-python` | 31,535 | Python | AI Agent Cost / Inference |
+| `milvus-io/milvus` | 45,919 | Go + C++ | AI Data Engineer for RAG |
+
+## 五、累计统计
+
+| 指标 | 值 |
+|---|---|
+| 累计岗位条目数 | 46（第 1 期 10 + 第 2 期 10 + 第 3 期 8 + 第 4 期 6 + 第 5 期 6 + 第 6 期 6） |
+| 累计期数 | 6 |
+| 对标仓库 clone+test 总数 | 36（第 1 期 5 + 第 2 期 11 + 第 3 期 9 + 第 4 期 2 + 第 5 期 6 + 第 6 期 3） |
+| 六层视角 | 广度 + 深度 + 落地 + 最后一公里 + 商业闭环与前沿 + 生产级工程化 |
+
+## 六、关键发现
+
+- MCP 安全岗位：US AI Security Architect（MCP）$200K–$285K+、LLM & Agentic Security $200K–$280K+、AI Red Teamer $160K–$230K、AI Security Engineer 平均 $186K / Top $287K；agentic 技能溢价 20–30%
+- Token 经济学：企业 AI 月均支出 $85,521（YoY +36%）；Prompt Caching 60–90% + Model Routing 40–70% + 叠加 70–85%；H2 2026 mid-market 推理 50%+ 在 open-weights
+- LLM Inference：US $160K–$260K；自托管盈亏平衡：7B 50%+ / 13B 10%+ 利用率
+- AI Data for RAG：US 中位 $160K–$225K base / $200K–$360K total；LLM 工程师 $158,669 vs 传统 DE $132,823 +19%
+- AI Agent Evaluation：US $130K–$225K base（applied）/ $180K–$260K total（mid）/ $230K–$650K+（frontier）；Anthropic Model Evaluations $500K–$850K total
+- AI Prompt Compiler：US $120K–$220K（未验证）；DSPy MIPROv3 生产部署：Nexara AI 法律科技 62%→91% EM、latency 0.9s/query、年省 $120K
+
+## 七、踩坑与解决
+
+| 踩坑 | 原因 | 解决 |
+|---|---|---|
+| `git clone` 失败（Recv failure: Connection was reset / Failed to connect to github.com:443） | GitHub 直连不可达（网络限制） | 改用 `codeload.github.com` tarball 下载 + `tar xzf` 解压，3 个仓库全部成功 |
+| GitHub API 返回 200 但 git clone 失败 | API 走 codeload 通道，git 走直连 | 同上 |
+
+## 八、后续
+
+- 测试脚本运行完成后回写 `docs/20`
+- 待测试完成后执行 Git commit + push
+- 待测试完成后执行 ima 知识库推送（W36 前缀）
+- 待测试完成后写 memory.md 执行摘要

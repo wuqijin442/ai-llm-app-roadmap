@@ -57,6 +57,10 @@ REPOS = [
     ("anthropics/anthropic-cookbook", "anthropic-cookbook", "AI Educator 深化 / AI 产品工程：Anthropic Cookbook（官方示例库，Jupyter）"),
     ("langgenius/dify", "dify", "AI Workflow Automation（深化）/ AI Agent 平台：Dify（LLMOps 可视化 + AI 工作流平台，TS）"),
     ("browser-use/browser-use", "browser-use", "Multimodal Agent / AI Agent 前沿：Browser Use（AI 浏览器自动化 Agent，Python）"),
+    # —— 第 6 期（2026-09-02）：3 个（生产级 Agent 安全 / Token 经济学 / RAG 数据基础设施对标仓库）——
+    ("guardrails-ai/guardrails", "guardrails", "AI Agent Security：Guardrails（LLM 输出护栏 + Validator 编排框架，Python）"),
+    ("openai/openai-python", "openai-python", "AI Agent Cost / Inference Engineering：OpenAI 官方 Python SDK（多模型路由 + 批处理 + Prompt Caching 基础）"),
+    ("milvus-io/milvus", "milvus", "AI Data Engineer for RAG：Milvus（云原生向量数据库，Go+C++ 双后端，HNSW/IVF/SCANN）"),
 ]
 
 def api_meta(full_name):

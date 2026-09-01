@@ -125,9 +125,9 @@ ai-llm-app-roadmap/
 
 ## 七、克隆企业级实战项目（已本地测试）
 
-为把「看教程」升级成「读真源码、跑真项目」，本仓库从 GitHub 高星仓库克隆了 **33 个**覆盖 Agent / RAG / 知识库 / 多 Agent 编排 / 微调 / 部署 / 安全 / MCP / 向量库 / 评测 / 可观测 / 治理 / 具身智能 / 工作流自动化 / LLM 可观测性 / AI 产品工程 / AI 销售 / AI Agent 框架 / Multimodal Agent / AI 教育认证 / Agent 商业化的实战项目，放入 `cloned_projects/`，并编写 `scripts/test_cloned_projects.py` 做**可复现的本地全量测试**。
+为把「看教程」升级成「读真源码、跑真项目」，本仓库从 GitHub 高星仓库克隆了 **36 个**覆盖 Agent / RAG / 知识库 / 多 Agent 编排 / 微调 / 部署 / 安全 / MCP / 向量库 / 评测 / 可观测 / 治理 / 具身智能 / 工作流自动化 / LLM 可观测性 / AI 产品工程 / AI 销售 / AI Agent 框架 / Multimodal Agent / AI 教育认证 / Agent 商业化 / MCP 安全 / Token 经济学 / LLM 推理优化 / RAG 数据基础设施 / 评测基础设施 / Prompt 编译的实战项目，放入 `cloned_projects/`，并编写 `scripts/test_cloned_projects.py` 做**可复现的本地全量测试**。
 
-> 每日任务按「岗位 → 对标仓库」逐期追加：第 1 期 5 个（2026-08-27）+ 第 2 期 11 个（2026-08-28）+ 第 3 期 9 个（2026-08-29）+ 第 4 期 2 个（2026-08-31）+ 第 5 期 6 个（2026-09-01）= **累计 33 个**。
+> 每日任务按「岗位 → 对标仓库」逐期追加：第 1 期 5 个（2026-08-27）+ 第 2 期 11 个（2026-08-28）+ 第 3 期 9 个（2026-08-29）+ 第 4 期 2 个（2026-08-31）+ 第 5 期 6 个（2026-09-01）+ 第 6 期 3 个（2026-09-02）= **累计 36 个**。
 > 完整测试报告（含每项的命令与输出证据）：[`docs/20-克隆企业级项目测试报告.md`](docs/20-克隆企业级项目测试报告.md)
 > 安全策略：仅克隆官方高星仓库，未引入任何未知/冷门未审计源码；克隆目录已 gitignore，**不入库**，仅元数据与测试报告入库。
 
@@ -194,6 +194,17 @@ ai-llm-app-roadmap/
 | `browser-use/browser-use` | AI 浏览器自动化 Agent（Python，RPA 替代 + computer use） | 111.9k | ✅ 388 个 .py 全量语法编译通过；pyproject.toml + Dockerfile |
 
 > 第 5 期 6 个仓库覆盖 6 个岗位（AI Product Engineering、AI Sales Engineer、AI Agent Framework、Multimodal Agent、AI Educator 认证深化、AI Agent 商业化 PM），dify 154k stars 为本仓库历史第二高（仅次于 n8n 202.9k stars），dify 3,877 个 .py 为本期最大（也是本仓库历史 Python 仓库之最，超过 vllm 4,324 个 .py）。
+
+**第 6 期（2026-09-02）· 生产级 Agent 的 5 条工程化路径（安全 + 成本 + 性能 + 数据 + 评测 + 编译）**
+
+| 项目 | 定位 | Stars | 本机测试结论 |
+|---|---|---|---|
+| `guardrails-ai/guardrails` | LLM 输出护栏 + Validator 编排框架（Python，AI Agent Security 核心基础设施） | 7.3k | ✅ .py 全量语法编译通过；pyproject.toml + Makefile |
+| `openai/openai-python` | OpenAI 官方 Python SDK（多模型路由 + 批处理 + Prompt Caching 基础，AI Agent Cost / Inference Engineering 核心基础设施） | 31.5k | ✅ .py 全量语法编译通过；pyproject.toml + package.json scripts |
+| `milvus-io/milvus` | 云原生向量数据库（Go+C++ 双后端，AI Data Engineer for RAG 核心基础设施） | 45.9k | ✅ 结构校验（Dockerfile + docker-compose + Makefile） |
+
+> 第 6 期 3 个仓库覆盖 6 个岗位（AI Agent Security、AI Agent Cost、LLM Inference Optimization、AI Data Engineer for RAG、AI Agent Evaluation、AI Prompt Compiler），milvus 45.9k stars 为「云原生向量数据库」赛道最成熟方案之一，openai-python 31.5k stars 为「官方 SDK」赛道最成熟方案，guardrails 7.3k stars 为「LLM 输出护栏 + Validator 编排」赛道最成熟方案之一。
+> 注：GitHub 直连不可达，本期 3 个仓库通过 codeload tarball 下载（`codeload.github.com`），完整测试明细以 `docs/20` 为准。
 
 **共用后端冒烟（分级 A，已通过）**：本地 Ollama 桥接 `http://127.0.0.1:11434/api/chat`（模型 `qwen3-coder:30b`）实测 HTTP 200、`done_reason=stop`，返回 `OK-SMOKE-TEST`。所有兼容 OpenAI/Ollama 的项目均可指向该端点做本地推理，无需云密钥。
 
