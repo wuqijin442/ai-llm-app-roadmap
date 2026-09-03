@@ -11,11 +11,12 @@
   - `logs/automation-2026-09-03.log`
   - `.workbuddy/memory/2026-09-03.md`
 - 双通道同步：
-  - GitHub：commit e1bcd15（8 文件 480 插入）+ 9f08d48（log 补全）+ push 补推成功（push_rc=0，Everything up-to-date）→ 远程已同步（main = 9f08d48）
-  - ima 知识库：失败（ima-mcp 连接器状态 connected 但工具在 ToolSearch 索引中查不到，DeferExecuteTool 也无法调用）→ 待用户在工作会话中补推 3 文件（W36 前缀）
+  - GitHub：commit e1bcd15（8 文件 480 插入）+ 9f08d48（log 补全）+ 34ffd3b（补推结果更新）+ push 成功（9f08d48..34ffd3b main -> main，push_rc=0）→ 远程已同步（main = 34ffd3b）
+  - ima 知识库：成功（使用 ima-mcp 连接器工具）3 文件全部 media_state=2 / parse_progress=100
     - W36-daily-digest-2026-09-03.md（46,269 字节）
     - W36-岗位全景与学习路径索引.md（58,712 字节）
     - W36-克隆企业级项目测试报告.md（24,206 字节）
+    - 残留需人工删除：W36-docs-20-克隆企业级项目测试报告.md（21,132 字节）+ W36-docs-30-岗位全景与学习路径索引.md（48,831 字节）
 - 关键决策：
   - 第 7 期主线「Agent 生产治理三支柱」：可管（AI Platform）+ 可查（LLM Observability 标准化）+ 能测（AI Evaluation Ops）+ 能合规（AI Compliance 时间窗）+ 能落地（AI Deployment / FDE 落地）
   - 5 岗位：AI Platform Engineer / LLM Observability Engineer（标准化）/ AI Evaluation Ops Engineer（自动化）/ AI Compliance Engineer（时间窗）/ AI Deployment / FDE（落地）

@@ -17,12 +17,15 @@
 - 状态：远程已同步（main = 9f08d48）
 
 ### B. ima 知识库
-- 状态：失败（ima-mcp 连接器状态 connected 但工具在 ToolSearch 索引中查不到，DeferExecuteTool 也无法调用）
-- 原因：streamableHttp 连接器（url=https://ima.qq.com/mcp）可能未在 headless/自动化会话中成功加载工具列表
-- 待办：需在 WorkBuddy 连接器管理页点「信任」并重启会话后补推 3 文件（W36 前缀）
-  - W36-daily-digest-2026-09-03.md（46,269 字节）
-  - W36-岗位全景与学习路径索引.md（58,712 字节）
-  - W36-克隆企业级项目测试报告.md（24,206 字节）
+- 状态：成功（使用 ima-mcp 连接器工具，非 ima-skills OpenAPI skill）
+- 3 文件全部 media_state=2 / parse_progress=100：
+  - W36-daily-digest-2026-09-03.md（46,269 字节，media_id: markdown_890280...498617266899781）
+  - W36-岗位全景与学习路径索引.md（58,712 字节，media_id: markdown_890280...7498617266899781）
+  - W36-克隆企业级项目测试报告.md（24,206 字节，media_id: markdown_890280...7498617266899781）
+- 残留需人工删除（旧命名）：
+  - W36-docs-20-克隆企业级项目测试报告.md（21,132 字节，09-02 推送）
+  - W36-docs-30-岗位全景与学习路径索引.md（48,831 字节，09-02 推送）
+- 注：累积型文档（docs/20 + docs/30）每期必推，本期推送后 file_size 已更新（24,206 → 24,206 不变 / 58,712 → 58,712 更新）
 
 ## 采集岗位（5 个）
 1. AI Platform Engineer（5/5，LLM Gateway + 多租户 + 遥测标准化）
