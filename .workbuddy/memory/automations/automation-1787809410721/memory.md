@@ -85,3 +85,35 @@
   - 项目 e4-agent-ops-dashboard 启动
   - 第 4 期采集（补 AI 教育 / AI GTM / AI Reliability）
   - W36 周报 2026-09-06
+
+## 2026-09-02（W36 周三 · 第 6 期）
+- 模式：工作日（周三，W36 第 3 天）
+- 产出：
+  - `daily-digest/2026-09-02.md`（第 6 期 6 岗位 / 3 仓库 / 来源汇总 + 与五期去重）
+  - `docs/30-岗位全景与学习路径索引.md`（追加第 6 期 6 岗位 + 累计统计更新 46 岗位 / 36 仓库 / 6 期）
+  - `README.md`（第 7 节 36 仓库已同步 + 第 6 期 3 仓库行）
+  - `scripts/test_cloned_projects.py`（追加 3 条 REPOS）
+  - `logs/automation-2026-09-02.log`
+- 双通道同步：
+  - GitHub：commit 9618cfa + push rc=0，成功
+  - ima 知识库 7498617266899781：3 文件 W36- 前缀全部 create_media → COS 上传 → add_knowledge 串行完成
+- 关键决策：
+  - 第 6 期主线「生产级 Agent 的 5 条工程化路径」（安全 + 成本 + 性能 + 数据 + 评测 + 编译），补第 5 期「商业闭环与前沿」之后的工程化落地
+  - 6 岗位：AI Agent Security / AI Agent Cost / LLM Inference / AI Data for RAG / AI Agent Evaluation / AI Prompt Compiler
+  - 3 仓库：guardrails 7.3k★ / openai-python 31.5k★ / milvus 45.9k★（通过 codeload tarball 下载，GitHub 直连不可达）
+- 数据亮点：
+  - AI Agent Security US AI Security Architect（MCP）$200K–$285K+、AI Red Teamer $160K–$230K、agentic 技能溢价 20–30%
+  - AI Agent Cost：企业 AI 月均支出 $85,521（YoY +36%）、Prompt Caching 60–90% + Model Routing 40–70% + 叠加 70–85%
+  - LLM Inference US $160K–$260K、自托管盈亏平衡 7B 50%+ / 13B 10%+ 利用率
+  - AI Data for RAG US 中位 $160K–$225K base / $200K–$360K total、LLM 工程师 vs 传统 DE +19% 溢价
+  - AI Agent Evaluation US $130K–$225K base / $180K–$260K total / $230K–$650K+（frontier）、Anthropic Model Evaluations $500K–$850K total
+  - AI Prompt Compiler US $120K–$220K（未验证）、DSPy MIPROv3 Nexara AI 法律科技 62%→91% EM、年省 $120K
+  - 累计：46 岗位 / 36 仓库 / 6 期 / 六层视角
+- 经验教训：
+  - GitHub 直连不可达（Recv failure: Connection was reset / Failed to connect to github.com:443），改用 codeload.github.com tarball 下载 + tar xzf 解压，3 个仓库全部成功
+  - COS 上传需使用 COS SDK（cos-nodejs-sdk-v5），直接 curl PUT 返回 403（需签名）
+  - ima 推送全部串行（create_media → COS 上传 → add_knowledge），无并行 403 问题
+  - 测试脚本全量重跑 36 仓库预计 50-60 分钟（比第 5 期 33 仓库略长）
+- 待办（W36）：
+  - 测试脚本运行完成后回写 docs/20（自动）
+  - 周日汇总进 weekly/2026-W36-周报.md

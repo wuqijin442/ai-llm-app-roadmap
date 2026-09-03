@@ -61,6 +61,10 @@ REPOS = [
     ("guardrails-ai/guardrails", "guardrails", "AI Agent Security：Guardrails（LLM 输出护栏 + Validator 编排框架，Python）"),
     ("openai/openai-python", "openai-python", "AI Agent Cost / Inference Engineering：OpenAI 官方 Python SDK（多模型路由 + 批处理 + Prompt Caching 基础）"),
     ("milvus-io/milvus", "milvus", "AI Data Engineer for RAG：Milvus（云原生向量数据库，Go+C++ 双后端，HNSW/IVF/SCANN）"),
+    # —— 第 7 期（2026-09-03）：3 个（Agent 生产治理三支柱对标仓库：可观测 + 评测 + 部署）——
+    ("open-telemetry/opentelemetry-collector", "otel-collector", "LLM Observability / AI Platform：OpenTelemetry Collector（遥测数据管道，Go，AI 可观测性核心基础设施）"),
+    ("confident-ai/deepeval", "deepeval", "AI Evaluation / 合规证据：DeepEval（LLM 应用评测框架，15+ 内建指标 + 幻觉/偏见/毒性检测，Python）"),
+    ("google/adk-python", "adk-python", "AI Deployment / Agent 框架：Google ADK Python（官方 Agent 开发框架，Python，已克隆补登记）"),
 ]
 
 def api_meta(full_name):

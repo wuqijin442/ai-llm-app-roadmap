@@ -125,9 +125,9 @@ ai-llm-app-roadmap/
 
 ## 七、克隆企业级实战项目（已本地测试）
 
-为把「看教程」升级成「读真源码、跑真项目」，本仓库从 GitHub 高星仓库克隆了 **36 个**覆盖 Agent / RAG / 知识库 / 多 Agent 编排 / 微调 / 部署 / 安全 / MCP / 向量库 / 评测 / 可观测 / 治理 / 具身智能 / 工作流自动化 / LLM 可观测性 / AI 产品工程 / AI 销售 / AI Agent 框架 / Multimodal Agent / AI 教育认证 / Agent 商业化 / MCP 安全 / Token 经济学 / LLM 推理优化 / RAG 数据基础设施 / 评测基础设施 / Prompt 编译的实战项目，放入 `cloned_projects/`，并编写 `scripts/test_cloned_projects.py` 做**可复现的本地全量测试**。
+为把「看教程」升级成「读真源码、跑真项目」，本仓库从 GitHub 高星仓库克隆了 **39 个**覆盖 Agent / RAG / 知识库 / 多 Agent 编排 / 微调 / 部署 / 安全 / MCP / 向量库 / 评测 / 可观测 / 治理 / 具身智能 / 工作流自动化 / LLM 可观测性 / AI 产品工程 / AI 销售 / AI Agent 框架 / Multimodal Agent / AI 教育认证 / Agent 商业化 / MCP 安全 / Token 经济学 / LLM 推理优化 / RAG 数据基础设施 / 评测基础设施 / Prompt 编译 / AI 平台 / OpenTelemetry GenAI / AI 评测 Ops / AI 合规 / AI 部署落地的实战项目，放入 `cloned_projects/`，并编写 `scripts/test_cloned_projects.py` 做**可复现的本地全量测试**。
 
-> 每日任务按「岗位 → 对标仓库」逐期追加：第 1 期 5 个（2026-08-27）+ 第 2 期 11 个（2026-08-28）+ 第 3 期 9 个（2026-08-29）+ 第 4 期 2 个（2026-08-31）+ 第 5 期 6 个（2026-09-01）+ 第 6 期 3 个（2026-09-02）= **累计 36 个**。
+> 每日任务按「岗位 → 对标仓库」逐期追加：第 1 期 5 个（2026-08-27）+ 第 2 期 11 个（2026-08-28）+ 第 3 期 9 个（2026-08-29）+ 第 4 期 2 个（2026-08-31）+ 第 5 期 6 个（2026-09-01）+ 第 6 期 3 个（2026-09-02）+ 第 7 期 3 个（2026-09-03）= **累计 39 个**。
 > 完整测试报告（含每项的命令与输出证据）：[`docs/20-克隆企业级项目测试报告.md`](docs/20-克隆企业级项目测试报告.md)
 > 安全策略：仅克隆官方高星仓库，未引入任何未知/冷门未审计源码；克隆目录已 gitignore，**不入库**，仅元数据与测试报告入库。
 
@@ -205,6 +205,17 @@ ai-llm-app-roadmap/
 
 > 第 6 期 3 个仓库覆盖 6 个岗位（AI Agent Security、AI Agent Cost、LLM Inference Optimization、AI Data Engineer for RAG、AI Agent Evaluation、AI Prompt Compiler），milvus 45.9k stars 为「云原生向量数据库」赛道最成熟方案之一，openai-python 31.5k stars 为「官方 SDK」赛道最成熟方案，guardrails 7.3k stars 为「LLM 输出护栏 + Validator 编排」赛道最成熟方案之一。
 > 注：GitHub 直连不可达，本期 3 个仓库通过 codeload tarball 下载（`codeload.github.com`），完整测试明细以 `docs/20` 为准。
+
+**第 7 期（2026-09-03）· Agent 生产治理三支柱（可管 + 可查 + 能测 + 能合规 + 能落地）**
+
+| 项目 | 定位 | Stars | 本机测试结论 |
+|---|---|---|---|
+| `open-telemetry/opentelemetry-collector` | 遥测数据管道（Go，OpenTelemetry GenAI 语义约定 + Collector receivers/processors/exporters，AI Platform / LLM Observability 核心基础设施） | 7.5k | ✅ 结构校验（Dockerfile + go.mod + Makefile）；2,848 文件 |
+| `confident-ai/deepeval` | LLM 应用评测框架（15+ 内建指标 + 幻觉/偏见/毒性检测 + LLM-as-judge 校准，AI Evaluation Ops / AI Compliance 核心基础设施） | 18.1k | ✅ .py 全量语法编译通过；pyproject.toml + Makefile；992 个 .py |
+| `google/adk-python` | Google 官方 Agent 开发框架（Python，AI Deployment / FDE / AI Platform 核心基础设施） | 21.4k | ✅ .py 全量语法编译通过；pyproject.toml + Dockerfile；1,853 个 .py |
+
+> 第 7 期 3 个仓库覆盖 5 个岗位（AI Platform Engineer、LLM Observability Engineer（标准化）、AI Evaluation Ops Engineer、AI Compliance Engineer（时间窗）、AI Deployment / FDE（落地）），otel-collector 7.5k stars（Go）是「OpenTelemetry GenAI 语义约定 + 数据管道」核心基础设施，deepeval 18.1k stars 是「LLM 应用自动化评测 + 偏见/毒性检测」核心基础设施，adk-python 21.4k stars 是「Google 官方 Agent 框架」核心基础设施。
+> 注：otel-collector 通过 git 直连克隆成功；deepeval GitHub 直连失败（curl 56），改用 codeload tarball 下载成功；adk-python 为已克隆补登记（第 5 期 AI Agent Framework 已引用）。完整测试明细以 `docs/20` 为准。
 
 **共用后端冒烟（分级 A，已通过）**：本地 Ollama 桥接 `http://127.0.0.1:11434/api/chat`（模型 `qwen3-coder:30b`）实测 HTTP 200、`done_reason=stop`，返回 `OK-SMOKE-TEST`。所有兼容 OpenAI/Ollama 的项目均可指向该端点做本地推理，无需云密钥。
 
