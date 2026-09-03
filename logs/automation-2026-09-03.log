@@ -12,16 +12,17 @@
 
 ## 双通道同步
 ### A. GitHub
-- commit：e1bcd15（8 文件，480 插入 / 40 删除）
-- push：失败（curl 28 / curl 56，GitHub 直连网络抖动，重试 1 次仍失败）
-- 状态：内容已落盘（本地 commit 成功），远程待网络恢复后补推
+- commit：e1bcd15（8 文件，480 插入 / 40 删除）+ 9f08d48（log 补全）
+- push：首次失败（curl 28/56 网络抖动）→ 补推成功（push_rc=0，Everything up-to-date）
+- 状态：远程已同步（main = 9f08d48）
 
 ### B. ima 知识库
-- 状态：跳过（ima-mcp 工具在工具索引中查不到，headless/cron 模式连接器未激活）
-- 待办：网络恢复后补推 3 文件（W36 前缀）
-  - W36-daily-digest-2026-09-03.md
-  - W36-岗位全景与学习路径索引.md
-  - W36-克隆企业级项目测试报告.md
+- 状态：失败（ima-mcp 连接器状态 connected 但工具在 ToolSearch 索引中查不到，DeferExecuteTool 也无法调用）
+- 原因：streamableHttp 连接器（url=https://ima.qq.com/mcp）可能未在 headless/自动化会话中成功加载工具列表
+- 待办：需在 WorkBuddy 连接器管理页点「信任」并重启会话后补推 3 文件（W36 前缀）
+  - W36-daily-digest-2026-09-03.md（46,269 字节）
+  - W36-岗位全景与学习路径索引.md（58,712 字节）
+  - W36-克隆企业级项目测试报告.md（24,206 字节）
 
 ## 采集岗位（5 个）
 1. AI Platform Engineer（5/5，LLM Gateway + 多租户 + 遥测标准化）
