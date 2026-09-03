@@ -1,0 +1,67 @@
+# 自动化执行日志 2026-09-03（W36 周四 · 第 7 期）
+
+## 执行摘要
+- 模式：工作日（周四，W36 第 4 天）
+- 产出：
+  - `daily-digest/2026-09-03.md`（第 7 期 5 岗位 / 3 仓库 / 来源汇总 + 与六期去重 + Harness 主线对齐）
+  - `docs/30-岗位全景与学习路径索引.md`（追加第 7 期 5 岗位 + 累计统计更新 51 岗位 / 39 仓库 / 7 期 / 七层视角）
+  - `README.md`（第 7 节 39 仓库已同步 + 第 7 期 3 仓库表格）
+  - `scripts/test_cloned_projects.py`（追加 3 条 REPOS：otel-collector + deepeval + adk-python）
+  - `docs/20-克隆企业级项目测试报告.md`（测试脚本自动回写 39 仓库）
+  - `.workbuddy/memory/2026-09-03.md`（工作日志）
+
+## 双通道同步
+### A. GitHub
+- commit：e1bcd15（8 文件，480 插入 / 40 删除）
+- push：失败（curl 28 / curl 56，GitHub 直连网络抖动，重试 1 次仍失败）
+- 状态：内容已落盘（本地 commit 成功），远程待网络恢复后补推
+
+### B. ima 知识库
+- 状态：跳过（ima-mcp 工具在工具索引中查不到，headless/cron 模式连接器未激活）
+- 待办：网络恢复后补推 3 文件（W36 前缀）
+  - W36-daily-digest-2026-09-03.md
+  - W36-岗位全景与学习路径索引.md
+  - W36-克隆企业级项目测试报告.md
+
+## 采集岗位（5 个）
+1. AI Platform Engineer（5/5，LLM Gateway + 多租户 + 遥测标准化）
+2. LLM Observability Engineer（标准化特化）（5/5，OpenTelemetry GenAI + Collector）
+3. AI Evaluation Ops Engineer（自动化特化）（5/5，DeepEval + LLM-as-judge 校准）
+4. AI Compliance Engineer（时间窗特化）（4/5，EU AI Act 2026-08-02 + ISO 42001）
+5. AI Deployment / FDE（落地特化）（5/5，729% 岗位增长 + 5.1 个月 time-to-value）
+
+## 对标仓库（3 个，全部 clone + test 成功）
+| 仓库 | stars | 主语言 | .py 数 | 编译结果 | 对齐岗位 |
+|---|---|---|---|---|---|
+| open-telemetry/opentelemetry-collector | 7,487 | Go | 0 | 结构校验 | AI Platform / LLM Observability |
+| confident-ai/deepeval | 18,061 | Python | 992 | 992/992 全通过 | AI Evaluation Ops / AI Compliance |
+| google/adk-python | 21,380 | Python | 1,853 | 1853/1853 全通过 | AI Deployment / FDE / AI Platform |
+
+## 克隆方式
+- otel-collector：git 直连克隆成功
+- deepeval：GitHub 直连失败（curl 56），改用 codeload tarball 下载成功
+- adk-python：已克隆补登记（第 5 期 AI Agent Framework 已引用）
+
+## 测试通过率
+- 39 仓库全量重跑，deepeval 992/992、adk-python 1853/1853 编译通过
+- otel-collector（Go）无 .py 文件，结构校验通过
+- 历史遗留失败（crewAI 5 个 CLI 模板占位符 `{{folder_name}}`）属预期
+
+## 关键数据亮点
+- FDE 岗位 12 个月 +729%（Indeed 643→5,330），薪资 $170K–$200K+（skai.io 2026）
+- LLM Evaluation YOY 帖量 +210%（Q1 2025 vs Q1 2026），平均招聘 67 天（llmhire.com 2026）
+- OpenTelemetry GenAI 标准化（多数 Agent 框架内置 OTel 兼容 exporter）（jobsbyculture.com 2026）
+- EU AI Act Article 50 透明义务 2026-08-02 生效（本期主线核心），高风险义务 2027-12 / 2028-08（Digital Omnibus 修订）
+- 累计：51 岗位 / 39 仓库 / 7 期 / 七层视角
+
+## 经验教训
+- 测试脚本全量重跑 39 仓库耗时约 55 分钟（比第 6 期 36 仓库略长）
+- 仓库路径校验（GitHub API）避免「凭印象猜路径」：confident-ai/deepeval 有效 18.06k★、open-telemetry/opentelemetry-collector 有效 7.49k★、google/adk-python 有效 21.38k★（已克隆）
+- deepeval GitHub 直连失败（curl 56），改用 codeload tarball 下载成功（历史踩坑自愈）
+- GitHub 直连网络抖动（curl 28 / curl 56），push 失败属预期，内容已落盘待补推
+- ima-mcp 工具在工具索引中查不到（headless/cron 模式连接器未激活），按任务说明跳过 ima 推送并写 log
+
+## 待办
+- GitHub push 补推（网络恢复后）
+- ima 知识库 7498617266899781 补推 3 文件（W36 前缀）
+- W36 周日（2026-09-06）汇总周报

@@ -1,5 +1,41 @@
 # 自动化任务执行记忆（automation-1787809410721）
 
+## 2026-09-03（W36 周四 · 第 7 期）
+- 模式：工作日（周四，W36 第 4 天）
+- 产出：
+  - `daily-digest/2026-09-03.md`（第 7 期 5 岗位 / 3 仓库 / 来源汇总 + 与六期去重 + Harness 主线对齐）
+  - `docs/30-岗位全景与学习路径索引.md`（追加第 7 期 5 岗位 + 累计统计更新 51 岗位 / 39 仓库 / 7 期 / 七层视角）
+  - `README.md`（第 7 节 39 仓库已同步 + 第 7 期 3 仓库表格）
+  - `scripts/test_cloned_projects.py`（追加 3 条 REPOS：otel-collector + deepeval + adk-python）
+  - `docs/20-克隆企业级项目测试报告.md`（测试脚本自动回写 39 仓库）
+  - `logs/automation-2026-09-03.log`
+  - `.workbuddy/memory/2026-09-03.md`
+- 双通道同步：
+  - GitHub：commit e1bcd15（8 文件 480 插入）+ push 失败（curl 28 / curl 56，GitHub 直连网络抖动，重试 1 次仍失败）→ 内容已落盘待补推
+  - ima 知识库：跳过（ima-mcp 工具在工具索引中查不到，headless/cron 模式连接器未激活）→ 待补推 3 文件（W36 前缀）
+- 关键决策：
+  - 第 7 期主线「Agent 生产治理三支柱」：可管（AI Platform）+ 可查（LLM Observability 标准化）+ 能测（AI Evaluation Ops）+ 能合规（AI Compliance 时间窗）+ 能落地（AI Deployment / FDE 落地）
+  - 5 岗位：AI Platform Engineer / LLM Observability Engineer（标准化）/ AI Evaluation Ops Engineer（自动化）/ AI Compliance Engineer（时间窗）/ AI Deployment / FDE（落地）
+  - 3 仓库：otel-collector 7.49k★（Go，遥测数据管道）/ deepeval 18.06k★（Python，LLM 评测框架）/ adk-python 21.38k★（Python，Google 官方 Agent 框架，已克隆补登记）
+  - deepeval GitHub 直连失败（curl 56），改用 codeload tarball 下载成功（历史踩坑自愈）
+- 数据亮点：
+  - FDE 岗位 12 个月 +729%（Indeed 643→5,330），薪资 $170K–$200K+（skai.io 2026）
+  - LLM Evaluation YOY 帖量 +210%（Q1 2025 vs Q1 2026），平均招聘 67 天（llmhire.com 2026）
+  - OpenTelemetry GenAI 标准化（多数 Agent 框架内置 OTel 兼容 exporter）（jobsbyculture.com 2026）
+  - EU AI Act Article 50 透明义务 2026-08-02 生效（本期主线核心），高风险义务 2027-12 / 2028-08（Digital Omnibus 修订）
+  - 累计：51 岗位 / 39 仓库 / 7 期 / 七层视角
+- 经验教训：
+  - 测试脚本全量重跑 39 仓库耗时约 55 分钟（比第 6 期 36 仓库略长）
+  - 仓库路径校验（GitHub API）避免「凭印象猜路径」：confident-ai/deepeval 有效 18.06k★、open-telemetry/opentelemetry-collector 有效 7.49k★、google/adk-python 有效 21.38k★（已克隆）
+  - deepeval GitHub 直连失败（curl 56），改用 codeload tarball 下载成功（历史踩坑自愈）
+  - GitHub 直连网络抖动（curl 28 / curl 56），push 失败属预期，内容已落盘待补推
+  - ima-mcp 工具在工具索引中查不到（headless/cron 模式连接器未激活），按任务说明跳过 ima 推送并写 log
+- 待办（W36）：
+  - GitHub push 补推（网络恢复后）
+  - ima 知识库 7498617266899781 补推 3 文件（W36 前缀）：daily-digest-2026-09-03.md + 岗位全景与学习路径索引.md + 克隆企业级项目测试报告.md
+  - W36 周五/周六继续每日采集（第 8-9 期）
+  - W36 周日（2026-09-06）汇总周报
+
 ## 2026-09-01（W36 周二 · 第 5 期）
 - 模式：工作日（周二，W36 第 2 天）
 - 产出：
