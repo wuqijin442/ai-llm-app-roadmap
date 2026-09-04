@@ -65,6 +65,9 @@ REPOS = [
     ("open-telemetry/opentelemetry-collector", "otel-collector", "LLM Observability / AI Platform：OpenTelemetry Collector（遥测数据管道，Go，AI 可观测性核心基础设施）"),
     ("confident-ai/deepeval", "deepeval", "AI Evaluation / 合规证据：DeepEval（LLM 应用评测框架，15+ 内建指标 + 幻觉/偏见/毒性检测，Python）"),
     ("google/adk-python", "adk-python", "AI Deployment / Agent 框架：Google ADK Python（官方 Agent 开发框架，Python，已克隆补登记）"),
+    # —— 第 8 期（2026-09-04）：2 个（Agent 互操作协议 + Context Engineering / 记忆层 + LLM 推理引擎对标仓库）——
+    ("sgl-project/sglang", "sglang", "LLM Inference Engineering：SGLang（高性能 LLM 推理引擎，RadixAttention 前缀缓存 + 多 GPU 并行，Python+CUDA）"),
+    ("mem0ai/mem0", "mem0", "Context Engineering / Agent Memory：Mem0（AI Agent 通用长期记忆层，事实抽取 + 多信号检索 + 时间推理，Python）"),
 ]
 
 def api_meta(full_name):

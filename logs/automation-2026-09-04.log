@@ -1,0 +1,29 @@
+# 自动化执行日志 · 2026-09-04（第 8 期）
+
+## 执行概要
+- 日期：2026-09-04（周五，W36）
+- 期数：第 8 期，主线「治理底座三根深水桩（协议 + 记忆 + 引擎）」
+- 抓取岗位：3 个（MCP Engineer、Context Engineering / AI Memory Engineer、LLM Inference Engineer Agent 特化）
+- 累计岗位：54 个（第 1-8 期）
+
+## 对标仓库 clone + test
+- 新增 2 个：sgl-project/sglang（34,104★，6,207 .py）、mem0ai/mem0（64,674★，390 .py）
+- 克隆通道：GitHub 直连（git clone）连续 4 次失败（Failed to connect to github.com:443），沿用第 6 期 fallback 走 codeload.github.com tarball 下载成功（sglang 30MB / mem0 19MB），非 git 元数据克隆（无 .git 目录）
+- 测试：scripts/test_cloned_projects.py 全量重跑（41 仓库），耗时 2 小时 3 分钟（sglang 6,207 .py 拉长耗时，历史约 40 分钟），全部通过，本期 2 仓库 100% 编译通过率
+- 累计仓库：41 个（第 1 期 5 + 第 2 期 11 + 第 3 期 9 + 第 4 期 2 + 第 5 期 6 + 第 6 期 3 + 第 7 期 3 + 第 8 期 2）
+
+## 产出文件
+- daily-digest/2026-09-04.md（新建，第 8 期）
+- docs/30-岗位全景与学习路径索引.md（追加第 8 期 3 岗 + 累计统计更新：54 岗 / 41 仓 / 八层视角）
+- docs/20-克隆企业级项目测试报告.md（测试脚本自动回写）
+- README.md（第 7 节：总数 39→41，新增第 8 期表格，导航注释 25→41）
+- scripts/test_cloned_projects.py（REPOS 追加第 8 期 2 条）
+
+## GitHub 推送
+- 见下方结果记录
+
+## ima 知识库推送（W36 前缀）
+- 见下方结果记录
+
+## 备注
+- 耗时优化建议：测试脚本如再遇超大仓库（>5K .py），可考虑增量模式（只测新增仓库）
