@@ -20,10 +20,24 @@
 - scripts/test_cloned_projects.py（REPOS 追加第 8 期 2 条）
 
 ## GitHub 推送
-- 见下方结果记录
+- 首次推送：commit 6d98cb0（f51f12f..6d98cb0），PUSH_RC=0，成功
+- 内容：daily-digest/2026-09-04.md、docs/30、docs/20、README、scripts REPOS、log（6 files, +289/-45）
 
-## ima 知识库推送（W36 前缀）
-- 见下方结果记录
+## ima 知识库推送（W36 前缀，串行三步走均成功）
+- 推送前核对（get_knowledge_list file_size vs 本地 getsize）：
+  - W36-岗位全景与学习路径索引.md：库内 58,712 vs 本地 66,264 → 过期，重推
+  - W36-克隆企业级项目测试报告.md：库内 24,206 vs 本地 25,610 → 过期，重推
+  - W36-daily-digest-2026-09-04.md：新文件，首推
+- 推送结果（均为 create_media → cos-upload HTTP 200 → add_knowledge REPLACE，串行执行无 403）：
+  1. W36-daily-digest-2026-09-04.md（34,374 B）→ media_state=2 / parse 100% ✅
+  2. W36-岗位全景与学习路径索引.md（66,264 B）→ media_state=2 / parse 100% ✅
+  3. W36-克隆企业级项目测试报告.md（25,610 B）→ media_state=2 / parse 100% ✅（库内 introduction 已显示 2026-09-04 09:29 新版）
+- 推送后复核：三文件 file_size 与本地完全一致 ✅
+
+## 遗留提示（需人工处理）
+- ima MCP 无删除接口，以下旧周前缀/旧命名版本残留，RAG 会同时命中新旧版本，需在 ima「ai study road」库手动删除：
+  - W36-docs-20-克隆企业级项目测试报告.md（21,132 B，9/2 旧版，已被 W36-克隆企业级项目测试报告.md 取代）
+  - W36-docs-30-岗位全景与学习路径索引.md（48,831 B，9/2 旧版，已被 W36-岗位全景与学习路径索引.md 取代）
 
 ## 备注
 - 耗时优化建议：测试脚本如再遇超大仓库（>5K .py），可考虑增量模式（只测新增仓库）
