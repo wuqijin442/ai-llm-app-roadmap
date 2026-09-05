@@ -43,8 +43,8 @@
 - P2：docs/07（AI 基础设施三件套 Ray/MLflow/TGI）/ docs/09（FDE +729%）/ docs/04+05（评测基础设施工具栈）
 
 ## GitHub 同步
-- git add -A && git commit -m "[2026-09-06] W36 周报与索引同步" → rc=0
-- git push origin main → 见下方回填
+- git add -A && git commit -m "[2026-09-06] W36 周报与索引同步" → rc=0（c080cec，10 文件 +619/-49）
+- git push origin main → 挂起（GitHub 直连慢，>20min 未完成，历史多次网络抖动；内容已落盘，待补推）
 - remote: github.com/wuqijin442/ai-llm-app-roadmap.git
 
 ## ima 知识库推送
@@ -55,7 +55,11 @@
   - W36-岗位全景与学习路径索引.md（76,470 bytes，重推累积型）
   - W36-克隆企业级项目测试报告.md（27,783 bytes，重推累积型）
 - 三步流程：create_media → COS 上传 → add_knowledge（串行，REPLACE 去重）
-- 结果：见下方回填
+- 结果：全部成功（3 文件 media_state=2 / parse_progress=100，file_size 与本地一致）
+  - W36-2026-W36-周报.md（30,341 bytes）
+  - W36-岗位全景与学习路径索引.md（76,470 bytes）
+  - W36-克隆企业级项目测试报告.md（27,783 bytes）
+- 残留需人工删除（旧命名，09-02 推送）：W36-docs-20-克隆企业级项目测试报告.md（21,132）+ W36-docs-30-岗位全景与学习路径索引.md（48,831）
 
 ## 诚实说明
 - 本周数据来自公开招聘平台/行业报告，部分为厂商/猎头/培训机构口径，建议交叉验证后再用于简历/薪资谈判

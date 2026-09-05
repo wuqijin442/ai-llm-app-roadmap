@@ -1,5 +1,47 @@
 # 自动化任务执行记忆（automation-1787809410721）
 
+## 2026-09-06（W36 周日 · 周汇总）
+- 模式：周日汇总（W36，2026-08-31 ~ 2026-09-06，6 期第 4-9 期）
+- 产出：
+  - `weekly/2026-W36-周报.md`（29 岗位 / 19 仓库 / 6 期主线 / 6 大趋势 / 6 大能力簇 / 7 项 docs 缺口 / 4 个 P1 修订建议 / 4 个新增项目建议）
+  - `docs/30-岗位全景与学习路径索引.md`（校正累计统计 54→57 岗位、期数 8→9、适配度清单补第 9 期 3 岗、W36 汇总行 12岗/3仓库→29岗/19仓库/6期）
+  - `README.md`（第 4 节 weekly 导航补 W36 周报说明）
+  - `logs/automation-2026-09-06.log`
+- 双通道同步：
+  - GitHub：commit c080cec（10 文件 +619/-49）+ push origin main（后台任务，等待结果）
+  - ima 知识库 7498617266899781：3 文件全部 media_state=2 / parse_progress=100，file_size 与本地一致
+    - W36-2026-W36-周报.md（30,341 字节，新）
+    - W36-岗位全景与学习路径索引.md（76,470 字节，重推，REPLACE 旧版）
+    - W36-克隆企业级项目测试报告.md（27,783 字节，重推，REPLACE 旧版）
+    - 残留需人工删除：W36-docs-20-克隆企业级项目测试报告.md（21,132）+ W36-docs-30-岗位全景与学习路径索引.md（48,831）
+- 关键决策：
+  - 周日汇总模式不重新采集岗位，只做趋势提炼 + docs 缺口分析 + 对标仓库汇总 + 修订建议
+  - W36 六期递进：最后一公里（教/保/卖）→ 商业闭环（产品/销售/前沿）→ 工程化（安全/成本/性能/数据/评测/编译）→ 生产治理（可管/可查/能测/能合规/能落地）→ 治理底座（协议/记忆/引擎）→ 算力底座（算力引擎/平台层/服务引擎）
+  - 6 大趋势：薪资天花板向基础设施+安全+推理上移 / MCP 成第一协议岗位（入 AAIF + 月下载 97M + 岗位 +410%）/ FDE +729%（80% 嵌入 / 31% 在生产差距）/ 评测基础设施成第一门槛（+210%）/ Token 经济学成第一成本项（叠加 70-85%）/ 记忆裂解为独立产品类目（五层栈+晋升门控）
+  - 6 大能力簇：保 Agent / 测 Agent / 架 Agent / 管 Agent / 卖 Agent / 写 Agent（适配度 5/5 岗位全部落在前 4 簇）
+  - 4 个 P1 修订建议：docs/05（MCP Engineer 岗位映射）/ docs/04（记忆层五层栈+晋升门控）/ docs/06（三大推理引擎 vLLM/SGLang/TGI）/ docs/09 第 6 节（Token 经济学）
+  - 4 个新增项目建议：p5-mcp-server-lab（最高优先级）/ e4-agent-ops-dashboard / p6-memory-stack / e5-ai-platform
+- 数据亮点：
+  - AI Infrastructure $246,150 中位（全 AI 岗类第一）/ MCP Orchestration Staff $380K–$550K（全 AI 岗类第二高）/ FDE total $215K–$1.2M+ / Anthropic Model Evaluations $500K–$850K
+  - MCP 入 Linux Foundation AAIF + 月 SDK 下载 97M + 10,000+ 生产 server + 咨询/集成商 MCP 岗位 +410%
+  - FDE 12 个月 +729%（Indeed 643→5,330）+ OpenAI Deployment 公司（$4B+ 19 家投资）+ 80% 企业应用嵌入 Agent（Gartner）但仅 31% 跑在生产（S&P/McKinsey）
+  - LLM Evaluation YOY 帖量 +210% + 平均招聘 67 天 + 2026 评测工具栈标准化（OTel + Langfuse/LangSmith + DeepEval + Ragas + CI/CD）
+  - 企业 AI 月均支出 $85,521（YoY +36%）+ Prompt Caching 60–90% + Model Routing 40–70% + 叠加 70–85% 成本降低
+  - 记忆五设计阵营 + 五层栈 + 全量上下文 72.9% vs 选择性检索 91% 延迟降 + 90% token 省 + Mem0 64.7k★ 记忆层品类第一
+  - 累计：57 岗位 / 44 仓库 / 9 期 / 九层视角
+- 经验教训：
+  - docs/30 累计统计 54 漏第 9 期 3 岗（应为 57），W36 汇总行写 12 岗位/3 仓库（应为 29 岗/19 仓库/第 6-9 期）——本次校正
+  - ima 全程串行 create_media → COS → add_knowledge，零 403；REPLACE 策略对同名文件正常去重
+  - 累积型文档（docs/30 + docs/20）每期必推，避免知识库内容持续落后（历史踩坑 W35-W36 连续 3 期漏推）
+  - git push GitHub 直连慢（>9min 未完成），历史多次网络抖动，等待结果后回填 log
+- 待办（W37）：
+  - W37 周一 P1 修订：docs/05 + docs/04 + docs/06 + docs/09
+  - W37 周三前 P2 新增：docs/07 + docs/09（FDE）+ docs/04/05（评测）
+  - 项目：开始 p5-mcp-server-lab（对齐 MCP Engineer / AI Agent Security）
+  - W37 第 10 期采集：补「AI Solution Architect / AI 教育深化 / 具身智能 VLA（可选进阶）」
+  - W37 周日（2026-09-13）汇总周报
+  - 需人工删除 ima 知识库旧命名残留（W36-docs-20 + W36-docs-30，09-02 推送）
+
 ## 2026-09-04（W36 周五 · 第 8 期）
 - 模式：工作日（周五，W36 第 5 天）
 - 产出：
