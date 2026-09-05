@@ -1,5 +1,40 @@
 # 自动化任务执行记忆（automation-1787809410721）
 
+## 2026-09-04（W36 周五 · 第 8 期）
+- 模式：工作日（周五，W36 第 5 天）
+- 产出：
+  - `daily-digest/2026-09-04.md`（第 8 期 3 岗位 / 2 仓库 / 与七期去重 / Harness 主线对齐）
+  - `docs/30-岗位全景与学习路径索引.md`（追加第 8 期 3 岗位 + 累计统计更新 54 岗位 / 41 仓库 / 8 期 / 八层视角）
+  - `README.md`（第 7 节 41 仓库已同步 + 第 8 期 2 仓库表格 + 导航注释 25→41）
+  - `scripts/test_cloned_projects.py`（追加 2 条 REPOS：sglang + mem0）
+  - `docs/20-克隆企业级项目测试报告.md`（测试脚本自动回写 41 仓库）
+  - `logs/automation-2026-09-04.log`
+- 双通道同步：
+  - GitHub：commit 6d98cb0（6 文件 +289/-45，push rc=0）+ 11e29d2（log 收尾，第一次 push exit 128 网络抖动，等 60s 重试 rc=0）→ main = 11e29d2
+  - ima 知识库：3 文件全部 media_state=2 / parse_progress=100，file_size 与本地一致
+    - W36-daily-digest-2026-09-04.md（34,374 字节，新）
+    - W36-岗位全景与学习路径索引.md（66,264 字节，重推，旧版 58,712 已 REPLACE）
+    - W36-克隆企业级项目测试报告.md（25,610 字节，重推，旧版 24,206 已 REPLACE）
+    - 残留需人工删除（沿用）：W36-docs-20-克隆企业级项目测试报告.md（21,132）+ W36-docs-30-岗位全景与学习路径索引.md（48,831）
+- 关键决策：
+  - 第 8 期主线「治理底座三根深水桩」（协议 + 记忆 + 引擎）：MCP Engineer（互操作协议层）/ Context Engineering · AI Memory Engineer（记忆层）/ LLM Inference Engineer（Agent 工作流特化，引擎层）
+  - 2 仓库：sgl-project/sglang 34,104★（GitHub API 实时）/ 6,207 .py 全过（本仓库 .py 数历史第一）；mem0ai/mem0 64,674★ / 390 .py 全过（记忆层品类 star 第一）
+  - MCP Engineer 由已克隆 mcp-python-sdk / mcp-typescript-sdk / mcp-servers 共同对标，本期不重复克隆
+- 数据亮点：
+  - MCP 月 SDK 下载 97M / 10,000+ 生产 server / 入 Linux Foundation AAIF；MCP Orchestration Staff total $380K–$550K（全 AI 岗类第二高）；咨询/集成商 MCP 岗位 +410%
+  - 记忆已分离为独立产品类目（五设计阵营）；mem0 五层记忆栈 + 晋升门控；全量上下文 72.9% 准确 vs 选择性检索 91% 延迟降 + 90% token 省
+  - SGLang 400,000+ GPU 部署 / Agent 场景 TTFT 降 60% / H100 吞吐超 vLLM 29%；NVIDIA 推理岗 JD 明确要求 vLLM+SGLang 双引擎
+  - 累计：54 岗位 / 41 仓库 / 8 期 / 八层视角
+- 经验教训：
+  - git clone 连续 4 次失败（Failed to connect github.com:443）→ 直接切 codeload tarball（sglang 30MB / mem0 19MB），不再死磕
+  - 测试脚本全量重跑 41 仓库耗时 2h3m（sglang 6,207 .py 拉长，历史约 40-55min）——后续遇 >5K .py 仓库建议评估增量模式
+  - git push 管道 tail 再次掩盖 exit 128（第二次 commit push 首试假成功），改用重定向 `> log 2>&1; rc=$?` 后确认真失败，等 60s 重试成功
+  - ima 全程串行 create_media → COS → add_knowledge，零 403；REPLACE 策略对同名文件正常去重
+- 待办（W36）：
+  - W36 周六继续每日采集（第 9 期）
+  - W36 周日（2026-09-06）汇总周报 `weekly/2026-W36-周报.md`
+  - 需人工删除 ima 知识库旧命名残留（W36-docs-20 + W36-docs-30）
+
 ## 2026-09-03（W36 周四 · 第 7 期）
 - 模式：工作日（周四，W36 第 4 天）
 - 产出：

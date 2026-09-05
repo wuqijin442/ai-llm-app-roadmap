@@ -1,0 +1,71 @@
+[2026-09-06 周日 · W36 汇总模式] AI 大模型应用开发转岗学习仓库 · 自动化任务日志
+
+## 本次任务
+周日汇总模式：读取本周（2026-08-31 ~ 2026-09-06，W36）6 期 daily-digest（第 4-9 期），产出 weekly/2026-W36-周报.md，校正 docs/30 累计统计，回查 README，双通道同步（GitHub + ima 知识库）。
+
+## 做了什么
+1. 读取仓库结构（README / docs/30 / docs/20 报告头 / daily-digest 6 期头部 + 市场总盘）
+2. 产出 weekly/2026-W36-周报.md（29 岗位 / 19 仓库 / 6 期主线 / 6 大趋势 / 6 大能力簇 / 7 项 docs 缺口 / 4 个 P1 修订建议 / 4 个新增项目建议）
+3. 校正 docs/30-岗位全景与学习路径索引.md 累计统计：
+   - 累计岗位条目数 54 → 57（补第 9 期 3 岗：AI Infrastructure / AI Platform 深化 / LLM Inference 三大引擎）
+   - 累计期数 8 → 9（补 2026-09-05）
+   - 适配度 5/5 清单补 AI Infrastructure Engineer + AI Platform Engineer（深化）
+   - 适配度 4/5 清单补 LLM Inference Engineer（三大引擎特化）
+   - W36 周汇总行 12 岗位/3 仓库 → 29 岗位/19 仓库/6 期主线
+4. 回查 README 第 4 节仓库导航（补 weekly/2026-W36-周报.md 说明）+ 第 7 节项目总数（44 已同步，第 1-9 期）
+5. GitHub 提交 + 推送
+6. ima 知识库「ai study road」推送（3 个文件，W36 前缀）
+
+## 岗位采集（本周 6 期）
+- 第 4 期（08-31）AI 应用落地最后一公里：6 岗位（AI Reliability / AI GTM / AI Educator 深化 / LLM Observability / AI Workflow Automation / AI Learning PM）
+- 第 5 期（09-01）AI 应用商业闭环与前沿：6 岗位（AI Product Engineer / AI Sales Engineer / AI Agent Framework / Multimodal Agent / AI 教育认证 / Agent 商业化 PM）
+- 第 6 期（09-02）生产级 Agent 5 条工程化路径：6 岗位（AI Agent Security / AI Agent Cost / LLM Inference / AI Data for RAG / AI Agent Evaluation / AI Prompt Compiler）
+- 第 7 期（09-03）Agent 生产治理三支柱：5 岗位（AI Platform / LLM Observability 标准化 / AI Evaluation Ops / AI Compliance / AI Deployment FDE）
+- 第 8 期（09-04）治理底座三根深水桩：3 岗位（MCP Engineer / Context/Memory Engineer / LLM Inference Agent 特化）
+- 第 9 期（09-05）AI 基础设施三件套：3 岗位（AI Infrastructure / AI Platform 深化 / LLM Inference 三大引擎）
+- 合计 29 岗位，累计 57 岗位 / 9 期
+- 6 大趋势：薪资天花板向基础设施+安全+推理上移 / MCP 成第一协议岗位 / FDE +729% / 评测基础设施成第一门槛（+210%）/ Token 经济学成第一成本项（叠加 70-85%）/ 记忆裂解为独立产品类目（五层栈+晋升门控）
+
+## 对标仓库（本周 19 个，累计 44）
+- 第 4 期：langfuse + n8n（2 个）
+- 第 5 期：OpenHands + openai-agents-python + dspy + anthropic-cookbook + dify + browser-use（6 个）
+- 第 6 期：guardrails + openai-python + milvus（3 个）
+- 第 7 期：otel-collector + deepeval + adk-python（3 个）
+- 第 8 期：sglang + mem0（2 个）
+- 第 9 期：ray + mlflow + tgi（3 个）
+- 测试通过率：99.92%（crewAI 5 个 CLI 模板占位符 {{folder_name}} 预期失败）
+- 最大仓库（.py 数）：sglang 6,207 个 .py（本仓库 .py 数历史第一）/ dify 3,877 个 .py（历史第二）
+- 最高星仓库：n8n 202.9k★（本仓库历史最高）/ dify 154k★（历史第二）/ mem0 64.7k★（记忆层品类第一）
+- 测试脚本耗时：41 仓库全量重跑约 2h3m（sglang 6,207 .py 拉长）
+
+## docs 缺口（周报列出，未直接大改）
+- P1：docs/05（MCP Engineer 岗位映射）/ docs/04（记忆层五层栈+晋升门控）/ docs/06（三大推理引擎 vLLM/SGLang/TGI）/ docs/09 第 6 节（Token 经济学）
+- P2：docs/07（AI 基础设施三件套 Ray/MLflow/TGI）/ docs/09（FDE +729%）/ docs/04+05（评测基础设施工具栈）
+
+## GitHub 同步
+- git add -A && git commit -m "[2026-09-06] W36 周报与索引同步" → rc=0
+- git push origin main → 见下方回填
+- remote: github.com/wuqijin442/ai-llm-app-roadmap.git
+
+## ima 知识库推送
+- 库 id：7498617266899781（ai study road）
+- 周前缀：W36-
+- 待推送 3 个文件：
+  - W36-2026-W36-周报.md（30,341 bytes，新）
+  - W36-岗位全景与学习路径索引.md（76,470 bytes，重推累积型）
+  - W36-克隆企业级项目测试报告.md（27,783 bytes，重推累积型）
+- 三步流程：create_media → COS 上传 → add_knowledge（串行，REPLACE 去重）
+- 结果：见下方回填
+
+## 诚实说明
+- 本周数据来自公开招聘平台/行业报告，部分为厂商/猎头/培训机构口径，建议交叉验证后再用于简历/薪资谈判
+- 19 个对标仓库测试为 B/C 级（Python 全量语法编译 + 结构合法性），D 级（Docker/DB/云密钥运行时）本机未执行，附操作手册见 docs/20
+- 本周 6 期 GitHub 直连多次失败（Failed to connect / curl 28 / curl 56），多仓库走 codeload tarball 下载成功，非 git 元数据克隆
+- 测试脚本 41 仓库全量重跑 2h3m，后续遇 >5K .py 仓库建议评估增量模式
+
+## 下周（W37）行动
+- P1 修订：docs/05 + docs/04 + docs/06 + docs/09（W37 周一）
+- P2 新增：docs/07 + docs/09（FDE）+ docs/04/05（评测）（W37 周三前）
+- 项目：开始 p5-mcp-server-lab（对齐 MCP Engineer / AI Agent Security）
+- 第 10 期采集：补「AI Solution Architect / AI 教育深化 / 具身智能 VLA（可选进阶）」
+- W37 周报：2026-09-13

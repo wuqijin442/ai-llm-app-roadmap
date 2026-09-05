@@ -68,6 +68,10 @@ REPOS = [
     # —— 第 8 期（2026-09-04）：2 个（Agent 互操作协议 + Context Engineering / 记忆层 + LLM 推理引擎对标仓库）——
     ("sgl-project/sglang", "sglang", "LLM Inference Engineering：SGLang（高性能 LLM 推理引擎，RadixAttention 前缀缓存 + 多 GPU 并行，Python+CUDA）"),
     ("mem0ai/mem0", "mem0", "Context Engineering / Agent Memory：Mem0（AI Agent 通用长期记忆层，事实抽取 + 多信号检索 + 时间推理，Python）"),
+    # —— 第 9 期（2026-09-05）：3 个（AI 基础设施三件套：分布式计算引擎 + 实验追踪平台 + 推理服务引擎）——
+    ("ray-project/ray", "ray", "AI Infrastructure Engineer / AI Platform Engineer：Ray（AI compute engine，分布式计算 + GPU 编排 + 调度 + 容错，Python+Rust）"),
+    ("mlflow/mlflow", "mlflow", "AI Platform Engineer / AI Solution Architect：MLflow（开源 AI 工程平台，实验追踪 + 模型注册 + LLM 评测 + MLflow GenAI，Python）"),
+    ("huggingface/text-generation-inference", "text-generation-inference", "LLM Inference Engineering：Hugging Face TGI（生产级 LLM 推理服务引擎，Rust 后端 + CUDA 加速 + continuous batching）"),
 ]
 
 def api_meta(full_name):
