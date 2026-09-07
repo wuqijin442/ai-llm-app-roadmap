@@ -76,6 +76,10 @@ REPOS = [
     ("a2aproject/A2A", "a2a", "AI Solution Architect：A2A（Agent-to-Agent 协议，Google/Linux Foundation 托管，MCP 之上 agent→agent 互操作层，TypeScript+Shell）"),
     ("huggingface/lerobot", "lerobot", "具身智能 VLA：LeRobot（HF 官方 VLA 策略框架，SO-101 机械臂 + ACT/Diffusion Policy/π0，Python）"),
     ("openai/openai-cookbook", "openai-cookbook", "AI 教育深化：OpenAI Cookbook（官方示例库，Jupyter Notebook，AI 素养培训核心教材）"),
+    # —— 第 11 期（2026-09-08）：3 个（AI 应用工程栈：RAG 数据基础设施 + 数据校验 + 工程化底座对标仓库）——
+    ("microsoft/graphrag", "graphrag", "RAG 数据基础设施进阶 / AI Data Engineer：GraphRAG（模块化图基 RAG，实体关系抽取 + 社区摘要，Python）"),
+    ("pydantic/pydantic", "pydantic", "Agent 数据校验层 / AI 应用工程栈：Pydantic（Python 类型校验 + JSON Schema 生成，Agent 工具 I/O 契约核心）"),
+    ("astral-sh/uv", "uv", "AI 工程化底座 / AI Platform Engineer：uv（Rust 编写的高性能 Python 包 + 项目管理器，AI 平台基础设施）"),
 ]
 
 def api_meta(full_name):
