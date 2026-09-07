@@ -1,0 +1,59 @@
+# 2026-09-07 自动化执行日志（W37 周一 · 第 10 期）
+
+- 模式：工作日（周一，W37 第 1 天，第 10 期）
+- 主线：**「企业级落地三件套」**——架构（AI Solution Architect）+ 互操作（A2A Agent-to-Agent 协议）+ 具身（具身智能 / VLA 工程师）+ 教育（AI 教育深化）
+- Harness 主线：docs/05 的 6 要素中，第 10 期聚焦「Client integration + Safety + Lifecycle」三要素的企业级落地化
+
+## 产出文件
+
+| 文件 | 操作 | 说明 |
+|---|---|---|
+| `daily-digest/2026-09-07.md` | 新增 | 第 10 期 4 岗位 / 3 仓库 / 与九期去重 / Harness 主线对齐 / 含「三·补 对标仓库 clone+test」小节 |
+| `docs/30-岗位全景与学习路径索引.md` | 修订 | 追加第 10 期 4 岗位条目 + 累计统计更新（57→61 岗位 / 44→47 仓库 / 9→10 期 / 新增「十层视角」行 + 第 10 期主线行 + 关键新增信号行） |
+| `README.md` | 修订 | 第 7 节 44→47 仓库 + 第 10 期 3 仓库表格（含测试结论）+ 回填第 9 期 3 仓库测试结论（ray/mlflow/tgi）+ 导航注释 44→47 |
+| `scripts/test_cloned_projects.py` | 修订 | 追加 3 条 REPOS（a2aproject/A2A + huggingface/lerobot + openai/openai-cookbook），标注第 10 期（2026-09-07） |
+| `docs/20-克隆企业级项目测试报告.md` | 自动回写 | 测试脚本全量重跑 47 仓库后自动重写（含第 10 期 3 仓库明细） |
+| `docs/05-Agent智能体与Harness.md` | 修订（P1） | 新增第 5 节「协议层岗位映射（MCP Engineer）」，原第 5 节「交付物」顺延为第 6 节 |
+| `docs/04-RAG检索增强生成.md` | 修订（P1） | 新增第 2b 节「记忆层五层栈 + 晋升门控」 |
+| `docs/06-模型微调与部署工程化.md` | 修订（P1） | 新增第 2b 节「三大推理引擎格局（vLLM / SGLang / TGI）」+ 选型决策 + 压测方法 |
+| `docs/09-企业级落地范式.md` | 修订（P1） | 新增第 6b 节「Token 经济学（2026 企业第一成本项）」+ 四大降本杠杆 + 成本归因 |
+
+## 岗位采集（4 个，与第 1-9 期不重叠）
+
+| 岗位 | 薪资带宽（2026） | 转岗适配度 |
+|---|---|---|
+| AI Solution Architect（深化第 1 期 AI Architect + 第 7 期 AI Platform） | $150K–$260K US / +30–50% premium / $200K+ 中位；PepsiCo $110,700–$185,250；DXC $121,300–$225,300；Philips €4,500–€7,000/月；国内 60–150W | 5/5 |
+| 具身智能 / VLA 工程师（深化第 3 期，物理世界 AI） | 具身智能算法 60–150 万 / VLA 高级 80–120 万；优必选首席科学家年薪 1,500 万起最高 1.24 亿；VLA/具身大模型 50–200 万 | 3/5 |
+| AI 教育深化（深化第 4/5 期 AI Educator） | US Prompt Engineer 中位 $131,458 / 90th $208,956 / AI 技能溢价最高 56%（PwC 2025）；SGD 65,000–95,000；国内 2–4 万/月（大厂资深） | 3/5 |
+| A2A 协议工程师（新岗位，对齐 AI Solution Architect） | MCP Engineer 同带 $200K–$260K mid / $260K–$340K senior / Orchestration Staff $380K–$550K；A2A 双协议溢价 10–20%（未验证） | 5/5 |
+
+## 对标仓库 clone + test（3 个，全部成功）
+
+| 仓库 | Stars | 主语言 | 文件数 | .py | 编译结果 | .ipynb | 克隆方式 |
+|---|---|---|---|---|---|---|---|
+| `a2aproject/A2A` | 25,662 | Shell | 164 | 3 | ✅ 3/3（100%） | 0 | git clone 直连成功 |
+| `huggingface/lerobot` | 27,270 | Python | 1,047 | 812 | ✅ 812/812（100%） | 1 ✅ | codeload tarball（6.4MB） |
+| `openai/openai-cookbook` | 75,808 | Jupyter Notebook | 3,164 | 225 | ✅ 225/225（100%） | 272 ✅ | codeload tarball（790.7MB） |
+
+- 合计：4,375 文件 / 1,040 .py / 273 .ipynb
+- **B 级编译通过率 100%（1,040/1,040），C 级 Notebook 273/273 全部合法，本期零失败项**
+- 全量 47 仓库测试通过率：ray 4807/4808（1 个测试用例 syntax_error.py 预期失败），其余全绿
+
+## 关键发现
+
+- `a2aproject/A2A` 25,662★ 为「Agent 互操作协议」品类 star 第一（对照 mcp-servers 89.9k★ 是「工具服务器集合」，非 agent 间协议）——「MCP（agent→tool）+ A2A（agent→agent）」双协议格局成立
+- `huggingface/lerobot` 27,270★ / 812 .py 为「具身智能 / VLA 策略框架」品类 star 第一（对照 openvla 6.9k★ / NVIDIA/Isaac-GR00T 8.0k★）
+- `openai/openai-cookbook` 75,808★ / 272 .ipynb 为「AI 教育深化 / 官方示例库」品类 star 第一（超过 anthropic-cookbook 52.3k★）
+
+## 双通道同步
+
+- GitHub：commit + push origin main（见下节）
+- ima 知识库 7498617266899781（W37 前缀）：3 文件串行推送（daily-digest + docs/30 + docs/20）
+
+## 经验教训
+
+- 后台测试任务（task 2vDp4g）因会话中断丢失句柄，但脚本实际已完成并回写 docs/20（09:38）——**教训：长时后台任务应在启动后先落盘一次中间产物，或用 nohup+日志文件，避免句柄丢失后无法确认结果**；本次通过 `ls -la docs/20` 时间戳 + grep 仓库名双重核实确认完成
+- README 第一个 Edit 遇 EBUSY（文件被锁），改用不同 old_string 锚点重试成功——**教训：Edit 遇 EBUSY 时换唯一锚点重试，不要反复重试同一段**
+- git clone 并发三连只有第一个成功（a2a），后两个（lerobot / openai-cookbook）均 Failed to connect to github.com:443——**沿用第 6/8/9 期经验：并发克隆易触发网络抖动，改用串行 codeload tarball 稳**
+- 仓库路径校验（GitHub API）再次生效：`google/agent-design-patterns`、`openai/transformers`、`anthropics/anthropic-cookbook`、`google/agents`、`a2a-protocol/A2A`、`leRobot/lerobot` 均 NOTFOUND，靠 API 搜索定位到正确路径 `a2aproject/A2A` / `huggingface/lerobot`
+- `/tmp` 路径在 Windows Git Bash + 托管 Python 下不可靠（tarball 写入后读不到），改用当前目录写入 + tar 解压成功

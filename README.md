@@ -83,7 +83,7 @@ ai-llm-app-roadmap/
 │   ├── 30天-入门冲刺.md
 │   ├── 90天-核心突破.md
 │   └── 180天-转岗实战.md
-├── cloned_projects/               # 克隆的企业级实战项目（gitignore，不入库，累计 44 个见第 7 节）
+├── cloned_projects/               # 克隆的企业级实战项目（gitignore，不入库，累计 47 个见第 7 节）
 │   ├── ai-agents-for-beginners/   #   微软官方 Agent 教程（73.3k★）
 │   ├── ruoyi-ai/                  #   Java 企业级 AI 框架（5.7k★）
 │   ├── Langchain-Chatchat/        #   Python 本地知识库 RAG（38.6k★）
@@ -126,9 +126,9 @@ ai-llm-app-roadmap/
 
 ## 七、克隆企业级实战项目（已本地测试）
 
-为把「看教程」升级成「读真源码、跑真项目」，本仓库从 GitHub 高星仓库克隆了 **44 个**覆盖 Agent / RAG / 知识库 / 多 Agent 编排 / 微调 / 部署 / 安全 / MCP / 向量库 / 评测 / 可观测 / 治理 / 具身智能 / 工作流自动化 / LLM 可观测性 / AI 产品工程 / AI 销售 / AI Agent 框架 / Multimodal Agent / AI 教育认证 / Agent 商业化 / MCP 安全 / Token 经济学 / LLM 推理优化 / RAG 数据基础设施 / 评测基础设施 / Prompt 编译 / AI 平台 / OpenTelemetry GenAI / AI 评测 Ops / AI 合规 / AI 部署落地 / MCP 工程 / Agent 记忆层 / Agent 工作流推理引擎 / **AI 基础设施三件套（Ray 分布式计算 + MLflow AI 工程平台 + TGI 推理服务引擎）**的实战项目，放入 `cloned_projects/`，并编写 `scripts/test_cloned_projects.py` 做**可复现的本地全量测试**。
+为把「看教程」升级成「读真源码、跑真项目」，本仓库从 GitHub 高星仓库克隆了 **47 个**覆盖 Agent / RAG / 知识库 / 多 Agent 编排 / 微调 / 部署 / 安全 / MCP / 向量库 / 评测 / 可观测 / 治理 / 具身智能 / 工作流自动化 / LLM 可观测性 / AI 产品工程 / AI 销售 / AI Agent 框架 / Multimodal Agent / AI 教育认证 / Agent 商业化 / MCP 安全 / Token 经济学 / LLM 推理优化 / RAG 数据基础设施 / 评测基础设施 / Prompt 编译 / AI 平台 / OpenTelemetry GenAI / AI 评测 Ops / AI 合规 / AI 部署落地 / MCP 工程 / Agent 记忆层 / Agent 工作流推理引擎 / **AI 基础设施三件套（Ray 分布式计算 + MLflow AI 工程平台 + TGI 推理服务引擎）** / **企业级落地三件套（A2A 协议 + LeRobot 具身智能 + OpenAI Cookbook AI 教育）**的实战项目，放入 `cloned_projects/`，并编写 `scripts/test_cloned_projects.py` 做**可复现的本地全量测试**。
 
-> 每日任务按「岗位 → 对标仓库」逐期追加：第 1 期 5 个（2026-08-27）+ 第 2 期 11 个（2026-08-28）+ 第 3 期 9 个（2026-08-29）+ 第 4 期 2 个（2026-08-31）+ 第 5 期 6 个（2026-09-01）+ 第 6 期 3 个（2026-09-02）+ 第 7 期 3 个（2026-09-03）+ 第 8 期 2 个（2026-09-04）+ **第 9 期 3 个（2026-09-05）= 累计 44 个**。
+> 每日任务按「岗位 → 对标仓库」逐期追加：第 1 期 5 个（2026-08-27）+ 第 2 期 11 个（2026-08-28）+ 第 3 期 9 个（2026-08-29）+ 第 4 期 2 个（2026-08-31）+ 第 5 期 6 个（2026-09-01）+ 第 6 期 3 个（2026-09-02）+ 第 7 期 3 个（2026-09-03）+ 第 8 期 2 个（2026-09-04）+ 第 9 期 3 个（2026-09-05）+ **第 10 期 3 个（2026-09-07）= 累计 47 个**。
 > 完整测试报告（含每项的命令与输出证据）：[`docs/20-克隆企业级项目测试报告.md`](docs/20-克隆企业级项目测试报告.md)
 > 安全策略：仅克隆官方高星仓库，未引入任何未知/冷门未审计源码；克隆目录已 gitignore，**不入库**，仅元数据与测试报告入库。
 
@@ -232,9 +232,20 @@ ai-llm-app-roadmap/
 
 | 项目 | 定位 | Stars | 本机测试结论 |
 |---|---|---|---|
-| `ray-project/ray` | AI compute engine（Ray Core 分布式计算 + GPU 编排 + 调度 + 容错 + Ray Serve，AI Infrastructure / AI Platform 核心基础设施） | 43.7k | ✅ 待回填（B/C 级测试，详见 docs/20） |
-| `mlflow/mlflow` | 开源 AI 工程平台（实验追踪 + 模型注册 + LLM 评测 + MLflow GenAI，AI Platform / AI Solution Architect 核心基础设施） | 27.8k | ✅ 待回填（B/C 级测试，详见 docs/20） |
-| `huggingface/text-generation-inference` | 生产级 LLM 推理服务引擎（Rust 后端 + CUDA 加速 + continuous batching + 多 GPU 并行，与 vLLM/SGLang 形成「三大引擎」格局，LLM Inference Engineer 核心基础设施） | 10.9k | ✅ 待回填（B/C 级测试，详见 docs/20） |
+| `ray-project/ray` | AI compute engine（Ray Core 分布式计算 + GPU 编排 + 调度 + 容错 + Ray Serve，AI Infrastructure / AI Platform 核心基础设施） | 43.7k | ⚠️ 4807/4808 个 .py 通过（失败 1：`syntax_error.py`，测试用例预期失败）；62 个 .ipynb 全部合法；Dockerfile |
+| `mlflow/mlflow` | 开源 AI 工程平台（实验追踪 + 模型注册 + LLM 评测 + MLflow GenAI，AI Platform / AI Solution Architect 核心基础设施） | 27.8k | ✅ 2675 个 .py 全量语法编译通过；42 个 .ipynb 全部合法；docker-compose + Dockerfile |
+| `huggingface/text-generation-inference` | 生产级 LLM 推理服务引擎（Rust 后端 + CUDA 加速 + continuous batching + 多 GPU 并行，与 vLLM/SGLang 形成「三大引擎」格局，LLM Inference Engineer 核心基础设施） | 10.9k | ✅ 380 个 .py 全量语法编译通过；Dockerfile |
+
+**第 10 期（2026-09-07）· 企业级落地三件套（架构 + 互操作 + 具身 + 教育）**
+
+| 项目 | 定位 | Stars | 本机测试结论 |
+|---|---|---|---|
+| `a2aproject/A2A` | Agent-to-Agent 协议（Google/Linux Foundation 托管，MCP 之上「agent→agent」互操作层，AI Solution Architect / A2A 协议工程师核心基础设施） | 25.7k | ✅ 3 个 .py 全量语法编译通过 |
+| `huggingface/lerobot` | HF 官方 VLA 策略框架（SO-101 机械臂 + ACT/Diffusion Policy/π0，具身智能 / VLA 工程师核心基础设施） | 27.3k | ✅ 812 个 .py 全量语法编译通过；1 个 .ipynb 合法 |
+| `openai/openai-cookbook` | OpenAI 官方示例库（Jupyter Notebook，AI 教育深化核心教材，AI Trainer / 企业内训 / 认证核心基础设施） | 75.8k | ✅ 225 个 .py 全量语法编译通过；272 个 .ipynb 全部合法（本仓库 Notebook 数历史第一）；docker-compose + Dockerfile |
+
+> 第 10 期 3 个仓库覆盖 4 个岗位（AI Solution Architect、具身智能 / VLA 工程师、AI 教育深化、A2A 协议工程师），其中 A2A 协议工程师由 `a2aproject/A2A` + 已克隆的 mcp-python-sdk / typescript-sdk / servers 共同对标；a2aproject/A2A 25.7k stars 为「Agent 互操作协议」品类 star 数第一（对照 modelcontextprotocol/servers 89.9k stars 是「工具服务器集合」，不是「agent 间协议」）；huggingface/lerobot 27.3k stars / 812 .py 为「具身智能 / VLA 策略框架」品类 star 数第一（对照 openvla 6.9k stars / NVIDIA/Isaac-GR00T 8.0k stars）；openai/openai-cookbook 75.8k stars / 272 .ipynb 为「AI 教育深化 / 官方示例库」品类 star 数第二（对照 anthropic-cookbook 52.3k stars）。
+> 注：本期 a2aproject/A2A 通过 git 直连克隆成功（164 文件）；huggingface/lerobot（6.4MB）+ openai/openai-cookbook（790.7MB）GitHub 直连失败（Failed to connect to github.com:443），沿用第 6/8/9 期 fallback，两仓库均走 `codeload.github.com` tarball 下载成功，非 git 元数据克隆（无 .git 目录）。完整测试明细以 `docs/20` 为准。
 
 > 第 9 期 3 个仓库覆盖 3 个岗位（AI Infrastructure Engineer、AI Platform Engineer 深化、LLM Inference Engineer 三大引擎特化），其中 AI Infrastructure 由 `ray` + `vllm` + `sglang` + `tgi` 共同对标，AI Platform 由 `mlflow` + `langfuse` + `deepeval` + `ragas` + `otel-collector` 共同对标，LLM Inference 由 `tgi` + `vllm` + `sglang` 共同对标；ray 43.7k stars 为「分布式计算引擎」品类 star 数第一、mlflow 27.8k stars 为「AI 工程平台」品类 star 数第一、tgi 10.9k stars 为「HF 官方推理服务引擎」第一。
 > 注：本期 GitHub 直连（git clone）全部失败（curl 28 Failed to connect to github.com:443），沿用第 6/8 期 fallback，三仓库均走 `codeload.github.com` tarball 下载成功（ray 198MB / mlflow 291MB / tgi 3.1MB），非 git 元数据克隆（无 .git 目录）。完整测试明细以 `docs/20` 为准。

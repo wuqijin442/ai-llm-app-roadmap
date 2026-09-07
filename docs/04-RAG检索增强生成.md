@@ -42,6 +42,28 @@
 - **多轮记忆**：会话历史向量化，支持追问。
 - **幻觉检测**：比对生成内容与检索片段，标记无依据陈述。
 
+## 2b. 记忆层五层栈 + 晋升门控（2026 新增，RAG 之上「Agent 记忆」）
+
+> 来源：W36 周报 P1 修订 + 第 8 期 Context/Memory Engineer 条目（zylos.ai 2026 / jacoblangvadnilsson.com 2026 / app-lab.ai）。
+
+- **五层记忆栈**（各配不同存储 + 检索经济学）：
+  1. **Working Memory**（Redis 毫秒级）：当前对话上下文
+  2. **Short-term Memory**（TTL）：会话历史
+  3. **Long-term Memory**（Postgres）：用户/租户长期事实
+  4. **Semantic Memory**（向量 + BM25 + rerank <200ms）：语义知识
+  5. **Episodic Memory**（ClickHouse <500ms）：事件时序
+- **检索经济学**（关键数据）：
+  - 全量上下文：72.9% 准确 / 17s / 26K token
+  - 选择性检索：**91% 延迟降 + 90% token 省**
+  - 子 Agent 隔离：成功率 +90.2%
+- **记忆晋升门控**（最高危操作）：
+  - session → user → tenant → global 分级
+  - 防 guardrail drift + precedent poisoning（记忆投毒）
+  - OWASP ASI06（记忆投毒防御）
+- **Truth vs Memory 分离**：事实（Truth）与记忆（Memory）分开存储，防污染。
+- **对标**：`mem0ai/mem0`（64.7k★，记忆层品类第一）、`qdrant/qdrant`（34.3k★）、`pgvector/pgvector`（22.8k★）（均已克隆）。
+- **岗位映射**：Context Engineering / AI Memory Engineer（US $140K–$220K）。
+
 ## 3. 企业级知识库（目标项目）
 → `projects/02-enterprise/e1-enterprise-kb`：支持 PDF/Word 上传、智能问答、**引用来源高亮**、多轮对话、混合检索 + 重排，准确率目标 90%+。
 

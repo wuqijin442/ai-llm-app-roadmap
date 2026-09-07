@@ -72,6 +72,10 @@ REPOS = [
     ("ray-project/ray", "ray", "AI Infrastructure Engineer / AI Platform Engineer：Ray（AI compute engine，分布式计算 + GPU 编排 + 调度 + 容错，Python+Rust）"),
     ("mlflow/mlflow", "mlflow", "AI Platform Engineer / AI Solution Architect：MLflow（开源 AI 工程平台，实验追踪 + 模型注册 + LLM 评测 + MLflow GenAI，Python）"),
     ("huggingface/text-generation-inference", "text-generation-inference", "LLM Inference Engineering：Hugging Face TGI（生产级 LLM 推理服务引擎，Rust 后端 + CUDA 加速 + continuous batching）"),
+    # —— 第 10 期（2026-09-07）：3 个（企业级落地三件套：架构 + 互操作 + 具身智能对标仓库）——
+    ("a2aproject/A2A", "a2a", "AI Solution Architect：A2A（Agent-to-Agent 协议，Google/Linux Foundation 托管，MCP 之上 agent→agent 互操作层，TypeScript+Shell）"),
+    ("huggingface/lerobot", "lerobot", "具身智能 VLA：LeRobot（HF 官方 VLA 策略框架，SO-101 机械臂 + ACT/Diffusion Policy/π0，Python）"),
+    ("openai/openai-cookbook", "openai-cookbook", "AI 教育深化：OpenAI Cookbook（官方示例库，Jupyter Notebook，AI 素养培训核心教材）"),
 ]
 
 def api_meta(full_name):
