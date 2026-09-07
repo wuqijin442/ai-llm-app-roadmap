@@ -45,10 +45,20 @@
 - `huggingface/lerobot` 27,270★ / 812 .py 为「具身智能 / VLA 策略框架」品类 star 第一（对照 openvla 6.9k★ / NVIDIA/Isaac-GR00T 8.0k★）
 - `openai/openai-cookbook` 75,808★ / 272 .ipynb 为「AI 教育深化 / 官方示例库」品类 star 第一（超过 anthropic-cookbook 52.3k★）
 
-## 双通道同步
+## 双通道同步结果
 
-- GitHub：commit + push origin main（见下节）
-- ima 知识库 7498617266899781（W37 前缀）：3 文件串行推送（daily-digest + docs/30 + docs/20）
+- **GitHub**：commit `0eba948`（10 文件 +375/-54）+ push origin main **rc=0**（11e29d2..0eba948，含 W36 补推）
+  - 首试 exit 128（Failed to connect to github.com:443 after 21096ms），等 45s 重试成功
+- **ima 知识库 7498617266899781（W37 前缀）**：3 文件全部 media_state=2 / parse_progress=100，file_size 与本地一致
+  - `W37-daily-digest-2026-09-07.md`（32,394 字节，新）
+  - `W37-岗位全景与学习路径索引.md`（90,744 字节，重推，旧 W36- 版 76,470 已被 REPLACE）
+  - `W37-克隆企业级项目测试报告.md`（29,315 字节，重推，旧 W36- 版 27,783 已被 REPLACE）
+  - **残留需人工删除（ima MCP 无删除接口）**：
+    - `W36-docs-20-克隆企业级项目测试报告.md`（21,132 字节，09-02 推送）
+    - `W36-docs-30-岗位全景与学习路径索引.md`（48,831 字节，09-02 推送）
+    - `W35-克隆企业级项目测试报告.md`（11,000 字节，08-28 推送）
+    - `W35-岗位全景与学习路径索引.md`（13,758 字节，08-28 推送）
+    - 说明：累积型文档换周前缀推送后旧版残留，RAG 检索会同时命中新旧版导致答案矛盾，需手动清理
 
 ## 经验教训
 
