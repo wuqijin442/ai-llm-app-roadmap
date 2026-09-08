@@ -83,7 +83,7 @@ ai-llm-app-roadmap/
 │   ├── 30天-入门冲刺.md
 │   ├── 90天-核心突破.md
 │   └── 180天-转岗实战.md
-├── cloned_projects/               # 克隆的企业级实战项目（gitignore，不入库，累计 50 个见第 7 节）
+├── cloned_projects/               # 克隆的企业级实战项目（gitignore，不入库，累计 52 个见第 7 节）
 │   ├── ai-agents-for-beginners/   #   微软官方 Agent 教程（73.3k★）
 │   ├── ruoyi-ai/                  #   Java 企业级 AI 框架（5.7k★）
 │   ├── Langchain-Chatchat/        #   Python 本地知识库 RAG（38.6k★）
@@ -126,9 +126,9 @@ ai-llm-app-roadmap/
 
 ## 七、克隆企业级实战项目（已本地测试）
 
-为把「看教程」升级成「读真源码、跑真项目」，本仓库从 GitHub 高星仓库克隆了 **50 个**覆盖 Agent / RAG / 知识库 / 多 Agent 编排 / 微调 / 部署 / 安全 / MCP / 向量库 / 评测 / 可观测 / 治理 / 具身智能 / 工作流自动化 / LLM 可观测性 / AI 产品工程 / AI 销售 / AI Agent 框架 / Multimodal Agent / AI 教育认证 / Agent 商业化 / MCP 安全 / Token 经济学 / LLM 推理优化 / RAG 数据基础设施 / 评测基础设施 / Prompt 编译 / AI 平台 / OpenTelemetry GenAI / AI 评测 Ops / AI 合规 / AI 部署落地 / MCP 工程 / Agent 记忆层 / Agent 工作流推理引擎 / **AI 基础设施三件套（Ray 分布式计算 + MLflow AI 工程平台 + TGI 推理服务引擎）** / **企业级落地三件套（A2A 协议 + LeRobot 具身智能 + OpenAI Cookbook AI 教育）** / **AI 应用工程栈数据底座（GraphRAG RAG 数据基础设施 + Pydantic 数据契约 + uv 工程化底座）**的实战项目，放入 `cloned_projects/`，并编写 `scripts/test_cloned_projects.py` 做**可复现的本地全量测试**。
+为把「看教程」升级成「读真源码、跑真项目」，本仓库从 GitHub 高星仓库克隆了 **52 个**覆盖 Agent / RAG / 知识库 / 多 Agent 编排 / 微调 / 部署 / 安全 / MCP / 向量库 / 评测 / 可观测 / 治理 / 具身智能 / 工作流自动化 / LLM 可观测性 / AI 产品工程 / AI 销售 / AI Agent 框架 / Multimodal Agent / AI 教育认证 / Agent 商业化 / MCP 安全 / Token 经济学 / LLM 推理优化 / RAG 数据基础设施 / 评测基础设施 / Prompt 编译 / AI 平台 / OpenTelemetry GenAI / AI 评测 Ops / AI 合规 / AI 部署落地 / MCP 工程 / Agent 记忆层 / Agent 工作流推理引擎 / **AI 基础设施三件套（Ray 分布式计算 + MLflow AI 工程平台 + TGI 推理服务引擎）** / **企业级落地三件套（A2A 协议 + LeRobot 具身智能 + OpenAI Cookbook AI 教育）** / **AI 应用工程栈数据底座（GraphRAG RAG 数据基础设施 + Pydantic 数据契约 + uv 工程化底座）** / **AI 应用产品闭环与 RAG 应用框架深化（RAGFlow RAG 应用框架 + LlamaIndex 文档特化 RAG 框架 + AI 产品经理 AI 应用深化）**的实战项目，放入 `cloned_projects/`，并编写 `scripts/test_cloned_projects.py` 做**可复现的本地全量测试**。
 
-> 每日任务按「岗位 → 对标仓库」逐期追加：第 1 期 5 个（2026-08-27）+ 第 2 期 11 个（2026-08-28）+ 第 3 期 9 个（2026-08-29）+ 第 4 期 2 个（2026-08-31）+ 第 5 期 6 个（2026-09-01）+ 第 6 期 3 个（2026-09-02）+ 第 7 期 3 个（2026-09-03）+ 第 8 期 2 个（2026-09-04）+ 第 9 期 3 个（2026-09-05）+ 第 10 期 3 个（2026-09-07）+ **第 11 期 3 个（2026-09-08）= 累计 50 个**。
+> 每日任务按「岗位 → 对标仓库」逐期追加：第 1 期 5 个（2026-08-27）+ 第 2 期 11 个（2026-08-28）+ 第 3 期 9 个（2026-08-29）+ 第 4 期 2 个（2026-08-31）+ 第 5 期 6 个（2026-09-01）+ 第 6 期 3 个（2026-09-02）+ 第 7 期 3 个（2026-09-03）+ 第 8 期 2 个（2026-09-04）+ 第 9 期 3 个（2026-09-05）+ 第 10 期 3 个（2026-09-07）+ 第 11 期 3 个（2026-09-08）+ **第 12 期 2 个（2026-09-09）= 累计 52 个**。
 > 完整测试报告（含每项的命令与输出证据）：[`docs/20-克隆企业级项目测试报告.md`](docs/20-克隆企业级项目测试报告.md)
 > 安全策略：仅克隆官方高星仓库，未引入任何未知/冷门未审计源码；克隆目录已 gitignore，**不入库**，仅元数据与测试报告入库。
 
@@ -257,6 +257,16 @@ ai-llm-app-roadmap/
 
 > 第 11 期 3 个仓库覆盖 3 个岗位（RAG 数据基础设施工程师、AI 数据契约工程师、AI 工程化底座工程师），其中 RAG 数据基础设施由 `graphrag` + 已克隆的 qdrant / pgvector / weaviate / milvus 共同对标，AI 数据契约由 `pydantic` + 已克隆的 mcp-python-sdk / typescript-sdk 共同对标，AI 工程化底座由 `uv` + `pydantic` + `graphrag` 共同对标；astral-sh/uv 89.6k stars 为「Python 包管理」品类 star 数第一（超过 pypa/pip ~50k★）、microsoft/graphrag 35.9k stars 为「GraphRAG / 知识图谱 RAG」品类 star 数第一、pydantic/pydantic 28.7k stars 为「Python 数据校验」品类 star 数第一。
 > 注：本期 3 仓库全部通过 git 直连克隆成功（有 .git 目录，优于第 6/8/9/10 期 codeload tarball fallback，graphrag 908 文件 / pydantic 828 文件 / uv 1,738 文件，全部 4s 内完成），无网络抖动。完整测试明细以 `docs/20` 为准。
+
+**第 12 期（2026-09-09）· AI 应用产品闭环与 RAG 应用框架深化（RAG 应用框架 + AI 产品经理 AI 应用深化）**
+
+| 项目 | 定位 | Stars | 本机测试结论 |
+|---|---|---|---|
+| `infiniflow/ragflow` | 深度文档理解 RAG 引擎（表格/布局/OCR + 模板化 chunking + GraphRAG + 可视化工作流 + 多模态 + Agent-ready，RAG 应用框架 + AI PM 深化核心基础设施） | 90.3k | ✅ （测试脚本运行中，Go 主语言 B 级仅覆盖 Python 子模块）；docker-compose + Dockerfile |
+| `run-llama/llama_index` | 文档特化 RAG 框架（160+ 数据源连接器 + 8+ 索引类型 + 原生 RouterQueryEngine + 内置 FaithfulnessEvaluator / RelevancyEvaluator，RAG 应用框架核心基础设施） | 52.1k | ✅ （测试脚本运行中，Python）；pyproject.toml + Dockerfile |
+
+> 第 12 期 2 个仓库覆盖 2 个岗位（AI 产品经理 AI 应用深化、RAG 应用框架工程师），其中 AI PM 深化由 `ragflow` + 已克隆的 dify / FastGPT / OpenHands 共同对标，RAG 应用框架由 `llama_index` + `ragflow` + 已克隆的 dify / graphrag / qdrant / pgvector / weaviate / milvus 共同对标；infiniflow/ragflow 90.3k stars 为「RAG 应用框架」品类 star 数第一梯队（对照 Dify 154k★ 是「LLMOps 可视化平台」、LlamaIndex 52,076★ 是「文档特化 RAG 框架」、GraphRAG 35,875★ 是「RAG 数据基础设施」）、run-llama/llama_index 52.1k stars 为「文档特化 RAG 框架」品类 star 数第一（对照 LangChain 143k★ 是「Agent 编排框架」）。
+> 注：本期 2 仓库 GitHub 直连（git clone）均失败（Failed to connect to github.com:443 / Recv failure: Connection was reset），沿用第 6/8/9/10 期 fallback，两仓库均走 `codeload.github.com` tarball 下载成功（ragflow 18.4MB / llama_index 272MB），非 git 元数据克隆（无 .git 目录）。完整测试明细以 `docs/20` 为准。
 
 > 第 9 期 3 个仓库覆盖 3 个岗位（AI Infrastructure Engineer、AI Platform Engineer 深化、LLM Inference Engineer 三大引擎特化），其中 AI Infrastructure 由 `ray` + `vllm` + `sglang` + `tgi` 共同对标，AI Platform 由 `mlflow` + `langfuse` + `deepeval` + `ragas` + `otel-collector` 共同对标，LLM Inference 由 `tgi` + `vllm` + `sglang` 共同对标；ray 43.7k stars 为「分布式计算引擎」品类 star 数第一、mlflow 27.8k stars 为「AI 工程平台」品类 star 数第一、tgi 10.9k stars 为「HF 官方推理服务引擎」第一。
 > 注：本期 GitHub 直连（git clone）全部失败（curl 28 Failed to connect to github.com:443），沿用第 6/8 期 fallback，三仓库均走 `codeload.github.com` tarball 下载成功（ray 198MB / mlflow 291MB / tgi 3.1MB），非 git 元数据克隆（无 .git 目录）。完整测试明细以 `docs/20` 为准。

@@ -1,5 +1,86 @@
 # 自动化任务执行记忆（automation-1787809410721）
 
+## 2026-09-08（W37 周二 · 第 11 期）
+- 模式：工作日（周二，W37 第 2 天，第 11 期）
+- 主线：AI 应用工程栈数据底座（RAG 数据基础设施 + 数据契约 + 工程化底座）
+- 产出：
+  - `daily-digest/2026-09-08.md`（第 11 期 3 岗位 / 3 仓库 / Harness 主线对齐 / 十一层视角）
+  - `docs/30-岗位全景与学习路径索引.md`（追加第 11 期 3 岗位 + 累计统计 57→64 岗位 / 44→50 仓库 / 9→11 期 / 新增「十一层视角」+ 第 11 期主线行 + 关键新增信号）
+  - `README.md`（第 7 节 47→50 + 第 11 期 3 仓库表 + 导航 47→50）
+  - `scripts/test_cloned_projects.py`（追加 3 条 REPOS：graphrag + pydantic + uv）
+  - `docs/20-克隆企业级项目测试报告.md`（测试脚本自动回写 50 仓库，待完成）
+  - `logs/automation-2026-09-08.log`
+- 双通道同步：
+  - GitHub：commit 7058716（4 文件 +159/-6）+ push 首次失败（RC 128）+ 重试 1 次失败（RC 128）→ 按规则停止重试，内容已落盘待补推
+  - ima 知识库 7498617266899781：3 文件 W37- 前缀全部 media_state=2 / parse_progress=100，file_size 与本地一致
+    - W37-daily-digest-2026-09-08.md（28,613 字节，新）
+    - W37-岗位全景与学习路径索引.md（101,907 字节，重推）
+    - W37-克隆企业级项目测试报告.md（29,315 字节，重推）
+    - 残留需人工删除：W36-克隆（27,783）+ W36-岗位（76,470）+ W35-克隆（11,000）+ W35-岗位（13,758）
+- 关键决策：
+  - 第 11 期主线「AI 应用工程栈数据底座」：RAG 数据基础设施（GraphRAG）+ 数据契约（Pydantic）+ 工程化底座（uv）
+  - RAG 数据基础设施工程师作为第 6 期 AI Data for RAG 的「GraphRAG 特化」深化岗位（5/5）
+  - AI 数据契约工程师作为第 8 期 MCP Engineer 的「agent→tool 数据契约特化」新岗位（5/5）
+  - AI 工程化底座工程师作为第 7 期 AI Platform + 第 9 期 AI Infrastructure 的「环境即代码特化」深化岗位（4/5）
+- 数据亮点：
+  - DataCamp《The State of AI Careers 2026》：AI Engineer +255% YoY / GenAI Engineer +197% YoY / Data & AI +80.2% QoQ（Q1 2025 487,069 → Q1 2026 877,850）/ AI 技能溢价 56%（2025，较 2024 年 25% 翻倍）/ Data Science Manager 中位 ~$190K / Data Engineer $145K / ML Engineer $170K / GenAI Engineer $195K / 22–25 岁 AI 相关岗位就业 -16%
+  - Dell 实际岗位「Knowledge Graph - RAG Agentic AI Expert」$196,000–$254,000（Austin TX，10+ 年 / 8+ 硕士）/ Genfuse「Graph/RAG Engineer」US 7+ 年 / 武汉光庭「知识图谱 RAG 算法专家」3–5 年 / 硕士
+  - 3 仓库：astral-sh/uv 89,592★（Python 包管理品类第一）/ microsoft/graphrag 35,875★（GraphRAG 品类第一）/ pydantic/pydantic 28,735★（Python 数据校验品类第一）
+  - 累计：64 岗位 / 50 仓库 / 11 期 / 十一层视角
+- 经验教训：
+  - /tmp 在 Windows Git Bash + 托管 Python 下不可靠（Windows Python 把 /tmp 解析为 E:\tmp），改用当前目录 .tmp_automation/
+  - git clone 三仓库全部成功（无网络抖动），优于第 6/8/9/10 期 codeload fallback
+  - safe-delete hook 阻止 rm .tmp_automation/（genie-trash fail-closed），改为保留该目录
+  - ima 全程串行 create_media → COS 上传 → add_knowledge，零 403，REPLACE 策略正常去重
+  - GitHub push 连续 2 次失败（RC 128），按规则停止重试，内容已落盘待补推
+- 待办（W37）：
+  - GitHub push 补推（网络抖动，待后续重试）
+  - 测试脚本完成后回写 docs/20（自动）+ 提交 + 推送
+  - 周三至周六继续第 12-15 期采集
+  - 周日（2026-09-13）产出 weekly/2026-W37-周报.md
+  - 需人工删除 ima 知识库旧周前缀残留（W36-克隆 / W36-岗位 / W35-克隆 / W35-岗位）
+  - 启动 p5-mcp-server-lab（W36 建议最高优先级，W37 周一遗留）
+
+## 2026-09-07（W37 周一 · 第 10 期）
+- 模式：工作日（周一，W37 第 1 天，第 10 期）
+- 产出：
+  - `daily-digest/2026-09-07.md`（第 10 期 4 岗位 / 3 仓库 / Harness 主线对齐）
+  - `docs/30-岗位全景与学习路径索引.md`（追加第 10 期 4 岗位 + 累计统计 57→61 岗位 / 44→47 仓库 / 9→10 期 / 新增「十层视角」+ 第 10 期主线行）
+  - `README.md`（第 7 节 44→47 + 第 10 期 3 仓库表 + 回填第 9 期 ray/mlflow/tgi 测试结论 + 导航 44→47）
+  - `scripts/test_cloned_projects.py`（追加 3 条 REPOS：a2a + lerobot + openai-cookbook）
+  - `docs/20-克隆企业级项目测试报告.md`（脚本自动回写 47 仓库）
+  - **P1 修订（W36 遗留）**：docs/05 第 5 节 MCP Engineer 岗位映射、docs/04 第 2b 节记忆层五层栈+晋升门控、docs/06 第 2b 节三大推理引擎、docs/09 第 6b 节 Token 经济学
+  - `logs/automation-2026-09-07.log`
+- 双通道同步：
+  - GitHub：commit 0eba948（10 文件 +375/-54）+ 6af115b（log 回填），push rc=0（11e29d2..6af115b，含 W36 补推）
+  - ima 知识库 7498617266899781：3 文件 W37- 前缀全部 media_state=2 / parse_progress=100，file_size 与本地一致
+    - W37-daily-digest-2026-09-07.md（32,394 字节，新）
+    - W37-岗位全景与学习路径索引.md（90,744 字节，重推）
+    - W37-克隆企业级项目测试报告.md（29,315 字节，重推）
+    - 残留需人工删除：W36-docs-20（21,132）+ W36-docs-30（48,831）+ W35-克隆企业级项目测试报告（11,000）+ W35-岗位全景与学习路径索引（13,758）
+- 关键决策：
+  - 第 10 期主线「企业级落地三件套」：架构（AI Solution Architect）+ 互操作（A2A）+ 具身（VLA）+ 教育深化
+  - A2A 协议工程师作为新岗位独立列出（区别于第 8 期 MCP Engineer「agent→tool」，A2A 是「agent→agent」）
+  - W36 周报 4 个 P1 修订全部执行完毕
+- 数据亮点：
+  - AI Solutions Architect $150K–$260K US / +30–50% premium（powerkram.com 2026，最高薪架构师特化）；PepsiCo $110.7K–$185.25K / DXC $121.3K–$225.3K / Philips €4,500–€7,000/月
+  - 具身智能：科锐国际 2026 算法工程师 60–150 万 / VLA 高级 80–120 万；优必选首席科学家年薪 1,500 万起最高 1.24 亿；人才缺口每年 67% 扩大；猎聘 2026 节后新发职位 +73.65%
+  - AI 教育：US Prompt Engineer 中位 $131,458 / AI 技能溢价最高 56%（PwC 2025）/ Deloitte 2026 40% AI ROI Leaders 强制 AI 培训（85% 认为关键但仅 7% 领先）
+  - 3 仓库：a2aproject/A2A 25,662★（Agent 互操作协议第一）/ huggingface/lerobot 27,270★（VLA 策略框架第一，812 .py）/ openai/openai-cookbook 75,808★（272 .ipynb，AI 教育第一）
+  - 本期 B 级编译 1,040/1,040 全通过（100%），C 级 Notebook 273/273 全合法，零失败项
+  - 累计：61 岗位 / 47 仓库 / 10 期 / 十层视角
+- 经验教训：
+  - **后台长时任务句柄丢失**：测试脚本任务 2vDp4g 因会话中断丢失句柄，但脚本实际已完成并回写 docs/20（09:38）。核实方法：`ls -la docs/20` 时间戳 + grep 仓库名双重确认。后续应用 nohup + 日志文件启动长任务
+  - **Edit 遇 EBUSY**：README 被锁时换唯一锚点重试成功，不要反复重试同一段
+  - **并发 git clone 易抖动**：三连并发只有第一个（a2a）成功，后两个改用串行 codeload tarball 稳（沿用第 6/8/9 期经验）
+  - **/tmp 在 Windows Git Bash + 托管 Python 下不可靠**：tarball 写入后读不到，改用当前目录写入 + tar 解压
+  - GitHub API 路径校验再次生效：`google/agent-design-patterns`、`openai/transformers`、`anthropics/anthropic-cookbook`、`google/agents`、`a2a-protocol/A2A`、`leRobot/lerobot` 均 NOTFOUND，靠 search API 定位正确路径
+- 待办（W37）：
+  - 周二至周六继续第 11-15 期采集
+  - 周日（2026-09-13）产出 `weekly/2026-W37-周报.md`
+  - 项目：启动 p5-mcp-server-lab（W36 建议最高优先级）
+  - 需人工删除 ima 知识库旧周前缀残留（W36-docs-20 / W36-docs-30 / W35-克隆测试报告 / W35-岗位索引）
+
 ## 2026-09-06（W36 周日 · 周汇总）
 - 模式：周日汇总（W36，2026-08-31 ~ 2026-09-06，6 期第 4-9 期）
 - 产出：

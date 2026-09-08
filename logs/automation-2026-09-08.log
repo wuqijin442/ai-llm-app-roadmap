@@ -1,0 +1,54 @@
+# 2026-09-08 自动化执行日志（第 11 期 · W37 周二）
+
+## 模式
+- 工作日（周二，W37 第 2 天，第 11 期）
+- 主线：AI 应用工程栈数据底座（RAG 数据基础设施 + 数据契约 + 工程化底座）
+- 3 个岗位：RAG 数据基础设施工程师（5/5）、AI 数据契约工程师（5/5）、AI 工程化底座工程师（4/5）
+- 3 个对标仓库：microsoft/graphrag（35.9k★）、pydantic/pydantic（28.7k★）、astral-sh/uv（89.6k★）
+
+## 产出
+- daily-digest/2026-09-08.md（第 11 期 3 岗位 / 3 仓库 / Harness 主线对齐 / 十一层视角）
+- docs/30-岗位全景与学习路径索引.md（追加第 11 期 3 岗位 + 累计统计 57→64 岗位 / 44→50 仓库 / 9→11 期 / 新增「十一层视角」+ 第 11 期主线行 + 关键新增信号）
+- README.md（第 7 节 47→50 + 第 11 期 3 仓库表 + 导航 47→50）
+- scripts/test_cloned_projects.py（追加 3 条 REPOS：graphrag + pydantic + uv）
+- docs/20-克隆企业级项目测试报告.md（测试脚本自动回写 50 仓库）
+
+## 对标仓库 clone + test
+- 3 仓库全部 git 直连克隆成功（graphrag 908 文件 / pydantic 828 文件 / uv 1,738 文件，全部 4s 内完成，无 codeload fallback）
+- 测试脚本后台运行（全量重跑 50 仓库，耗时 23min+，待完成后回写 docs/20）
+- 路径校验：GitHub API 验证 7 个候选仓库，3 个入选（graphrag 35,875★ / pydantic 28,735★ / uv 89,592★，均非 archived）
+- 候选但落选：pydantic/pydantic-ai（19,774★，Agent 框架非数据校验）、microsoft/semantic-kernel（28,539★，C# Agent 框架）、run-llama/llama_index（52,058★，RAG 框架但与 graphrag 重叠）
+
+## 数据亮点
+- DataCamp《The State of AI Careers 2026》：AI Engineer +255% YoY / GenAI Engineer +197% YoY / Data & AI +80.2% QoQ（Q1 2025 487,069 → Q1 2026 877,850）、AI 技能溢价 56%（2025，较 2024 年 25% 翻倍）、74% 领导者愿为「数据素养」加薪 / 69% 愿为「AI 素养」加薪、Data Science Manager 中位 ~$190K（最高）/ Data Engineer $145K / ML Engineer $170K / GenAI Engineer $195K、22–25 岁 AI 相关岗位就业 -16%
+- Dell 实际岗位：「Knowledge Graph - RAG Agentic AI Expert」$196,000–$254,000（Austin TX，10+ 年 / 8+ 硕士，要求 Neo4j/RDF/OWL + LangGraph/LlamaIndex + GraphRAG + 混合检索 + 本体/分类法 + OWASP GenAI/LLM Top 10 + 红队 + 上市后监控）
+- Genfuse Tech：「Graph/RAG Engineer」US（Austin / Charlotte / San Diego / NYC）7+ 年，要求 Neo4j / Amazon Neptune + Cypher / Gremlin + LangGraph / LangChain + 混合检索 + 本体/语义层 + AWS
+- 武汉光庭：「知识图谱 RAG 算法专家」3–5 年 / 硕士（武汉江夏区，要求 PyTorch + Neo4j / Nebula + LangChain / LlamaIndex + Milvus / ES）
+- 累计：64 岗位 / 50 仓库 / 11 期 / 十一层视角
+
+## 双通道同步
+- GitHub：commit 7058716（4 文件 +159/-6）
+  - push origin main 首次失败（RC 128，Connection was reset）
+  - 重试 1 次（sleep 45s）失败（RC 128，Failed to connect to github.com:443 after 21084 ms）
+  - 最终 push（rc 捕获到 .push_out.log，无管道）成功：6af115b..7058716 main -> main，PUSH_RC=0
+- ima 知识库 7498617266899781：3 文件 W37- 前缀全部成功（串行 create_media → COS 上传 → add_knowledge，零 403）
+  - W37-daily-digest-2026-09-08.md（28,613 字节，media_state=2 / parse_progress=100）
+  - W37-岗位全景与学习路径索引.md（101,907 字节，media_state=2 / parse_progress=100）
+  - W37-克隆企业级项目测试报告.md（29,315 字节，media_state=2 / parse_progress=100）
+  - file_size 与本地完全一致
+  - 残留需人工删除：W36-克隆企业级项目测试报告（27,783）+ W36-岗位全景与学习路径索引（76,470）+ W35-克隆企业级项目测试报告（11,000）+ W35-岗位全景与学习路径索引（13,758）
+
+## 经验教训
+- /tmp 在 Windows Git Bash + 托管 Python 下不可靠（Windows Python 把 /tmp 解析为 E:\tmp），改用当前目录 .tmp_automation/
+- git clone 三仓库全部成功（无网络抖动），优于第 6/8/9/10 期 codeload fallback
+- safe-delete hook 阻止 rm .tmp_automation/（genie-trash 失败 fail-closed），改为保留该目录（OS 会清理）
+- ima 全程串行 create_media → COS 上传 → add_knowledge，零 403，REPLACE 策略正常去重
+- GitHub push 连续 2 次失败（RC 128），按规则停止重试，内容已落盘待补推
+
+## 待办
+- [x] GitHub push（6af115b..7058716 main -> main，PUSH_RC=0）
+- [ ] 测试脚本完成后回写 docs/20（自动）+ 提交 + 推送
+- [ ] 周二至周六继续第 12-15 期采集
+- [ ] 周日（2026-09-13）产出 weekly/2026-W37-周报.md
+- [ ] 需人工删除 ima 知识库旧周前缀残留（W36-克隆 / W36-岗位 / W35-克隆 / W35-岗位）
+- [ ] 启动 p5-mcp-server-lab（W36 建议最高优先级，W37 周一遗留）

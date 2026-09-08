@@ -80,6 +80,9 @@ REPOS = [
     ("microsoft/graphrag", "graphrag", "RAG 数据基础设施进阶 / AI Data Engineer：GraphRAG（模块化图基 RAG，实体关系抽取 + 社区摘要，Python）"),
     ("pydantic/pydantic", "pydantic", "Agent 数据校验层 / AI 应用工程栈：Pydantic（Python 类型校验 + JSON Schema 生成，Agent 工具 I/O 契约核心）"),
     ("astral-sh/uv", "uv", "AI 工程化底座 / AI Platform Engineer：uv（Rust 编写的高性能 Python 包 + 项目管理器，AI 平台基础设施）"),
+    # —— 第 12 期（2026-09-09）：2 个（AI 应用产品闭环与 RAG 应用框架深化对标仓库）——
+    ("infiniflow/ragflow", "ragflow", "RAG 应用框架 / AI PM 深化：RAGFlow（深度文档理解 RAG 引擎，表格/布局/OCR + 模板化 chunking + GraphRAG + 可视化工作流，Go）"),
+    ("run-llama/llama_index", "llama_index", "RAG 应用框架：LlamaIndex（文档特化 RAG 框架，160+ 数据源连接器 + 8+ 索引类型 + 内置评测，Python）"),
 ]
 
 def api_meta(full_name):
