@@ -33,10 +33,17 @@
   - 第 11 期遗留（daily-digest 三·补表仍写「测试脚本运行中」）本期回写完成，后续需检查上一期是否真写完
   - ima 全程串行零 403；累积文档因内容后续变更需二次推送覆盖（file_size 复核一致）
 - 待办（W37）：
+  - [x] **p5-mcp-server-lab 已启动并完成**（W35 建议 / W36 最高优先级，2026-09-09 老大确认执行）
+    - 交付 `projects/01-practice/p5-mcp-server-lab/`：mcp_server.py（纯标准库 stdio JSON-RPC + 三原语 + 三级权限 + 不可绕过审计）+ attack_lab.py（9 类攻击红队评测）+ data/ 毒化样本 + README
+    - 场景贴 EMS 业务：攻击面设在设备备注 remark 字段（现场可自由填写），演示间接 Prompt Injection
+    - 实测（qwen3.8:27b）：hardened 9/9、naive 9/9 → 结论：真正拦住攻击的是 Server 层确定性拦截，防注入提示词在强模型下边际价值接近零；投入顺序应为 权限模型 > 输入隔离 > 审计 > 提示词
+    - 踩坑：判定器全文关键词匹配导致「正确拒绝」被误判为「被攻破」，且修一处不够（用例 6 残留条件二次踩坑）→ 改为只解析 ACTION: 行
+    - gitignore 修正：加 `!projects/01-practice/p5-mcp-server-lab/data/`（原 data/ 规则会忽略毒化样本），忽略 audit.jsonl / attack_report.json
+    - commit 8c23e96 已推送
   - 周四至周六继续第 13-15 期采集
   - 周日（2026-09-13）产出 weekly/2026-W37-周报.md
+  - p5 后续：补多轮社会工程用例（当前均单轮）、换 7B 小模型跑对照、接真实 MCP SDK 对照
   - 需人工删除 ima 知识库旧周前缀残留（6 条，见上）
-  - 启动 p5-mcp-server-lab（W36 建议最高优先级，W37 连续遗留）
   - 考虑把 git push 代理参数固定化（需用户确认，暂未改全局配置）
 
 ## 2026-09-08（W37 周二 · 第 11 期）
