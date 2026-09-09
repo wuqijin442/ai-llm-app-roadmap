@@ -7,12 +7,18 @@ env/
 
 # 本地数据（不要提交你的真实文档/密钥）
 data/
+# 例外：p5 的毒化样本是项目内容本身，必须入库
+!projects/01-practice/p5-mcp-server-lab/data/
 .env
 *.db
 chroma_db/
 kb_chroma/
 cs_agent.log
 best_prompt.json
+
+# p5 运行产物（每次跑都会变，不入库；评测报告本地生成即可）
+audit.jsonl
+attack_report.json
 
 # 克隆的企业级实战项目（体积大、不入库；仅测试报告/元数据入库）
 cloned_projects/

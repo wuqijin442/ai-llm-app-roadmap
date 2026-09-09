@@ -1,5 +1,44 @@
 # 自动化任务执行记忆（automation-1787809410721）
 
+## 2026-09-09（W37 周三 · 第 12 期）
+- 模式：工作日（周三，W37 第 3 天，第 12 期）
+- 主线：AI 应用产品闭环与 RAG 应用框架深化（AI 产品经理 AI 应用深化 + RAG 应用框架工程师）
+- 产出：
+  - `daily-digest/2026-09-09.md`（第 12 期 2 岗位 / 2 仓库，23,365 字节）
+  - `docs/30-岗位全景与学习路径索引.md`（追加第 12 期 2 岗位 + 累计统计 64→66 岗位 / 50→52 仓库 / 11→12 期）
+  - `README.md`（第 7 节 50→52 + 第 12 期分组表 + 导航 50→52）
+  - `scripts/test_cloned_projects.py`（追加 2 条 REPOS：ragflow + llama_index）
+  - `docs/20-克隆企业级项目测试报告.md`（脚本自动回写 52 仓库，38,060 字节，2026-09-09 07:30）
+  - `logs/automation-2026-09-09.log`
+- 双通道同步：
+  - GitHub：4 commits（017f7e7 / 51c349d / 2cbe27d / 96099ec）+ push 成功（7058716..96099ec，RC=0）
+  - ima 知识库 7498617266899781：3 文件 W37- 前缀全部 media_state=2 / parse_progress=100，file_size 与本地一致
+    - W37-daily-digest-2026-09-09.md（23,365）
+    - W37-岗位全景与学习路径索引.md（109,932）
+    - W37-克隆企业级项目测试报告.md（38,060，二次推送覆盖）
+    - 残留需人工删除：W36-克隆（27,783）+ W36-岗位（76,470）+ W36-docs-20（21,132）+ W36-docs-30（48,831）+ W35-克隆（11,000）+ W35-岗位（13,758）
+- 关键决策：
+  - 第 12 期回落到「谁来决定交付什么 + 用什么框架交付」：AI PM（需求拆解/评测体系/AI 原生产品设计）+ RAG 应用框架工程师
+  - 2 仓库：infiniflow/ragflow 90,321★（Go，深度文档理解 RAG 引擎）/ run-llama/llama_index 52,079★（Python，文档特化 RAG 框架）
+- 数据亮点：
+  - B 级编译 5,065 .py → 4,990 通过（98.52%）：ragflow 1,205/1,279（94.21%，74 失败集中在 agent/ + admin/client/）、llama_index 3,785/3,786（99.97%，1 失败为第三方集成 examples）
+  - C 级 Notebook：llama_index 759 个 .ipynb 全部合法
+  - 工程结论（已写入 daily-digest）：B 级编译通过率是「依赖隔离度指标」而非「代码质量指标」——llama_index namespace package 零外部耦合适合嵌入 Java/Spring；ragflow Python 层强耦合 Go 主服务适合独立部署
+  - 累计：66 岗位 / 52 仓库 / 12 期
+- 经验教训：
+  - **GitHub 直连 443 当前不可达（新踩坑）**：git clone 与 git push 均失败（RC=128 / Failed to connect to github.com:443）。解法：
+    - push 用 `git -c http.proxy=http://127.0.0.1:7890 -c https.proxy=http://127.0.0.1:7890 push origin main` → 一次通过（Clash 代理）
+    - clone 用 codeload tarball fallback（ragflow 18.4MB / llama_index 272MB），无 .git 目录
+    - 后续遇 exit 128 直接带代理参数重试，不要死等
+  - 第 11 期遗留（daily-digest 三·补表仍写「测试脚本运行中」）本期回写完成，后续需检查上一期是否真写完
+  - ima 全程串行零 403；累积文档因内容后续变更需二次推送覆盖（file_size 复核一致）
+- 待办（W37）：
+  - 周四至周六继续第 13-15 期采集
+  - 周日（2026-09-13）产出 weekly/2026-W37-周报.md
+  - 需人工删除 ima 知识库旧周前缀残留（6 条，见上）
+  - 启动 p5-mcp-server-lab（W36 建议最高优先级，W37 连续遗留）
+  - 考虑把 git push 代理参数固定化（需用户确认，暂未改全局配置）
+
 ## 2026-09-08（W37 周二 · 第 11 期）
 - 模式：工作日（周二，W37 第 2 天，第 11 期）
 - 主线：AI 应用工程栈数据底座（RAG 数据基础设施 + 数据契约 + 工程化底座）

@@ -74,7 +74,8 @@ ai-llm-app-roadmap/
 │   │   ├── p1-chatbot-cli/        #   流式对话机器人
 │   │   ├── p2-rag-docs-qa/        #   RAG 文档问答
 │   │   ├── p3-simple-agent/       #   工具调用 Agent
-│   │   └── p4-prompt-lab/         #   Prompt 实验台
+│   │   ├── p4-prompt-lab/         #   Prompt 实验台
+│   │   └── p5-mcp-server-lab/     #   MCP Server + 红队评测（9 类攻击）
 │   └── 02-enterprise/             # 企业级实战（贴近业务）
 │       ├── e1-enterprise-kb/      #   企业知识库
 │       ├── e2-smart-customer-service/  # 智能客服
