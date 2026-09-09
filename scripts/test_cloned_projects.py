@@ -83,6 +83,8 @@ REPOS = [
     # —— 第 12 期（2026-09-09）：2 个（AI 应用产品闭环与 RAG 应用框架深化对标仓库）——
     ("infiniflow/ragflow", "ragflow", "RAG 应用框架 / AI PM 深化：RAGFlow（深度文档理解 RAG 引擎，表格/布局/OCR + 模板化 chunking + GraphRAG + 可视化工作流，Go）"),
     ("run-llama/llama_index", "llama_index", "RAG 应用框架：LlamaIndex（文档特化 RAG 框架，160+ 数据源连接器 + 8+ 索引类型 + 内置评测，Python）"),
+    # —— 第 13 期（2026-09-10）：1 个（智能体开发工程师 / 官方认定新职业「智能体开发员」对标仓库）——
+    ("huggingface/smolagents", "smolagents", "智能体开发核心：smolagents（HF 官方 500 行代码级 Agent 框架，CodeAgent/TextualAgent/多 Agent 编排 + 工具调用，Python，智能体开发员新职业对标）"),
 ]
 
 def api_meta(full_name):
