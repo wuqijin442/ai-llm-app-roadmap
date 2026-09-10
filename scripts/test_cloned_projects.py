@@ -85,6 +85,9 @@ REPOS = [
     ("run-llama/llama_index", "llama_index", "RAG 应用框架：LlamaIndex（文档特化 RAG 框架，160+ 数据源连接器 + 8+ 索引类型 + 内置评测，Python）"),
     # —— 第 13 期（2026-09-10）：1 个（智能体开发工程师 / 官方认定新职业「智能体开发员」对标仓库）——
     ("huggingface/smolagents", "smolagents", "智能体开发核心：smolagents（HF 官方 500 行代码级 Agent 框架，CodeAgent/TextualAgent/多 Agent 编排 + 工具调用，Python，智能体开发员新职业对标）"),
+    # —— 第 14 期（2026-09-11）：2 个（AI 工作流编排双栈：可视化 + 低代码对标仓库）——
+    ("langflow-ai/langflow", "langflow", "AI 工作流编排（可视化）：Langflow（低代码 Agent + 工作流编排平台，拖拽式构建 + 多模型路由 + RAG 集成，Python，AI 工作流设计师 / AI PM 深化核心基础设施）"),
+    ("coze-dev/coze-studio", "coze-studio", "AI 工作流编排（低代码）：Coze Studio（字节官方低代码 Agent 平台，插件 + 工作流 + 多 Agent 编排 + 知识库，TypeScript，AI 工作流设计师 / AI 应用运维核心基础设施）"),
 ]
 
 def api_meta(full_name):
