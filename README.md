@@ -292,9 +292,9 @@ ai-llm-app-roadmap/
 
 | 项目 | 定位 | Stars | 本机测试结论 |
 |---|---|---|---|
-| `promptfoo/promptfoo` | LLM 红队测试 / 提示注入 / 越狱 / 数据投毒防御框架（TypeScript，LLM Red Teamer / RAG 投毒防御核心基础设施） | 25.0k | ✅ （测试脚本运行中，TypeScript 主语言 B 级仅覆盖 102 .py 子模块）；package.json + docker-compose |
-| `NVIDIA-NeMo/Curator` | 数据策展 / 质量评估 / 清洗 / 去重 / 过滤（Python，RAG 投毒防御数据治理侧核心基础设施） | 1.8k | ✅ （测试脚本运行中，Python 971 .py 待全量编译）；pyproject.toml + Dockerfile |
-| `openai/evals` | LLM 对齐评估 / 能力评测 / 安全评测 / 基准测试框架（Python，AI 对齐评估工程师核心基础设施） | 19.4k | ✅ （测试脚本运行中，Python 353 .py 待全量编译）；Makefile + pyproject.toml |
+| `promptfoo/promptfoo` | LLM 红队测试 / 提示注入 / 越狱 / 数据投毒防御框架（TypeScript，LLM Red Teamer / RAG 投毒防御核心基础设施） | 25.0k | ✅ 102/102 .py 全量编译通过；package.json scripts + Dockerfile + .devcontainer docker-compose |
+| `NVIDIA-NeMo/Curator` | 数据策展 / 质量评估 / 清洗 / 去重 / 过滤（Python，RAG 投毒防御数据治理侧核心基础设施） | 1.8k | ✅ 971/971 .py 全量编译通过 + 20 .ipynb JSON 全部合法；pyproject.toml + Dockerfile |
+| `openai/evals` | LLM 对齐评估 / 能力评测 / 安全评测 / 基准测试框架（Python，AI 对齐评估工程师核心基础设施） | 19.4k | ✅ 353/353 .py 全量编译通过 + 5 .ipynb JSON 全部合法；pyproject.toml + Dockerfile（elsuite） |
 
 > 第 15 期 3 个仓库覆盖 3 个岗位（LLM Red Teamer：2026 增长最快 AI 安全细分 / RAG 投毒防御工程师：RAG 投毒 0.04% 语料 → 98% 攻击成功率 / AI 对齐评估工程师：LLM Evaluation +210% YoY），其中 LLM Red Teamer 由 `promptfoo` + 已克隆的 `deepeval` / `llm-guard` / `rebuff` / `guardrails` / `NeMo-Guardrails` 共同对标，RAG 投毒防御由 `neMo-Curator` + `promptfoo` + 已克隆的 `graphrag` / `milvus` / `qdrant` / `pgvector` / `weaviate` 共同对标，AI 对齐评估由 `openai-evals` + 已克隆的 `deepeval` / `ragas` / `dspy` / `langfuse` / `helm` 共同对标；promptfoo 25.0k stars 为「LLM 红队测试」品类 star 数第一（对照 NVIDIA/garak 9.2k★ 是「LLM 红队扫描」、confident-ai/deepeval 18.1k★ 是「LLM 评测框架」）、NVIDIA-NeMo/Curator 1.8k stars 为「数据策展 / 质量评估」品类 NVIDIA 官方标杆（对照 NVIDIA/NeMo 是「LLM 训练框架」）、openai/evals 为「LLM 对齐评估」品类 OpenAI 官方标杆（对照 confident-ai/deepeval 18.1k★ 是「LLM 评测框架」、explodinggradients/ragas 15.5k★ 是「RAG 评测」）。
 > 注：本期 GitHub 直连（git clone）失败（curl 28 Failed to connect to github.com:443），沿用第 6/8/9/10/12/13 期 fallback，3 仓库均走 `codeload.github.com` tarball 下载成功（promptfoo 239M / neMo-Curator 36M / openai-evals 8M，其中 promptfoo 用 Clash 代理 127.0.0.1:7890 重试成功），非 git 元数据克隆（无 .git 目录）。完整测试明细以 `docs/20` 为准。

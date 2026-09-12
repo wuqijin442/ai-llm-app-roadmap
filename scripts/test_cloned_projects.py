@@ -14,9 +14,30 @@
 import os, sys, json, subprocess, urllib.request, xml.dom.minidom as minidom
 from datetime import datetime, timezone
 
+# —— 环境消毒：宿主注入的 PYTHONHOME/PYTHONPATH 会破坏子进程 py_compile（2026-09-12 踩坑）——
+for _k in list(os.environ):
+    if _k.upper() in ("PYTHONHOME", "PYTHONPATH"):
+        del os.environ[_k]
+
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CLONED = os.path.join(BASE, "cloned_projects")
 OUT = os.path.join(BASE, "docs", "20-克隆企业级项目测试报告.md")
+
+# —— GitHub API 限流 fallback：本地 stars 缓存（API 失败时回读，成功时回写）——
+_CACHE_PATH = os.path.join(BASE, ".tmp_automation", "stars_cache.json")
+try:
+    with open(_CACHE_PATH, encoding="utf-8") as _f:
+        _STARS_CACHE = json.load(_f)
+except Exception:
+    _STARS_CACHE = {}
+
+def _save_cache():
+    try:
+        os.makedirs(os.path.dirname(_CACHE_PATH), exist_ok=True)
+        with open(_CACHE_PATH, "w", encoding="utf-8") as _f:
+            json.dump(_STARS_CACHE, _f, ensure_ascii=False, indent=1)
+    except Exception:
+        pass
 
 REPOS = [
     # —— 第 1 期（2026-08-27）：5 个 ——
@@ -100,11 +121,18 @@ def api_meta(full_name):
         req = urllib.request.Request(url, headers={"User-Agent": "test-harness", "Accept": "application/vnd.github+json"})
         with urllib.request.urlopen(req, timeout=15) as r:
             d = json.load(r)
-        return d.get("stargazers_count"), d.get("language"), d.get("description", "")
+        meta = (d.get("stargazers_count"), d.get("language"), d.get("description", ""))
+        _STARS_CACHE[full_name] = list(meta)
+        _save_cache()
+        return meta
     except Exception as e:
+        if full_name in _STARS_CACHE:
+            c = _STARS_CACHE[full_name]
+            return c[0], c[1], str(c[2]) + "（缓存值，API 限流回读）"
         return None, None, f"(API 获取失败: {e})"
 
 def py_compile_all(repo_dir):
+    import py_compile as _pyc
     files, ok, bad = [], 0, []
     for root, _, fs in os.walk(repo_dir):
         if ".git" in root.split(os.sep):
@@ -114,10 +142,9 @@ def py_compile_all(repo_dir):
                 files.append(os.path.join(root, f))
     for fp in files:
         try:
-            subprocess.run([sys.executable, "-m", "py_compile", fp], check=True,
-                           stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            _pyc.compile(fp, doraise=True)
             ok += 1
-        except subprocess.CalledProcessError:
+        except Exception:
             bad.append(fp)
     return len(files), ok, bad
 
