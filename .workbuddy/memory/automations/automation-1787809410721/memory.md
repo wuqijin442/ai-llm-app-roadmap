@@ -1,5 +1,27 @@
 # 自动化任务执行记忆（automation-1787809410721）
 
+## 2026-09-13（W37 周日 · 周汇总）
+- 模式：周日总结（2026-09-07 ~ 09-12，第 10/11/12/13/14/15 期，6 期 16 岗位 / 14 仓库）
+- 产出：
+  - `weekly/2026-W37-周报.md`（29,916B，新）：6 期主线（企业级落地→数据底座→产品闭环→岗位认定→工作流编排+AIOps→安全与对齐）+ 6 大趋势 + 6 项 docs 缺口（P1×3）+ 4 个项目建议（p7-rag-poison-lab 最高优先级）
+  - `docs/30`：70→73 岗位 / 14→15 期 / 5/5 补第 12 期 2 岗（上期漏记）+ 第 15 期 3 岗 / 4/5 补 2 岗 / 仓库 55→58 / W37 周汇总行（155,142B）
+  - `README` weekly 导航补 W37；`logs/automation-2026-09-13.log`；`.workbuddy/memory/2026-09-13.md`
+- 关键数据：W37 编译 99.95%（12,765/12,772，v2）；**ragflow 修正为 1279/1279 全过**（v1 系子进程环境污染）；1,100 .ipynb 全合法；langflow 154,605★ 历史第二高星；累计 73 岗位 / 58 仓库 / 15 期
+- 双通道同步：
+  - GitHub：commit df032ed 本地成功；push RC=128 ×2（Clash 7890 连不上，疑周日早间代理未开）→ 按规则停止重试，**待补推**
+  - ima 7498617266899781：**4/4 全部成功**（全串行零 403）：W37-周报（新 29,916B）+ W37-岗位索引（重推 155,142B）+ **W37-克隆测试报告（补推 37,611B，修复 09-12 遗留，库内原为 09-09 版 38,060B）** + W37-daily-digest-09-12（重推 44,850B，库内 44,859B 与本地不一致）
+- 重大踩坑（已沉淀到 log，建议固化进 skill）：
+  1. **cos-upload.cjs 已从磁盘消失**（全盘搜索无果，插件缓存被清理）→ 改用官方 SDK cos-nodejs-sdk-v5（npmmirror 3s 装好）+ 自写 `.tmp_automation/cos_sdk_put.js`
+  2. **SDK putObject Body 必须用 Buffer**：createReadStream 无 Content-Length → AccessDenied（与凭证/策略无关，极易误判）
+  3. 自实现 COS 签名 StringToSign = `sha1\n + sha1(FormatString) + \n + KeyTime`，漏 `sha1\n` 会 SignatureDoesNotMatch；但 SDK Buffer 路径为准
+  4. npm shim bad interpreter → `node "G:/codeConfig/nvm/nodejs/node_modules/npm/bin/npm-cli.js" install`
+  5. 托管 Python 3.13.12 再次损坏（encodings 缺失，与 09-12 同因）→ 本期用 node 算 ISO 周
+- 待办（W38）：
+  - [ ] GitHub push 补推（先探测 7890 代理再推；export PATH 加 Git mingw64/bin）
+  - [ ] W38 周一 P1 修订：docs/04 RAG 投毒防御 + docs/05 工作流编排+A2A + docs/10 新职业与作品集策略
+  - [ ] W38 项目：启动 p7-rag-poison-lab
+  - [ ] ima 旧周前缀残留人工清理（W35/W36 系列，log 有清单）
+
 ## 2026-09-12（W37 周六 · 第 15 期）
 - 模式：工作日模式（周六补跑，第 15 期）
 - 主线：AI 应用安全与对齐三件套（LLM Red Teamer + RAG 投毒防御 + AI 对齐评估；EU AI Act Article 55 强制红队）

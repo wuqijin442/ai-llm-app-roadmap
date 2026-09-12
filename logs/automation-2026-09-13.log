@@ -1,0 +1,59 @@
+# 2026-09-13 automation log（W37 周日 · 总结模式）
+
+## 模式
+- 周日总结模式（ISO W37，2026-09-07 ~ 09-12，第 10/11/12/13/14/15 期，共 6 期）
+- 不重新采集岗位；产出周报 + 累计文档回写 + 双通道同步
+
+## 产出
+1. `weekly/2026-W37-周报.md`（29,916B，新文件）
+   - 16 岗位 / 14 仓库 / 6 期主线（企业级落地 → 数据底座 → 产品闭环 → 岗位认定 → 工作流编排+AIOps → 安全与对齐）
+   - 6 大趋势（国家新职业+几乎没有入门级 / RAG 三部曲闭环 / 工作流编排独立岗位 / AI 安全法定化 / 薪资溢价量化 +31.4%~+84.6% / MCP+A2A 双协议）
+   - 6 项 docs 缺口（P1×3：docs/04 RAG 投毒防御、docs/05 工作流编排+A2A、docs/10 新职业与作品集策略；P2×3）
+   - 4 个项目建议（p7-rag-poison-lab 最高优先级）
+2. `docs/30-岗位全景与学习路径索引.md`：累计 70→73 岗位、14→15 期、5/5 适配度补第 12 期 2 岗（上期漏记）+ 第 15 期 3 岗、4/5 补 2 岗、仓库 55→58、追加 W37 周汇总行（154,192B → 155,142B）
+3. `README.md`：weekly 导航补 W37 周报行
+4. 本日志 + `.workbuddy/memory/2026-09-13.md`
+
+## 对标仓库（周日不新增 clone；汇总本周 14 个）
+- 第 10 期 3：a2aproject/A2A（25,737★）/ huggingface/lerobot（27,419★）/ openai/openai-cookbook（75,923★）
+- 第 11 期 3：microsoft/graphrag（35,947★）/ pydantic/pydantic（28,757★）/ astral-sh/uv（89,732★）
+- 第 12 期 2：infiniflow/ragflow（90,535★）/ run-llama/llama_index（52,127★）
+- 第 13 期 1：huggingface/smolagents（29,286★）
+- 第 14 期 2：langflow-ai/langflow（154,605★，历史第二高星）/ coze-dev/coze-studio（21,578★）
+- 第 15 期 3：promptfoo/promptfoo（25,035★）/ NVIDIA-NeMo/Curator（1,761★）/ openai/evals（19,437★）
+- 累计 clone：44 → 58
+
+## 测试结论（docs/20 v2，2026-09-12 10:25 生成，周日复核确认）
+- 58 仓库全量：W37 14 仓库合计 12,772 .py / 通过 12,765（99.95%），失败 7（lerobot 5 + pydantic 1 + uv 1 + llama_index 1，均为依赖/环境类预期失败）
+- 1,100 .ipynb 全部合法；整仓失败 0
+- **重要修正：ragflow 1279/1279 全过**（v1 曾报 1205/1279，系子进程 PYTHONHOME/PYTHONPATH 污染；v2 进程内 py_compile + 环境消毒后修正）
+
+## 双通道同步
+### A. GitHub
+- commit df032ed（11 文件：周报 + docs/30 + README + 09-12 遗留 log/缓存）成功
+- push 第 1 次 RC=128（proxy 127.0.0.1:7890 Could not connect）→ 第 2 次 RC=128 → 按规则停止重试，内容已落盘待补推
+- 疑似 Clash 代理周日早间未开；下期开工可先探测 7890 再推
+### B. ima 知识库 7498617266899781（全部串行，零 403）
+- 推送前 get_knowledge_list 核对 file_size：
+  - W37-岗位全景与学习路径索引.md：库内 154,192B（过期）→ 重推 155,142B ✅
+  - W37-克隆企业级项目测试报告.md：库内 38,060B（09-09 版 52 仓库，09-12 推送失败遗留）→ 重推 37,611B（58 仓库 v2）✅
+  - W37-daily-digest-2026-09-12.md：库内 44,859B vs 本地 44,850B（推送后本地小改动）→ 按 file_size 规则重推 ✅
+  - W37-2026-W37-周报.md：新推 29,916B ✅
+- 4/4 全部 add_knowledge 成功（REPLACE 策略），media_state/parse_progress 待复查（见下）
+
+## 关键踩坑（本期新沉淀，建议固化）
+1. **cos-upload.cjs 脚本已从磁盘消失**（插件缓存被清理，全盘搜索无果）→ 本期改用官方 SDK cos-nodejs-sdk-v5（npmmirror 安装 3s）+ 自写脚本 `.tmp_automation/cos_sdk_put.js`
+2. **SDK putObject 的 Body 必须用 Buffer（readFileSync）**：用 createReadStream 时无 Content-Length → AccessDenied（易误判为凭证/策略问题）
+3. **自实现 COS 签名的 StringToSign 公式**：`sha1\n + sha1(FormatString) + \n + KeyTime`（FormatString = `put\n/{key}\n\n\n`；raw secretKey 做 HMAC-SHA1）；漏掉开头 `sha1\n` 会 SignatureDoesNotMatch。但脚本未走通（未再验证），SDK Buffer 路径为准
+4. **cos-nodejs-sdk-v5 安装**：本机 npm shim 有 bad interpreter 问题，需 `node "G:/codeConfig/nvm/nodejs/node_modules/npm/bin/npm-cli.js" install`；workspace 目录不存在需先建
+5. 托管 Python 3.13.12 再次损坏（ModuleNotFoundError: encodings，与 09-12 同因），本期改用 node 计算 ISO 周回避 Python 依赖
+6. 沙箱 shim：`ls/cat/head/dirname` 间歇性 command not found，全程用 node -e 替代
+
+## 校验结果（推送后复查）
+- get_knowledge_list 复查：4 文件 title 命中 W37- 前缀（见下）
+
+## 遗留 / 需用户人工处理
+- [ ] GitHub push 补推（RC=128 ×2，网络抖动；命令：`git -c http.proxy=http://127.0.0.1:7890 -c https.proxy=http://127.0.0.1:7890 push origin main`，需 export PATH 加 Git mingw64/bin）
+- [ ] ima 知识库旧周前缀残留需人工删除（无删除接口）：W36-克隆企业级项目测试报告 / W36-岗位全景与学习路径索引 / W36-2026-W36-周报（可保留）/ W36-daily-digest-2026-09-0X 系列 / W36-docs-20 / W36-docs-30 / W35 全系列（W35-2026-W35-周报可保留）
+- [ ] W38 周一 P1 修订：docs/04 RAG 投毒防御 + docs/05 工作流编排+A2A + docs/10 新职业与作品集策略
+- [ ] W38 项目：启动 p7-rag-poison-lab
