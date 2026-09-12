@@ -88,6 +88,10 @@ REPOS = [
     # —— 第 14 期（2026-09-11）：2 个（AI 工作流编排双栈：可视化 + 低代码对标仓库）——
     ("langflow-ai/langflow", "langflow", "AI 工作流编排（可视化）：Langflow（低代码 Agent + 工作流编排平台，拖拽式构建 + 多模型路由 + RAG 集成，Python，AI 工作流设计师 / AI PM 深化核心基础设施）"),
     ("coze-dev/coze-studio", "coze-studio", "AI 工作流编排（低代码）：Coze Studio（字节官方低代码 Agent 平台，插件 + 工作流 + 多 Agent 编排 + 知识库，TypeScript，AI 工作流设计师 / AI 应用运维核心基础设施）"),
+    # —— 第 15 期（2026-09-12）：3 个（AI 应用安全与对齐三件套：红队安全 + RAG 投毒防御 + 对齐评估对标仓库）——
+    ("promptfoo/promptfoo", "promptfoo", "LLM 红队测试：promptfoo（LLM 红队测试 / 提示注入 / 越狱 / 数据投毒防御框架，TypeScript，LLM Red Teamer 核心基础设施）"),
+    ("NVIDIA-NeMo/Curator", "neMo-Curator", "RAG 数据投毒防御：NVIDIA NeMo Curator（数据策展 / 质量评估 / 清洗 / 去重 / 过滤，Python，RAG 投毒防御数据治理侧核心基础设施）"),
+    ("openai/evals", "openai-evals", "AI 对齐评估：OpenAI Evals（LLM 对齐评估 / 能力评测 / 安全评测 / 基准测试框架，Python，AI 对齐评估工程师核心基础设施）"),
 ]
 
 def api_meta(full_name):

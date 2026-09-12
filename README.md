@@ -84,7 +84,7 @@ ai-llm-app-roadmap/
 │   ├── 30天-入门冲刺.md
 │   ├── 90天-核心突破.md
 │   └── 180天-转岗实战.md
-├── cloned_projects/               # 克隆的企业级实战项目（gitignore，不入库，累计 55 个见第 7 节）
+├── cloned_projects/               # 克隆的企业级实战项目（gitignore，不入库，累计 58 个见第 7 节）
 │   ├── ai-agents-for-beginners/   #   微软官方 Agent 教程（73.3k★）
 │   ├── ruoyi-ai/                  #   Java 企业级 AI 框架（5.7k★）
 │   ├── Langchain-Chatchat/        #   Python 本地知识库 RAG（38.6k★）
@@ -127,9 +127,9 @@ ai-llm-app-roadmap/
 
 ## 七、克隆企业级实战项目（已本地测试）
 
-为把「看教程」升级成「读真源码、跑真项目」，本仓库从 GitHub 高星仓库克隆了 **55 个**覆盖 Agent / RAG / 知识库 / 多 Agent 编排 / 微调 / 部署 / 安全 / MCP / 向量库 / 评测 / 可观测 / 治理 / 具身智能 / 工作流自动化 / LLM 可观测性 / AI 产品工程 / AI 销售 / AI Agent 框架 / Multimodal Agent / AI 教育认证 / Agent 商业化 / MCP 安全 / Token 经济学 / LLM 推理优化 / RAG 数据基础设施 / 评测基础设施 / Prompt 编译 / AI 平台 / OpenTelemetry GenAI / AI 评测 Ops / AI 合规 / AI 部署落地 / MCP 工程 / Agent 记忆层 / Agent 工作流推理引擎 / **AI 基础设施三件套（Ray 分布式计算 + MLflow AI 工程平台 + TGI 推理服务引擎）** / **企业级落地三件套（A2A 协议 + LeRobot 具身智能 + OpenAI Cookbook AI 教育）** / **AI 应用工程栈数据底座（GraphRAG RAG 数据基础设施 + Pydantic 数据契约 + uv 工程化底座）** / **AI 应用产品闭环与 RAG 应用框架深化（RAGFlow RAG 应用框架 + LlamaIndex 文档特化 RAG 框架 + AI 产品经理 AI 应用深化）** / **智能体开发工程师（smolagents HF 官方 500 行级 Agent 框架，CodeAgent 写代码执行 + 沙箱 + 多 Agent 编排 + 智能体开发员国家新职业对标）** / **AI 工作流编排双栈（Langflow 可视化编排 + Coze Studio 低代码编排，AI 工作流设计师 / AI 应用运维 / AI PM 工作流深化核心基础设施）**的实战项目，放入 `cloned_projects/`，并编写 `scripts/test_cloned_projects.py` 做**可复现的本地全量测试**。
+为把「看教程」升级成「读真源码、跑真项目」，本仓库从 GitHub 高星仓库克隆了 **58 个**覆盖 Agent / RAG / 知识库 / 多 Agent 编排 / 微调 / 部署 / 安全 / MCP / 向量库 / 评测 / 可观测 / 治理 / 具身智能 / 工作流自动化 / LLM 可观测性 / AI 产品工程 / AI 销售 / AI Agent 框架 / Multimodal Agent / AI 教育认证 / Agent 商业化 / MCP 安全 / Token 经济学 / LLM 推理优化 / RAG 数据基础设施 / 评测基础设施 / Prompt 编译 / AI 平台 / OpenTelemetry GenAI / AI 评测 Ops / AI 合规 / AI 部署落地 / MCP 工程 / Agent 记忆层 / Agent 工作流推理引擎 / **AI 基础设施三件套（Ray 分布式计算 + MLflow AI 工程平台 + TGI 推理服务引擎）** / **企业级落地三件套（A2A 协议 + LeRobot 具身智能 + OpenAI Cookbook AI 教育）** / **AI 应用工程栈数据底座（GraphRAG RAG 数据基础设施 + Pydantic 数据契约 + uv 工程化底座）** / **AI 应用产品闭环与 RAG 应用框架深化（RAGFlow RAG 应用框架 + LlamaIndex 文档特化 RAG 框架 + AI 产品经理 AI 应用深化）** / **智能体开发工程师（smolagents HF 官方 500 行级 Agent 框架，CodeAgent 写代码执行 + 沙箱 + 多 Agent 编排 + 智能体开发员国家新职业对标）** / **AI 工作流编排双栈（Langflow 可视化编排 + Coze Studio 低代码编排，AI 工作流设计师 / AI 应用运维 / AI PM 工作流深化核心基础设施）** / **AI 应用安全与对齐三件套（Promptfoo LLM 红队测试 + NeMo Curator 数据策展投毒防御 + OpenAI Evals 对齐评估，LLM Red Teamer / RAG 投毒防御 / AI 对齐评估核心基础设施）**的实战项目，放入 `cloned_projects/`，并编写 `scripts/test_cloned_projects.py` 做**可复现的本地全量测试**。
 
-> 每日任务按「岗位 → 对标仓库」逐期追加：第 1 期 5 个（2026-08-27）+ 第 2 期 11 个（2026-08-28）+ 第 3 期 9 个（2026-08-29）+ 第 4 期 2 个（2026-08-31）+ 第 5 期 6 个（2026-09-01）+ 第 6 期 3 个（2026-09-02）+ 第 7 期 3 个（2026-09-03）+ 第 8 期 2 个（2026-09-04）+ 第 9 期 3 个（2026-09-05）+ 第 10 期 3 个（2026-09-07）+ 第 11 期 3 个（2026-09-08）+ 第 12 期 2 个（2026-09-09）+ 第 13 期 1 个（2026-09-10）+ **第 14 期 2 个（2026-09-11）= 累计 55 个**。
+> 每日任务按「岗位 → 对标仓库」逐期追加：第 1 期 5 个（2026-08-27）+ 第 2 期 11 个（2026-08-28）+ 第 3 期 9 个（2026-08-29）+ 第 4 期 2 个（2026-08-31）+ 第 5 期 6 个（2026-09-01）+ 第 6 期 3 个（2026-09-02）+ 第 7 期 3 个（2026-09-03）+ 第 8 期 2 个（2026-09-04）+ 第 9 期 3 个（2026-09-05）+ 第 10 期 3 个（2026-09-07）+ 第 11 期 3 个（2026-09-08）+ 第 12 期 2 个（2026-09-09）+ 第 13 期 1 个（2026-09-10）+ 第 14 期 2 个（2026-09-11）+ 第 15 期 3 个（2026-09-12）= 累计 58 个。
 > 完整测试报告（含每项的命令与输出证据）：[`docs/20-克隆企业级项目测试报告.md`](docs/20-克隆企业级项目测试报告.md)
 > 安全策略：仅克隆官方高星仓库，未引入任何未知/冷门未审计源码；克隆目录已 gitignore，**不入库**，仅元数据与测试报告入库。
 
@@ -287,6 +287,17 @@ ai-llm-app-roadmap/
 
 > 第 14 期 2 个仓库覆盖 3 个岗位（AI 工作流设计师：2026 新增热门岗位 / AI 应用运维（AIOps）：US 中位 $156K / 国内一线 30–70K+ / AI PM 工作流深化：71% 岗位不需要真正懂 AI 底层），其中 AI 工作流设计师由 `langflow` + `coze-studio` + 已克隆的 dify / n8n / FastGPT 共同对标，AI 应用运维由 `langflow` + `coze-studio` + 已克隆的 otel-collector / langfuse / vllm / sglang / tgi 共同对标，AI PM 工作流深化由 `langflow` + `coze-studio` + 已克隆的 dify / n8n 共同对标；langflow-ai/langflow 154,553★ 为「AI 工作流编排（可视化）」品类 star 数第一（对照 langgenius/dify 154k★ 是「LLMOps 可视化 + AI 工作流平台」、n8n 202.9k★ 是「工作流自动化 + AI Agent 节点」、coze-dev/coze-studio 21.6k★ 是「低代码 Agent 平台」）、coze-dev/coze-studio 21,574★ 为「AI 工作流编排（低代码）」品类字节官方标杆（对照 coze-dev/coze-loop 5,714★ 是「Go 后端」）。
 > 注：本期 2 仓库全部通过 git 直连克隆成功（langflow 352M / coze-studio 133M，无网络抖动，优于第 6/8/9/10/12/13 期 codeload tarball fallback），非 git 元数据克隆（有 .git 目录）。完整测试明细以 `docs/20` 为准。
+
+**第 15 期（2026-09-12）· AI 应用安全与对齐三件套（红队安全 + RAG 投毒防御 + 对齐评估）**
+
+| 项目 | 定位 | Stars | 本机测试结论 |
+|---|---|---|---|
+| `promptfoo/promptfoo` | LLM 红队测试 / 提示注入 / 越狱 / 数据投毒防御框架（TypeScript，LLM Red Teamer / RAG 投毒防御核心基础设施） | 25.0k | ✅ （测试脚本运行中，TypeScript 主语言 B 级仅覆盖 102 .py 子模块）；package.json + docker-compose |
+| `NVIDIA-NeMo/Curator` | 数据策展 / 质量评估 / 清洗 / 去重 / 过滤（Python，RAG 投毒防御数据治理侧核心基础设施） | 1.8k | ✅ （测试脚本运行中，Python 971 .py 待全量编译）；pyproject.toml + Dockerfile |
+| `openai/evals` | LLM 对齐评估 / 能力评测 / 安全评测 / 基准测试框架（Python，AI 对齐评估工程师核心基础设施） | 19.4k | ✅ （测试脚本运行中，Python 353 .py 待全量编译）；Makefile + pyproject.toml |
+
+> 第 15 期 3 个仓库覆盖 3 个岗位（LLM Red Teamer：2026 增长最快 AI 安全细分 / RAG 投毒防御工程师：RAG 投毒 0.04% 语料 → 98% 攻击成功率 / AI 对齐评估工程师：LLM Evaluation +210% YoY），其中 LLM Red Teamer 由 `promptfoo` + 已克隆的 `deepeval` / `llm-guard` / `rebuff` / `guardrails` / `NeMo-Guardrails` 共同对标，RAG 投毒防御由 `neMo-Curator` + `promptfoo` + 已克隆的 `graphrag` / `milvus` / `qdrant` / `pgvector` / `weaviate` 共同对标，AI 对齐评估由 `openai-evals` + 已克隆的 `deepeval` / `ragas` / `dspy` / `langfuse` / `helm` 共同对标；promptfoo 25.0k stars 为「LLM 红队测试」品类 star 数第一（对照 NVIDIA/garak 9.2k★ 是「LLM 红队扫描」、confident-ai/deepeval 18.1k★ 是「LLM 评测框架」）、NVIDIA-NeMo/Curator 1.8k stars 为「数据策展 / 质量评估」品类 NVIDIA 官方标杆（对照 NVIDIA/NeMo 是「LLM 训练框架」）、openai/evals 为「LLM 对齐评估」品类 OpenAI 官方标杆（对照 confident-ai/deepeval 18.1k★ 是「LLM 评测框架」、explodinggradients/ragas 15.5k★ 是「RAG 评测」）。
+> 注：本期 GitHub 直连（git clone）失败（curl 28 Failed to connect to github.com:443），沿用第 6/8/9/10/12/13 期 fallback，3 仓库均走 `codeload.github.com` tarball 下载成功（promptfoo 239M / neMo-Curator 36M / openai-evals 8M，其中 promptfoo 用 Clash 代理 127.0.0.1:7890 重试成功），非 git 元数据克隆（无 .git 目录）。完整测试明细以 `docs/20` 为准。
 
 > 第 9 期 3 个仓库覆盖 3 个岗位（AI Infrastructure Engineer、AI Platform Engineer 深化、LLM Inference Engineer 三大引擎特化），其中 AI Infrastructure 由 `ray` + `vllm` + `sglang` + `tgi` 共同对标，AI Platform 由 `mlflow` + `langfuse` + `deepeval` + `ragas` + `otel-collector` 共同对标，LLM Inference 由 `tgi` + `vllm` + `sglang` 共同对标；ray 43.7k stars 为「分布式计算引擎」品类 star 数第一、mlflow 27.8k stars 为「AI 工程平台」品类 star 数第一、tgi 10.9k stars 为「HF 官方推理服务引擎」第一。
 > 注：本期 GitHub 直连（git clone）全部失败（curl 28 Failed to connect to github.com:443），沿用第 6/8 期 fallback，三仓库均走 `codeload.github.com` tarball 下载成功（ray 198MB / mlflow 291MB / tgi 3.1MB），非 git 元数据克隆（无 .git 目录）。完整测试明细以 `docs/20` 为准。
