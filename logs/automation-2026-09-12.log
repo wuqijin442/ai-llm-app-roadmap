@@ -1,0 +1,50 @@
+# automation 2026-09-12 · 第 15 期执行日志（AI 应用安全与对齐三件套）
+
+## 任务完成状态
+
+- [x] 3 岗位采集：LLM Red Teamer / RAG 投毒防御工程师 / AI 对齐评估工程师（daily-digest/2026-09-12.md）
+- [x] 3 仓库 clone（codeload tarball fallback，promptfoo 239M / neMo-Curator 36M / openai-evals 8M）
+- [x] scripts/test_cloned_projects.py REPOS 登记第 15 期 3 项（累计 58）
+- [x] 测试脚本全量重跑（v2 成功）→ docs/20 回写 58 仓库（47 全过 / 10 部分通过）
+- [x] docs/30 累计统计更新（73 岗位 / 15 期 / 58 仓库 / 十五层视角）
+- [x] README 第 7 节与 docs/20 一致性校验（58 个 + 7.1 表格最终测试结果）
+- [x] git commit 14157df + push origin main（33d2bbc..14157df，RC=0，Clash 代理）
+- [x] ima 推送文件 1/3：W37-daily-digest-2026-09-12.md（44,859B）create_media + COS 200 + add_knowledge 成功
+- [x] ima 推送文件 2/3：W37-岗位全景与学习路径索引.md（154,192B）create_media + COS 200 + add_knowledge 成功
+- [ ] ima 推送文件 3/3：W37-克隆企业级项目测试报告.md（37,611B）——**FAILED：ima-mcp token 过期（unauthorized），待下期重推**
+
+## 本期重大事故与修复（重要经验）
+
+### 事故 1：托管 Python 3.13.12 运行时被宿主迁移破坏
+- 上午 08:34 启动的全量测试（task yQUFXl → MmRVCe，1h34m）跑完，但产出全部作废：
+  所有仓库 py_compile 0/N（子进程继承被污染的 PYTHONHOME/PYTHONPATH=shim 目录）、
+  GitHub API 全部 403 rate limit（stars=None）。
+- 排查发现宿主正在迁移运行时（node 同现 .deleting.49004 标记），
+  C:/Users/Administrator/.workbuddy/binaries/python/versions/3.13.12 的 Lib/ 标准库整个缺失，
+  `python -E` 也无法启动 → 非环境变量问题，是安装本体损坏。
+- 修复：改用系统 Python 3.11.1（G:/codeConfig/python/python3.11.1/python.exe）重跑 v2。
+
+### 事故 2：会话 shell 环境不稳定
+- 中途起 Bash 工具 shim 报 dirname not found，PATH 时有时无，coreutils（grep/cat/stat）随机缺失，
+  git push 报 failed to load library 'libcurl-4.dll'。
+- 修复：`export PATH="/c/Program Files/Git/mingw64/bin:/c/Program Files/Git/cmd:$PATH"` 后 push 成功。
+- PowerShell 5.1 读 UTF-8 无 BOM 文件 Select-String 中文 pattern 不匹配（编码问题），用 Python 替代。
+
+### 测试脚本补丁（scripts/test_cloned_projects.py）
+1. 启动时清除 os.environ 中 PYTHONHOME/PYTHONPATH（防宿主注入污染子进程）。
+2. py_compile 改进程内 `py_compile.compile(fp, doraise=True)`（替代 subprocess 派生），
+   全量耗时 1h34m → 14m51s，且根除环境继承问题。
+3. stars 缓存 `.tmp_automation/stars_cache.json`：API 失败回读缓存（含来源标注），成功回写。
+   GitHub API 限流时用 shields.io JSON（img.shields.io/github/stars/<repo>.json）兜底取近似值。
+4. 缓存 58 条全部就位（55 条自 git HEAD 旧版 docs/20 提取 + 3 条新仓库）。
+
+## 最终数据
+
+- 测试 v2：RC=0，14m51s，docs/20 = 37,611B，58 仓库段
+- 本期 3 仓库：promptfoo 102/102 ✅（25,035★ TS）/ NeMo-Curator 971/971 ✅ + 20 ipynb ✅（1,761★ Py）/ openai-evals 353/353 ✅ + 5 ipynb ✅（19,437★ Py）
+- git：commit 14157df，push 33d2bbc..14157df RC=0
+
+## 遗留事项
+
+1. ima 文件 3/3（W37-克隆企业级项目测试报告.md，37,611B）待重推（凭证过期）。
+2. ima 知识库旧周前缀残留（W36/W35 系列）需人工清理。

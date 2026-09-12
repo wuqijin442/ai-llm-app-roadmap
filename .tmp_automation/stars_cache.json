@@ -1,0 +1,292 @@
+{
+ "microsoft/ai-agents-for-beginners": [
+  74468,
+  "Jupyter Notebook",
+  "18 Lessons to Get Started Building AI Agents"
+ ],
+ "ageerle/ruoyi-ai": [
+  5690,
+  "Java",
+  "An enterprise AI development framework for building AI agents. It provides unified management of multi-provider LLMs, secure enterprise knowledge bases with high-precision retrieval, visual workflow orchestration and multi-agent coordination. Compatible with mainstream Agent Skill standards, it enables developers to efficiently build production-gra"
+ ],
+ "chatchat-space/Langchain-Chatchat": [
+  38633,
+  "Python",
+  "Langchain-Chatchat（原Langchain-ChatGLM）基于 Langchain 与 ChatGLM, Qwen 与 Llama 等语言模型的 RAG 与 Agent 应用 | Langchain-Chatchat (formerly langchain-ChatGLM), local knowledge based LLM (like ChatGLM, Qwen and Llama) RAG and Agent app with langchain "
+ ],
+ "labring/FastGPT": [
+  29631,
+  "TypeScript",
+  "FastGPT is a knowledge-based platform built on the LLMs, offers a comprehensive suite of out-of-the-box capabilities such as data processing, RAG retrieval, and visual AI workflow orchestration, letting you easily develop and deploy complex question-answering systems without the need for extensive setup or configuration."
+ ],
+ "1Panel-dev/MaxKB": [
+  22771,
+  "Python",
+  "🔥 MaxKB is an open-source platform for building enterprise-grade agents.  强大易用的开源企业级智能体平台。"
+ ],
+ "langchain-ai/langgraph": [
+  41488,
+  "Python",
+  "Build resilient agents."
+ ],
+ "crewAIInc/crewAI": [
+  58380,
+  "Python",
+  "Framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, CrewAI empowers agents to work together seamlessly, tackling complex tasks."
+ ],
+ "microsoft/autogen": [
+  60940,
+  "Python",
+  "A programming framework for agentic AI"
+ ],
+ "huggingface/peft": [
+  21659,
+  "Python",
+  "🤗 PEFT: State-of-the-art Parameter-Efficient Fine-Tuning."
+ ],
+ "vllm-project/vllm": [
+  91528,
+  "Python",
+  "A high-throughput and memory-efficient inference and serving engine for LLMs"
+ ],
+ "nvidia/NeMo-Guardrails": [
+  7105,
+  "Python",
+  "NeMo Guardrails is an open-source toolkit for easily adding programmable guardrails to LLM-based conversational systems."
+ ],
+ "protectai/rebuff": [
+  1522,
+  "TypeScript",
+  "LLM Prompt Injection Detector"
+ ],
+ "protectai/llm-guard": [
+  3205,
+  "Python",
+  "The Security Toolkit for LLM Interactions"
+ ],
+ "modelcontextprotocol/servers": [
+  90257,
+  "TypeScript",
+  "Model Context Protocol Servers"
+ ],
+ "modelcontextprotocol/typescript-sdk": [
+  13372,
+  "TypeScript",
+  "The official TypeScript SDK for Model Context Protocol servers and clients"
+ ],
+ "modelcontextprotocol/python-sdk": [
+  24271,
+  "Python",
+  "The official Python SDK for Model Context Protocol servers and clients"
+ ],
+ "openvla/openvla": [
+  6993,
+  "Python",
+  "OpenVLA: An open-source vision-language-action model for robotic manipulation."
+ ],
+ "explodinggradients/ragas": [
+  15707,
+  "Python",
+  "Supercharge Your LLM Application Evaluations 🚀"
+ ],
+ "qdrant/qdrant": [
+  34503,
+  "Rust",
+  "Qdrant - High-performance, massive-scale Vector Database and Vector Search Engine for the next generation of AI. Also available in the cloud https://cloud.qdrant.io/"
+ ],
+ "pgvector/pgvector": [
+  22984,
+  "C",
+  "Open-source vector similarity search for Postgres"
+ ],
+ "open-telemetry/opentelemetry-python": [
+  2629,
+  "Python",
+  "OpenTelemetry Python API and SDK "
+ ],
+ "huggingface/datasets": [
+  21966,
+  "Python",
+  "🤗 The largest hub of ready-to-use datasets for AI models with fast, easy-to-use and efficient data manipulation tools"
+ ],
+ "huggingface/huggingface_hub": [
+  3884,
+  "Python",
+  "The official CLI and Python client for the Hugging Face Hub."
+ ],
+ "microsoft/responsible-ai-toolbox": [
+  1834,
+  "TypeScript",
+  "Responsible AI Toolbox is a suite of tools providing model and data exploration and assessment user interfaces and libraries that enable a better understanding of AI systems. These interfaces and libraries empower developers and stakeholders of AI systems to develop and monitor AI more responsibly, and take better data-driven actions."
+ ],
+ "weaviate/weaviate": [
+  16801,
+  "Go",
+  "Weaviate is an open-source vector database that stores both objects and vectors, allowing for the combination of vector search with structured filtering with the fault tolerance and scalability of a cloud-native database​."
+ ],
+ "langfuse/langfuse": [
+  34487,
+  "TypeScript",
+  "🪢 Open source agent evals & observability: Trace, evaluate, and improve LLM applications with one open platform."
+ ],
+ "n8n-io/n8n": [
+  204042,
+  "TypeScript",
+  "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations."
+ ],
+ "All-Hands-AI/OpenHands": [
+  87565,
+  "TypeScript",
+  "🙌 OpenHands: AI-Driven Development"
+ ],
+ "openai/openai-agents-python": [
+  29371,
+  "Python",
+  "A lightweight, powerful framework for multi-agent workflows"
+ ],
+ "stanfordnlp/dspy": [
+  37958,
+  "Python",
+  "DSPy: The framework for programming—not prompting—language models"
+ ],
+ "anthropics/anthropic-cookbook": [
+  52629,
+  "Jupyter Notebook",
+  "A collection of notebooks/recipes showcasing some fun and effective ways of using Claude."
+ ],
+ "langgenius/dify": [
+  155465,
+  "TypeScript",
+  "Build Agentic workflows, RAG pipelines, with rich AI model and tool support on one collaborative workspace. Deploy on cloud, VPC, or self-hosted, so teams move from prototype to production without rebuilding the stack."
+ ],
+ "browser-use/browser-use": [
+  114261,
+  "Python",
+  "Agents that use the browser."
+ ],
+ "guardrails-ai/guardrails": [
+  7396,
+  "Python",
+  "Adding guardrails to large language models."
+ ],
+ "openai/openai-python": [
+  31619,
+  "Python",
+  "The official Python library for the OpenAI API"
+ ],
+ "milvus-io/milvus": [
+  46063,
+  "Go",
+  "Milvus is a high-performance, cloud-native vector database built for scalable vector ANN search"
+ ],
+ "open-telemetry/opentelemetry-collector": [
+  7529,
+  "Go",
+  "OpenTelemetry Collector"
+ ],
+ "confident-ai/deepeval": [
+  18227,
+  "Python",
+  "The LLM Evaluation Framework"
+ ],
+ "google/adk-python": [
+  21504,
+  "Python",
+  "An open-source, code-first Python toolkit for building, evaluating, and deploying sophisticated AI agents with flexibility and control."
+ ],
+ "sgl-project/sglang": [
+  35831,
+  "Python",
+  "SGLang is a high-performance serving framework for large language models and multimodal models."
+ ],
+ "mem0ai/mem0": [
+  65143,
+  "Python",
+  "The Memory Layer for AI Agents - Drop-in memory infrastructure for AI agents and apps. Context that persists. Built for production."
+ ],
+ "ray-project/ray": [
+  43785,
+  "Python",
+  "Ray is an AI compute engine. Ray consists of a core distributed runtime and a set of AI Libraries for accelerating ML workloads."
+ ],
+ "mlflow/mlflow": [
+  27918,
+  "Python",
+  "The open source AI engineering platform for agents, LLMs, and ML models. MLflow enables teams of all sizes to debug, evaluate, monitor, and optimize production-quality AI applications while controlling costs and managing access to models and data."
+ ],
+ "huggingface/text-generation-inference": [
+  10886,
+  "Python",
+  "Large Language Model Text Generation Inference"
+ ],
+ "a2aproject/A2A": [
+  25737,
+  "Shell",
+  "Agent2Agent (A2A) is an open protocol enabling communication and interoperability between opaque agentic applications."
+ ],
+ "huggingface/lerobot": [
+  27419,
+  "Python",
+  "🤗 LeRobot: Making AI for Robotics more accessible with end-to-end learning"
+ ],
+ "openai/openai-cookbook": [
+  75923,
+  "Jupyter Notebook",
+  "Examples and guides for using the OpenAI API"
+ ],
+ "microsoft/graphrag": [
+  35947,
+  "Python",
+  "A modular graph-based Retrieval-Augmented Generation (RAG) system"
+ ],
+ "pydantic/pydantic": [
+  28757,
+  "Python",
+  "Data validation using Python type hints"
+ ],
+ "astral-sh/uv": [
+  89732,
+  "Rust",
+  "An extremely fast Python package and project manager, written in Rust."
+ ],
+ "infiniflow/ragflow": [
+  90535,
+  "Go",
+  "RAGFlow is a leading open-source Retrieval-Augmented Generation (RAG) engine that fuses cutting-edge RAG with Agent capabilities to create a superior context layer for LLMs"
+ ],
+ "run-llama/llama_index": [
+  52127,
+  "Python",
+  "LlamaIndex is the document processing platform for AI"
+ ],
+ "huggingface/smolagents": [
+  29286,
+  "Python",
+  "🤗 smolagents: a barebones library for agents that think in code."
+ ],
+ "langflow-ai/langflow": [
+  154605,
+  "Python",
+  "Langflow is a powerful tool for building and deploying AI-powered agents and workflows."
+ ],
+ "coze-dev/coze-studio": [
+  21578,
+  "TypeScript",
+  "An AI agent development platform with all-in-one visual tools, simplifying agent creation, debugging, and deployment like never before. Coze your way to AI Agent creation."
+ ],
+ "promptfoo/promptfoo": [
+  25035,
+  "TypeScript",
+  "LLM red teaming framework（shields.io 近似值，API 限流）"
+ ],
+ "NVIDIA-NeMo/Curator": [
+  1761,
+  "Python",
+  "Scalable data processing and curation toolkit for LLMs（shields.io 近似值，API 限流）"
+ ],
+ "openai/evals": [
+  19437,
+  "Python",
+  "OpenAI Evals: a framework for evaluating LLMs and LLM systems（早前 API 实测值）"
+ ]
+}

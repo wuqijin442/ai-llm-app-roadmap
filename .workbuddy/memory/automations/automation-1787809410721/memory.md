@@ -1,5 +1,24 @@
 # 自动化任务执行记忆（automation-1787809410721）
 
+## 2026-09-12（W37 周六 · 第 15 期）
+- 模式：工作日模式（周六补跑，第 15 期）
+- 主线：AI 应用安全与对齐三件套（LLM Red Teamer + RAG 投毒防御 + AI 对齐评估；EU AI Act Article 55 强制红队）
+- 岗位：LLM Red Teamer（5/5）+ RAG 投毒防御工程师（5/5）+ AI 对齐评估工程师（5/5），累计 73 岗位 / 15 期 / 58 仓库
+- 产出：
+  - `daily-digest/2026-09-12.md`（44,859B→约 47KB，测试结论已回填）
+  - `docs/30`（累计 70→73 岗位，154,192B）、`docs/20`（58 仓库 v2，37,611B）、`README`（7.1 最终结果）
+  - `scripts/test_cloned_projects.py` 补丁：环境消毒 + stars 缓存 fallback + 进程内 py_compile（1h34m→14m51s）
+  - `logs/automation-2026-09-12.log`
+- 对标仓库：promptfoo/promptfoo（25,035★ TS，102/102 ✅）/ NVIDIA-NeMo/Curator（1,761★ Py，971/971 ✅ + 20 ipynb）/ openai/evals（19,437★ Py，353/353 ✅ + 5 ipynb）
+- 双通道同步：
+  - GitHub：commit 14157df，push 33d2bbc..14157df RC=0（Clash 代理；需 export PATH 加 Git mingw64/bin 修 libcurl-4.dll）
+  - ima 7498617266899781：文件 1/3（daily-digest 44,859B）+ 2/3（docs/30 154,192B）推送成功；**文件 3/3（docs/20 37,611B）FAILED——会话过长 token 过期（unauthorized），下期需重推 W37-克隆企业级项目测试报告.md**
+- 重大事故（详见 logs/automation-2026-09-12.log）：
+  1. 托管 Python 3.13.12 被宿主运行时迁移破坏（Lib/ 标准库缺失，python -E 也不能跑）→ v1 全量测试数据作废（py_compile 全 0 + API 全 403）→ 改系统 Python 3.11.1 重跑 v2
+  2. 会话 shell 环境不稳定（shim dirname not found、coreutils 随机缺失、PowerShell 5.1 UTF-8 中文匹配失效）
+  3. GitHub API 限流兜底：shields.io JSON 端点取 star 数
+- 遗留：ima 推 docs/20（37,611B）+ ima 旧周前缀残留人工清理（W36/W35 系列）
+
 ## 2026-09-11（W37 周五 · 第 14 期）
 - 模式：工作日（周五，W37 第 5 天，第 14 期）
 - 主线：AI 工作流编排双栈（可视化 + 低代码）+ AI 应用运维（AIOps）

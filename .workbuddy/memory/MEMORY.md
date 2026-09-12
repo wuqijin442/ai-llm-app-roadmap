@@ -49,3 +49,14 @@ B 级 Python 编译通过率不是「代码质量指标」，而是「**依赖�
 
 实测（qwen3.8:27b）：hardened 与 naive 两组提示词都是 9/9 通过 →
 **权限模型 > 输入隔离 > 审计 > 提示词**。别把安全感建立在 system prompt 上。
+
+### 批量测试 harness 的三道防线（09-12 事故沉淀）
+
+1. **跑之前先验解释器**：宿主会做运行时迁移，托管 Python 可能 Lib/ 缺失（`python -E` 也起不来）；
+   全量测试 1h34m 跑完才发现数据全废。开跑前先 `python -c "import sys"` 探活。
+2. **子进程必须环境消毒**：PYTHONHOME/PYTHONPATH 被注入 shim 目录会令所有 py_compile 子进程
+   静默全灭（0/N）。进程内 `py_compile.compile(fp, doraise=True)` 既根除环境继承又快 7 倍
+   （1h34m→14m51s）。已固化进 scripts/test_cloned_projects.py。
+3. **外部 API 必有缓存兜底**：GitHub API 限流（403）时回读 `.tmp_automation/stars_cache.json`；
+   取 star 数还可用 shields.io JSON（img.shields.io/github/stars/<repo>.json）绕过限流。
+   旧报告数据可从 `git show HEAD:<file>` 抢救。
