@@ -1,0 +1,52 @@
+# 自动化执行日志 · 2026-09-14（W38 周一 · 第 16 期）
+
+## 概要
+- 模式：工作日（周一，W38 第 1 天，第 16 期）
+- 主线：Agent 的耳朵、嘴巴与离线小脑——实时语音 Agent 双栈（LiveKit Agents + Pipecat）+ 端侧/边缘 LLM 工程（llama.cpp）
+- 岗位：Voice AI Engineer / 实时语音 Agent 工程师（5/5）+ 端侧/边缘 LLM 工程师（4/5）+ Conversational AI Designer（3/5），累计 76 岗位 / 16 期 / 61 仓库
+
+## 采集
+- WebSearch 4 轮（voice AI jobs 2026 / on-device LLM edge jobs 2026 / 国内语音 Agent JD / NPU）
+- 来源：innovarerecruitment.com（417 公司 / 2,055 在招 / 656 薪资点）、speechtechjobs.com（+45% YoY / $180K–$250K）、callsphere.ai（+88% YoY / 76% 填不满 / 特化溢价 30–50%）、theaimarketpulse.com（<500ms 延迟约束）、techfuturism.com（$48.17/hr / Conversational AI Designer 案例）、edgecomputingjobs.co.uk（UK £45K–£180K）、itcompare.pl（NPU 50 TOPS / 溢价 30–45%）、aitechconnect.in（可复现数字门槛）、国内：高德 30–55K / 端侧语音 Agent 40–70K 深圳 / 字节火山方舟 100–200K×15 薪 / MCP 与语音 Agent 合流 JD
+
+## 克隆（3/3 成功，codeload tarball fallback）
+- livekit/agents（14,170★ Python）→ livekit-agents ✅
+- pipecat-ai/pipecat（15,499★ Python）→ pipecat ✅
+- ggml-org/llama.cpp（128,102★ C++）→ llama.cpp ✅（本仓库历史第四高星：n8n 202.9k / langflow 154.6k / dify 154.0k / llama.cpp 128.1k）
+- 路径全部先经 GitHub API 校验（04:05 限流前），未凭印象猜路径
+- 过程坑：shim coreutils 随机缺失（ls/mv/head 127）改用 node fs；tar 首次静默失败产生空目录 + 扁平散落文件（59 项隔离到 cloned_projects/.trash_flat_0914/）；rename EPERM 重试自愈
+
+## 测试
+- 解释器探活：托管 3.13.12 再次损坏（encodings 缺失，与 09-12/09-13 同因）；3.13.12.old 与 hermes venv 已消失；改用 WindowsApps Python 3.11.1（py launcher 检出 3.14 备用）
+- 全量 61 仓库重跑：15m15s，RC=0
+- 本期结果：pipecat 1,343/1,343 ✅ / llama.cpp 219/219 ✅（B 级仅 Python 子模块）/ livekit-agents 1,042/1,044 ⚠️（失败 2 为上游 main 真实缺陷：elevenlabs stt.py 参数 secondary_languages 重复定义，非环境问题）
+- GitHub API 限流 403（61 仓库元数据耗尽未认证配额）→ stars 用限流前 API 实测值回填 docs/20
+- docs/20 重写 61 仓库（39,545B）
+
+## 回写
+- daily-digest/2026-09-14.md（36,243B，第 16 期 3 岗位 + 三·补测试结论回填）
+- docs/30（164,576B：第 16 期 3 岗位表 + 累计统计 76 岗位 / 16 期 / 61 仓库 + 十六层视角 + 第 16 期主线/关键信号行；校正仓库总数行 55→61，上期漏改）
+- README 第 7 节（61 个 + 第 16 期表 + breakdown + cloned_projects 注释 58→61）
+- scripts/test_cloned_projects.py REPOS +3（第 16 期注释）
+
+## 双通道
+- GitHub：commit af3553d 本地成功；push RC=128（Clash 7890 ECONNREFUSED，凌晨未开代理；直连 443 挂起 32 分钟被杀）→ 按规则停止重试，**待补推**（现 ahead 3：df032ed + 21fb944 + af3553d）
+- ima 7498617266899781：3/3 串行成功（零 403，create_media → cos_sdk_put.js（Buffer 版）→ add_knowledge）
+  - W38-daily-digest-2026-09-14.md（36,243B）state=2 / 100%
+  - W38-岗位全景与学习路径索引.md（164,576B）state=2 / 100%
+  - W38-克隆企业级项目测试报告.md（39,545B）state=1 / 77%（解析中，异步）
+  - cos-upload.cjs 仍缺失，沿用 .tmp_automation/cos_sdk_put.js（已改 Buffer Body）
+
+## 待人工清理（ima 旧周前缀残留，API 无删除接口）
+- W36-克隆企业级项目测试报告.md（27,783）
+- W36-岗位全景与学习路径索引.md（76,470）
+- W36-2026-W36-周报.md（30,341）
+- W36-daily-digest-2026-09-04.md（34,374）
+- W35 系列（历史清单见 09-08 log）
+- W37-岗位全景与学习路径索引.md（155,142）/ W37-克隆企业级项目测试报告.md（37,611）（已被 W38 版取代，可一并清理）
+
+## 待办（W38）
+- [ ] GitHub push 补推（代理可用时，ahead 3）
+- [ ] W37 周报 P1 修订：docs/04 RAG 投毒防御 + docs/05 工作流编排+A2A + docs/10 新职业与作品集策略
+- [ ] 项目 p7-rag-poison-lab 启动（W37 周报最高优先级建议）
+- [ ] ima 旧周前缀残留人工清理（见上清单）
