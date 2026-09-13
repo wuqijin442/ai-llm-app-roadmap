@@ -19,7 +19,7 @@ cos.putObject(
     Bucket: arg('bucket'),
     Region: arg('region'),
     Key: arg('cos-key'),
-    Body: fs.createReadStream(arg('file')),
+    Body: fs.readFileSync(arg('file')),
     ContentType: arg('content-type') || 'text/markdown',
     onProgress: () => {}
   },

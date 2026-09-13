@@ -113,6 +113,10 @@ REPOS = [
     ("promptfoo/promptfoo", "promptfoo", "LLM 红队测试：promptfoo（LLM 红队测试 / 提示注入 / 越狱 / 数据投毒防御框架，TypeScript，LLM Red Teamer 核心基础设施）"),
     ("NVIDIA-NeMo/Curator", "neMo-Curator", "RAG 数据投毒防御：NVIDIA NeMo Curator（数据策展 / 质量评估 / 清洗 / 去重 / 过滤，Python，RAG 投毒防御数据治理侧核心基础设施）"),
     ("openai/evals", "openai-evals", "AI 对齐评估：OpenAI Evals（LLM 对齐评估 / 能力评测 / 安全评测 / 基准测试框架，Python，AI 对齐评估工程师核心基础设施）"),
+    # —— 第 16 期（2026-09-14）：3 个（实时语音 Agent 双栈 + 端侧 LLM 推理底座对标仓库）——
+    ("livekit/agents", "livekit-agents", "实时语音 Agent（SDK 编排侧）：LiveKit Agents（realtime voice AI agents 官方框架，pipeline 编排 + WebRTC + 电话接入，Python，Voice AI Engineer 核心基础设施）"),
+    ("pipecat-ai/pipecat", "pipecat", "实时语音 Agent（框架编排侧）：Pipecat（开源 voice agent / 多模态 / realtime AI 框架，Daily 旗下，Python，Voice AI Engineer 核心基础设施）"),
+    ("ggml-org/llama.cpp", "llama.cpp", "端侧 LLM 推理底座：llama.cpp（纯 C/C++ LLM 推理，GGUF 量化 + CPU/GPU/NPU 混合 + 手机/桌面本地部署，C++，端侧/边缘 AI 工程师核心基础设施）"),
 ]
 
 def api_meta(full_name):

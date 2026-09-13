@@ -1,0 +1,10 @@
+E:\ai-llm-app-roadmap\cloned_projects\ray\python\ray\llm\tests\common\cloud\test_utils.py:96: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  assert await cache.aget("missing") is -1  # First fetch
+E:\ai-llm-app-roadmap\cloned_projects\ray\python\ray\llm\tests\common\cloud\test_utils.py:101: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  assert await cache.aget("missing") is -1  # Cache hit
+E:\ai-llm-app-roadmap\cloned_projects\ray\python\ray\llm\tests\common\cloud\test_utils.py:106: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  assert await cache.aget("missing") is -1  # Should fetch again after expiration
+E:\ai-llm-app-roadmap\cloned_projects\mlflow\examples\gateway\mlflow_models\example.py:24: SyntaxWarning: str indices must be integers or slices, not tuple; perhaps you missed a comma?
+  "input"[
+REPORT WRITTEN: E:\ai-llm-app-roadmap\docs\20-克隆企业级项目测试报告.md
+Bytes: 38897
