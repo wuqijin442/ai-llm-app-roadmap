@@ -117,6 +117,10 @@ REPOS = [
     ("livekit/agents", "livekit-agents", "实时语音 Agent（SDK 编排侧）：LiveKit Agents（realtime voice AI agents 官方框架，pipeline 编排 + WebRTC + 电话接入，Python，Voice AI Engineer 核心基础设施）"),
     ("pipecat-ai/pipecat", "pipecat", "实时语音 Agent（框架编排侧）：Pipecat（开源 voice agent / 多模态 / realtime AI 框架，Daily 旗下，Python，Voice AI Engineer 核心基础设施）"),
     ("ggml-org/llama.cpp", "llama.cpp", "端侧 LLM 推理底座：llama.cpp（纯 C/C++ LLM 推理，GGUF 量化 + CPU/GPU/NPU 混合 + 手机/桌面本地部署，C++，端侧/边缘 AI 工程师核心基础设施）"),
+    # —— 第 17 期（2026-09-15）：3 个（AI 应用交付与协作层：AI 全栈/前端 + Design Engineer + Vibe Coding 对标仓库）——
+    ("vercel/ai", "vercel-ai", "AI 全栈/前端工程师：Vercel AI SDK（TypeScript/React AI 应用构建库，generative UI + 流式 + 工具调用 + 多 provider，AI Frontend/Full-stack Engineer 核心基础设施）"),
+    ("e2b-dev/E2B", "e2b", "Vibe Coding / AI-Assisted Software Engineer：E2B（开源安全代码执行沙箱，AI Agent 运行真实代码 + 文件系统 + 工具，agentic coding 运行时核心基础设施）"),
+    ("microsoft/TypeChat", "typechat", "Design Engineer：TypeChat（用 TypeScript 类型把 LLM 自然语言输出约束为结构化数据，LLM→UI 表单/可视化生成，Design Engineer 核心基础设施）"),
 ]
 
 def api_meta(full_name):

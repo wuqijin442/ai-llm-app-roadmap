@@ -128,9 +128,9 @@ ai-llm-app-roadmap/
 
 ## 七、克隆企业级实战项目（已本地测试）
 
-为把「看教程」升级成「读真源码、跑真项目」，本仓库从 GitHub 高星仓库克隆了 **58 个**覆盖 Agent / RAG / 知识库 / 多 Agent 编排 / 微调 / 部署 / 安全 / MCP / 向量库 / 评测 / 可观测 / 治理 / 具身智能 / 工作流自动化 / LLM 可观测性 / AI 产品工程 / AI 销售 / AI Agent 框架 / Multimodal Agent / AI 教育认证 / Agent 商业化 / MCP 安全 / Token 经济学 / LLM 推理优化 / RAG 数据基础设施 / 评测基础设施 / Prompt 编译 / AI 平台 / OpenTelemetry GenAI / AI 评测 Ops / AI 合规 / AI 部署落地 / MCP 工程 / Agent 记忆层 / Agent 工作流推理引擎 / **AI 基础设施三件套（Ray 分布式计算 + MLflow AI 工程平台 + TGI 推理服务引擎）** / **企业级落地三件套（A2A 协议 + LeRobot 具身智能 + OpenAI Cookbook AI 教育）** / **AI 应用工程栈数据底座（GraphRAG RAG 数据基础设施 + Pydantic 数据契约 + uv 工程化底座）** / **AI 应用产品闭环与 RAG 应用框架深化（RAGFlow RAG 应用框架 + LlamaIndex 文档特化 RAG 框架 + AI 产品经理 AI 应用深化）** / **智能体开发工程师（smolagents HF 官方 500 行级 Agent 框架，CodeAgent 写代码执行 + 沙箱 + 多 Agent 编排 + 智能体开发员国家新职业对标）** / **AI 工作流编排双栈（Langflow 可视化编排 + Coze Studio 低代码编排，AI 工作流设计师 / AI 应用运维 / AI PM 工作流深化核心基础设施）** / **AI 应用安全与对齐三件套（Promptfoo LLM 红队测试 + NeMo Curator 数据策展投毒防御 + OpenAI Evals 对齐评估，LLM Red Teamer / RAG 投毒防御 / AI 对齐评估核心基础设施）**的实战项目，放入 `cloned_projects/`，并编写 `scripts/test_cloned_projects.py` 做**可复现的本地全量测试**。
+为把「看教程」升级成「读真源码、跑真项目」，本仓库从 GitHub 高星仓库克隆了 **64 个**覆盖 Agent / RAG / 知识库 / 多 Agent 编排 / 微调 / 部署 / 安全 / MCP / 向量库 / 评测 / 可观测 / 治理 / 具身智能 / 工作流自动化 / LLM 可观测性 / AI 产品工程 / AI 销售 / AI Agent 框架 / Multimodal Agent / AI 教育认证 / Agent 商业化 / MCP 安全 / Token 经济学 / LLM 推理优化 / RAG 数据基础设施 / 评测基础设施 / Prompt 编译 / AI 平台 / OpenTelemetry GenAI / AI 评测 Ops / AI 合规 / AI 部署落地 / MCP 工程 / Agent 记忆层 / Agent 工作流推理引擎 / **AI 基础设施三件套（Ray 分布式计算 + MLflow AI 工程平台 + TGI 推理服务引擎）** / **企业级落地三件套（A2A 协议 + LeRobot 具身智能 + OpenAI Cookbook AI 教育）** / **AI 应用工程栈数据底座（GraphRAG RAG 数据基础设施 + Pydantic 数据契约 + uv 工程化底座）** / **AI 应用产品闭环与 RAG 应用框架深化（RAGFlow RAG 应用框架 + LlamaIndex 文档特化 RAG 框架 + AI 产品经理 AI 应用深化）** / **智能体开发工程师（smolagents HF 官方 500 行级 Agent 框架，CodeAgent 写代码执行 + 沙箱 + 多 Agent 编排 + 智能体开发员国家新职业对标）** / **AI 工作流编排双栈（Langflow 可视化编排 + Coze Studio 低代码编排，AI 工作流设计师 / AI 应用运维 / AI PM 工作流深化核心基础设施）** / **AI 应用安全与对齐三件套（Promptfoo LLM 红队测试 + NeMo Curator 数据策展投毒防御 + OpenAI Evals 对齐评估，LLM Red Teamer / RAG 投毒防御 / AI 对齐评估核心基础设施）**的实战项目，放入 `cloned_projects/`，并编写 `scripts/test_cloned_projects.py` 做**可复现的本地全量测试**。
 
-> 每日任务按「岗位 → 对标仓库」逐期追加：第 1 期 5 个（2026-08-27）+ 第 2 期 11 个（2026-08-28）+ 第 3 期 9 个（2026-08-29）+ 第 4 期 2 个（2026-08-31）+ 第 5 期 6 个（2026-09-01）+ 第 6 期 3 个（2026-09-02）+ 第 7 期 3 个（2026-09-03）+ 第 8 期 2 个（2026-09-04）+ 第 9 期 3 个（2026-09-05）+ 第 10 期 3 个（2026-09-07）+ 第 11 期 3 个（2026-09-08）+ 第 12 期 2 个（2026-09-09）+ 第 13 期 1 个（2026-09-10）+ 第 14 期 2 个（2026-09-11）+ 第 15 期 3 个（2026-09-12）+ 第 16 期 3 个（2026-09-14）= 累计 61 个。
+> 每日任务按「岗位 → 对标仓库」逐期追加：第 1 期 5 个（2026-08-27）+ 第 2 期 11 个（2026-08-28）+ 第 3 期 9 个（2026-08-29）+ 第 4 期 2 个（2026-08-31）+ 第 5 期 6 个（2026-09-01）+ 第 6 期 3 个（2026-09-02）+ 第 7 期 3 个（2026-09-03）+ 第 8 期 2 个（2026-09-04）+ 第 9 期 3 个（2026-09-05）+ 第 10 期 3 个（2026-09-07）+ 第 11 期 3 个（2026-09-08）+ 第 12 期 2 个（2026-09-09）+ 第 13 期 1 个（2026-09-10）+ 第 14 期 2 个（2026-09-11）+ 第 15 期 3 个（2026-09-12）+ 第 16 期 3 个（2026-09-14）+ 第 17 期 3 个（2026-09-15）= 累计 64 个。
 > 完整测试报告（含每项的命令与输出证据）：[`docs/20-克隆企业级项目测试报告.md`](docs/20-克隆企业级项目测试报告.md)
 > 安全策略：仅克隆官方高星仓库，未引入任何未知/冷门未审计源码；克隆目录已 gitignore，**不入库**，仅元数据与测试报告入库。
 
@@ -310,6 +310,17 @@ ai-llm-app-roadmap/
 
 > 第 16 期 3 个仓库覆盖 3 个岗位（Voice AI Engineer：US +45% YoY / 2,055 在招 / 417 家公司 / 国内高德 30–55K 到字节 100–200K×15 薪 + 端侧 LLM 工程师：UK £45K–£180K / NPU 50–80 TOPS / 比移动开发溢价 30–45% + Conversational AI Designer：语言学背景切入的非工程岗），其中 Voice AI Engineer 由 `livekit-agents` + `pipecat` 双栈对标（中立框架 vs 平台框架），端侧 LLM 工程师由 `llama.cpp` 对标（Ollama 是其封装层，DGX 本地推理经验直接下钻）；ggml-org/llama.cpp 128,102★ 为「端侧/本地 LLM 推理」品类 star 数第一且断层领先，本仓库历史第四高星（仅次于 n8n 202.9k★ / langflow 154.6k★ / dify 154.0k★）。
 > 注：本期 GitHub 直连（git clone）超时挂起，3 仓库均走 `codeload.github.com` tarball 下载成功（无 .git 目录）。完整测试明细以 `docs/20` 为准。
+
+**第 17 期（2026-09-15）· AI 应用的「交付与协作」层（AI 全栈/前端工程师 + Design Engineer + Vibe Coding）**
+
+| 项目 | 定位 | Stars | 本机测试结论 |
+|---|---|---|---|
+| `vercel/ai` | Vercel AI SDK（TypeScript/React AI 应用构建库，generative UI + 流式 SSE + 工具调用 + 多 provider，AI 全栈/前端工程师核心基础设施） | 26.7k | ✅ 5/5 .py 全量编译通过；package.json + pnpm-workspace + turbo（TS 主工程） |
+| `e2b-dev/E2B` | 开源安全代码执行沙箱（AI Agent 运行真实代码 + 文件系统 + 工具，Vibe Coding / agentic coding 运行时核心基础设施） | 13.8k | ✅ 537/537 .py 全量编译通过；pyproject.toml + Dockerfile + package.json |
+| `microsoft/TypeChat` | 用 TypeScript 类型把 LLM 自然语言输出约束为结构化数据（LLM→UI 表单/可视化生成，Design Engineer 核心基础设施） | 8.7k | ✅ 56/56 .py 全量编译通过 + 7 .ipynb 合法；package.json + tsconfig |
+
+> 第 17 期 3 个仓库覆盖 3 个岗位（AI 全栈/前端工程师：streaming SSE 渲染 + generative UI + Vercel AI SDK + optimistic UI / Design Engineer：会写代码的设计师，Next.js + Framer Motion + v0 + TypeChat LLM→结构化→UI / Vibe Coding：人+AI 协作编程，Cursor/Claude Code/Windsurf/Copilot/Aider + E2B 安全代码执行沙箱），其中 AI 全栈/前端工程师由 `vercel/ai` 对标（AI Frontend 核心库），Design Engineer 由 `microsoft/TypeChat` 对标（LLM 输出结构化为 UI 的数据契约层），Vibe Coding 由 `e2b-dev/E2B` 对标（agent 运行真实代码的沙箱运行时）；vercel/ai 26,733★ 为「AI 应用前端 SDK」品类 star 数第一（对照 microsoft/TypeChat 8,684★ 是「LLM→结构化类型」）、e2b-dev/E2B 13,798★ 为「AI 代码执行沙箱」品类事实标准。
+> 注：本期 GitHub 直连（git clone）经 `codeload.github.com` tarball 下载成功（vercel/ai 111M / e2b-dev/E2B 31M / microsoft/TypeChat 1.6M，均无 .git 目录）。完整测试明细以 `docs/20` 为准。
 
 > 第 9 期 3 个仓库覆盖 3 个岗位（AI Infrastructure Engineer、AI Platform Engineer 深化、LLM Inference Engineer 三大引擎特化），其中 AI Infrastructure 由 `ray` + `vllm` + `sglang` + `tgi` 共同对标，AI Platform 由 `mlflow` + `langfuse` + `deepeval` + `ragas` + `otel-collector` 共同对标，LLM Inference 由 `tgi` + `vllm` + `sglang` 共同对标；ray 43.7k stars 为「分布式计算引擎」品类 star 数第一、mlflow 27.8k stars 为「AI 工程平台」品类 star 数第一、tgi 10.9k stars 为「HF 官方推理服务引擎」第一。
 > 注：本期 GitHub 直连（git clone）全部失败（curl 28 Failed to connect to github.com:443），沿用第 6/8 期 fallback，三仓库均走 `codeload.github.com` tarball 下载成功（ray 198MB / mlflow 291MB / tgi 3.1MB），非 git 元数据克隆（无 .git 目录）。完整测试明细以 `docs/20` 为准。
