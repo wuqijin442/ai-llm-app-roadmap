@@ -1,0 +1,48 @@
+# 自动化执行日志 · 2026-09-15（第 17 期 / W38 / 周二 / 工作日模式）
+
+## 执行概览
+- 期数：第 17 期（累计 17 期）
+- 模式：工作日模式（AI 受影响岗位日更）
+- 主题：AI 应用的「交付与协作」层 —— AI 全栈/前端工程师 + Design Engineer + Vibe Coding（人+AI 协作编程）
+- 视角：EMS 后端/前端工程师转岗 AI，Harness（执行与治理层）主线
+-  interpreters：WindowsApps Python 3.11.1（托管 3.13.12 仍缺失 encodings，沿用）
+
+## 一、岗位采集（3 个）
+1. AI 全栈/前端工程师：streaming SSE 渲染 + generative UI + Vercel AI SDK + optimistic UI + 客户端错误/重试/降级
+   - 数据源：myengineeringpath.dev、meritshot、脉脉高聘、Stack Overflow 2026、Vercel AI SDK 官方文档
+2. Design Engineer：会写代码的设计师，Next.js + Framer Motion + v0 + TypeChat（LLM→结构化→UI）
+   - 数据源：Vercel Design Engineering JD、natively.dev
+3. Vibe Coding / AI-Assisted Software Engineer：Cursor / Claude Code / Windsurf / Copilot / Aider + E2B 安全代码执行沙箱
+   - 数据源：vibehackers.io、llmhire.com、allinoneaicenter.com
+
+## 二、对标仓库克隆 + 本地测试（3 个，codeload tarball 全部成功）
+| 仓库 | Stars | 语言 | 本机测试（B 级 Python 全量编译） |
+|---|---|---|---|
+| vercel/ai → vercel-ai | 26,733 | TypeScript | 5/5 .py 通过；package.json + pnpm-workspace + turbo |
+| e2b-dev/E2B → e2b | 13,798 | Python | 537/537 .py 通过；pyproject.toml + Dockerfile + package.json |
+| microsoft/TypeChat → typechat | 8,684 | TypeScript | 56/56 .py 通过 + 7 .ipynb 合法；package.json + tsconfig |
+
+- 全量 64 仓库测试脚本 `scripts/test_cloned_projects.py` 重跑通过（RC=0，16m11s），`docs/20` 已重写（40,743 字节，含 3 新仓库 100% 编译结论）。
+- 3 仓库均经 `codeload.github.com` tarball 下载（vercel/ai 111M / e2b 31M / TypeChat 1.6M），无 .git 目录。
+
+## 三、文档同步
+- 产出 `daily-digest/2026-09-15.md`：第 17 期日更（视角/主线/市场总盘/3 岗位拆解/前沿信号/三·补 clone+test 表）。
+- 追加 `docs/30-岗位全景与学习路径索引.md` 第 17 期节 + 累计统计（岗位 76→79、期数 16→17、仓库 61→64）。
+- 回写 `README.md` 第 7 节：总数 58→64，链「+ 第 17 期 3 个 = 累计 64」，新增第 17 期清单表。
+- `scripts/test_cloned_projects.py` REPOS 列表追加 3 条（vercel/ai、e2b-dev/E2B、microsoft/TypeChat）。
+
+## 四、双通道同步
+(A) GitHub：
+- commit d45a928 完成（6 files changed, +294 / -112），仅暂存交付物，未暂存 .tmp_automation 凭证/临时脚本。
+- push：Clash 代理 127.0.0.1:7890 当前不可用（首次 RC=128：Could not connect to server）；直连 github.com:443 亦不可达（已超时终止，7m45s）。
+- 状态：本地提交已落盘，push 待补推。本地现领先远程 4 个提交（历史 ahead 3 + 本期 1），待 Clash 可用后 `git push origin main`。
+
+(B) ima 知识库（7498617266899781「ai study road」）串行推送 3/3 成功：
+- W38-daily-digest-2026-09-15.md  OK（create_media → COS 200 → add_knowledge）
+- W38-岗位全景与学习路径索引.md    OK
+- W38-克隆企业级项目测试报告.md    OK（首次 COS 403 InvalidAccessKeyId，重取 create_media 凭证后重试成功）
+
+## 五、遗留 TODO（跨期，非本期核心）
+- GitHub push 补推（本地领先远程 4）；Clash 可用后执行。
+- W37 报告 P1 修订（沿用）。
+- ima 旧周前缀清理（W35 / W36 / W37 残留，手动）。

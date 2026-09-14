@@ -1,5 +1,44 @@
 # 自动化任务执行记忆（automation-1787809410721）
 
+## 2026-09-15（W38 周二 · 第 17 期）
+- 模式：工作日（周二，W38 第 2 天，第 17 期）
+- 主线：AI 应用的「交付与协作」层（AI 全栈/前端工程师 + Design Engineer + Vibe Coding）
+- 岗位：AI 全栈/前端工程师（5/5）+ Design Engineer（3/5）+ Vibe Coding（5/5），累计 79 岗位 / 17 期 / 64 仓库
+- 对标仓库：vercel/ai（26,733★ TS，5/5 .py）/ e2b-dev/E2B（13,798★ Py，537/537 .py）/ microsoft/TypeChat（8,684★ TS，56/56 .py + 7 .ipynb），codeload tarball 全部成功
+- 全量测试：scripts/test_cloned_projects.py 重跑 RC=0（16m11s），docs/20 重写（40,743B，64 仓库）
+- 产出：daily-digest/2026-09-15.md + docs/30 追加 + README §7（58→64）+ scripts REPOS +3
+- 双通道：
+  - GitHub：commit d45a928 本地成功；push RC=128（Clash 7890 离线）+ 直连 443 挂起 7m45s 被杀 → **待补推，现 ahead 4**
+  - ima：3/3 串行成功（docs/20 首次 COS 403 重取凭证后成功）；W38-daily-digest / W38-岗位索引 / W38-克隆报告
+- 安全：未 git add -A，避免提交 .tmp_automation 内 cos_cred_*.json 等凭证 / 临时脚本
+- 待办（沿用）：GitHub push 补推（ahead 4）/ W37 P1 修订 / ima 旧周前缀清理（W35/W36/W37）
+
+## 2026-09-14（W38 周一 · 第 16 期）
+- 模式：工作日（周一，W38 第 1 天，第 16 期）
+- 主线：实时语音 Agent 双栈（LiveKit Agents + Pipecat）+ 端侧/边缘 LLM 工程（llama.cpp）
+- 岗位：Voice AI Engineer（5/5）+ 端侧/边缘 LLM 工程师（4/5）+ Conversational AI Designer（3/5），累计 76 岗位 / 16 期 / 61 仓库
+- 产出：
+  - `daily-digest/2026-09-14.md`（36,243B，3 岗位 / 3 仓库，测试结论已回填）
+  - `docs/30`（164,576B：76 岗位 / 16 期 / 61 仓库 + 十六层视角 + 校正仓库总数行 55→61 上期漏改）
+  - `README` 第 7 节（61 个 + 第 16 期表）；`scripts/test_cloned_projects.py` REPOS +3
+  - `docs/20`（39,545B，61 仓库，stars 用限流前 API 实测值回填）
+  - `logs/automation-2026-09-14.log`
+- 对标仓库：livekit/agents（14,170★ Py，1,042/1,044，失败 2 为上游 elevenlabs stt.py 参数重复定义缺陷）/ pipecat-ai/pipecat（15,499★ Py，1,343/1,343）/ ggml-org/llama.cpp（128,102★ C++，219/219，本仓库历史第四高星：n8n/langflow/dify 之后）
+- 双通道：
+  - GitHub：commit af3553d 本地成功；push RC=128（Clash 7890 凌晨 ECONNREFUSED，直连 443 挂起 32min 被杀）→ **待补推，现 ahead 3**
+  - ima：3/3 串行成功零 403；W38-daily-digest（36,243）/W38-岗位索引（164,576）state=2/100%，W38-克隆报告（39,545）77% 解析中
+- 关键踩坑沉淀：
+  1. 托管 Python 3.13.12 第三次损坏（encodings），3.13.12.old 与 hermes venv 已消失 → **WindowsApps Python 3.11.1**（`C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/python.exe`）为新稳定解释器；py launcher 另有 3.14
+  2. shim coreutils 随机缺失加剧：ls/mv/head 全 127 → 一律 node fs
+  3. tar 首次提取静默失败产生空目录 + 59 项扁平散落文件（livekit tgz 根异常）→ 已隔离 `cloned_projects/.trash_flat_0914/`；后续解压先 `tar -tzf` 验根再解压
+  4. cos_sdk_put.js 已改 Buffer Body；cos-upload.cjs 仍缺失
+  5. GitHub API 未认证配额 60/hr 被 61 仓库元数据拉取耗尽 → 新仓库 stars 必须在跑测试脚本**之前**单独取好
+- 待办（W38）：
+  - [ ] GitHub push 补推（ahead 3：df032ed / 21fb944 / af3553d）
+  - [ ] W37 周报 P1 修订：docs/04 + docs/05 + docs/10
+  - [ ] 项目 p7-rag-poison-lab 启动
+  - [ ] ima 旧周前缀残留人工清理（W35/W36 全部 + W37-岗位索引 + W37-克隆报告，log 有清单）
+
 ## 2026-09-13（W37 周日 · 周汇总）
 - 模式：周日总结（2026-09-07 ~ 09-12，第 10/11/12/13/14/15 期，6 期 16 岗位 / 14 仓库）
 - 产出：
@@ -446,3 +485,8 @@
 - 待办（W36）：
   - 测试脚本运行完成后回写 docs/20（自动）
   - 周日汇总进 weekly/2026-W36-周报.md
+
+## 2026-09-14 08:20（周一 · 用户指令「补齐ima」）
+- 核对知识库 51 条目 vs 本地：今晨第 16 期 W38 三件（digest/索引/克隆报告）已全部同步，W37 六期 digest 除 09-10 外齐全。
+- 补推唯一缺口：W37-daily-digest-2026-09-10.md（第 13 期，19,739B）→ 成功，media_state=2 / parse_progress=100 / file_size 一致。
+- 教训沉淀：09-10 期当日推送遗漏未被发现，后续每期推送后应把「当期文件命中清单」写进自动化记忆，便于次日核对。
