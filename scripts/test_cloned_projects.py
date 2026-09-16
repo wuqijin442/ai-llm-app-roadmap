@@ -121,6 +121,10 @@ REPOS = [
     ("vercel/ai", "vercel-ai", "AI 全栈/前端工程师：Vercel AI SDK（TypeScript/React AI 应用构建库，generative UI + 流式 + 工具调用 + 多 provider，AI Frontend/Full-stack Engineer 核心基础设施）"),
     ("e2b-dev/E2B", "e2b", "Vibe Coding / AI-Assisted Software Engineer：E2B（开源安全代码执行沙箱，AI Agent 运行真实代码 + 文件系统 + 工具，agentic coding 运行时核心基础设施）"),
     ("microsoft/TypeChat", "typechat", "Design Engineer：TypeChat（用 TypeScript 类型把 LLM 自然语言输出约束为结构化数据，LLM→UI 表单/可视化生成，Design Engineer 核心基础设施）"),
+    # —— 第 18 期（2026-09-17）：3 个（AI 应用数据生产链：标注 + 合成 + 领域语料对标仓库）——
+    ("HumanSignal/label-studio", "label-studio", "AI Trainer/数据标注负责人：Label Studio（开源多类型数据标注与标注平台，图像/文本/音频/NLP 标注 + RLHF 偏好数据生产，SFT/RLHF/评测数据生产核心基础设施）"),
+    ("argilla-io/distilabel", "distilabel", "合成数据工程师：Distilabel（Argilla 合成数据与 LLM 蒸馏 pipeline 框架，用 LLM 生成偏好/训练/评测数据，Synthetic Data Engineer 核心基础设施）"),
+    ("DS4SD/docling", "docling", "AI 垂域知识工程师/领域语料：Docling（IBM 文档解析 → AI-ready 结构化语料，PDF/Office/HTML/图片 → JSON/MD，RAG + 微调语料生产核心基础设施）"),
 ]
 
 def api_meta(full_name):
