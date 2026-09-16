@@ -1,0 +1,55 @@
+# 自动化执行日志 · 2026-09-17（W38 周四 · 第 18 期）
+
+## 模式与主线
+- 工作日（周四，W38 第 4 天，第 18 期）
+- 主线：**AI 应用的数据生产链：从标注到合成到领域语料**
+- Harness 主线落点：docs/05「数据质量门控（治理层输入端）」——数据生产治理，与第 4 期数据底座、第 15 期投毒防御形成完整数据 lineage
+
+## 采集岗位（3 个，累计 82 岗位 / 18 期）
+| 岗位 | 转岗适配度 | 对标仓库 | stars | 主语言 |
+| --- | --- | --- | --- | --- |
+| AI Trainer / 数据标注负责人（国家职业标准五级，RLHF 偏好数据生产） | 5/5 | HumanSignal/label-studio | 28,278 | TypeScript |
+| 合成数据工程师（Gartner 60% by 2026，合规数据供给） | 4/5 | argilla-io/distilabel | 3,394 | Python |
+| AI 垂域知识工程师（领域语料 → RAG+微调，海尔新能源 JD） | 5/5 | DS4SD/docling | 66,507 | Python |
+
+## 对标仓库 clone + test（3 个，累计 67 仓库）
+- 克隆：`git clone --depth 1` 经 Clash 代理（127.0.0.1:7890）成功，3 仓库均有 .git 目录
+- 路径校验：用 GitHub API + 代理核验（label-studio/label-studio、docling-project/docling 经校验为 404，已走官方正确路径）
+- B 级编译（py_compile 全量）：label-studio 734/734、distilabel 368/368、docling 483/483，全部通过；distilabel +4 .ipynb 合法、docling +24 .ipynb 合法
+- REPOS 登记：scripts/test_cloned_projects.py 追加 3 条
+
+## 全量测试 harness
+- 命令：scripts/test_cloned_projects.py（后台任务 NdqQag）
+- 结果：RC=0，耗时 19m7s，docs/20 重写为 67 仓库（42,424B）
+- 限流回填：本次运行 GitHub API 未认证配额 60/hr 耗尽，9 个仓库（3 新 + 6 旧：livekit/agents、pipecat-ai/pipecat、ggml-org/llama.cpp、vercel/ai、e2b-dev/E2B、microsoft/TypeChat）stars 显示为 None
+  - 已用 shields.io JSON 端点取真实 stars + 主语言，手填回 docs/20（label-studio 28278/TS、distilabel 3394/Py、docling 66507/Py、livekit 14170/Py、pipecat 15499/Py、llama.cpp 128102/C++、vercel/ai 26733/TS、e2b 13798/Py、TypeChat 8684/TS）
+  - 已 seed .tmp_automation/stars_cache.json（9 条），后续运行可经缓存兜底防回归
+  - 根因：脚本缓存仅覆盖「曾成功拉取」的仓库；尾部队列（position>60）恒在配额后，永不被缓存 → 已记入本日志待脚本改进
+
+## 一致性回查（README / docs/20 / docs/30 三方）
+- README §7：累计 67 个（期数累加行 + 第 18 期 3 仓库表）✅
+- docs/20：67 个仓库段、0 个 stars=None ✅
+- docs/30：累计岗位条目 82、对标仓库 clone+test 总数 67（已修正旧行 61→67，补第 17/18 期）、适配度 5/5 补 AI Trainer + AI 垂域知识工程师、4/5 补合成数据工程师 ✅
+
+## 双通道同步
+### A. GitHub（best-effort，退出码判定）
+- commit b01aca2：「[2026-09-17] 每日AI岗位学习内容获取（第18期：AI应用数据生产链）」5 文件 +249/-89
+  - 已暂存：README.md / docs/20 / docs/30 / scripts/test_cloned_projects.py / daily-digest/2026-09-17.md（**未用 git add -A**，避免提交 .tmp_automation 内 cos_cred_*.json 等凭证）
+- push：直连 `git push origin main` RC=128（Connection was reset，GitHub 443 不可达）→ 代理推送 `git -c http.proxy=...:7890 push` 挂起 18m（0 字节输出、ahead 1 不变，确认为连接挂死）已被杀
+- **状态：PENDING**（本地 main 领先 origin/main 1 个 commit，待下个自动化或手动补推；不循环重试）
+
+### B. ima 知识库「ai study road」（id=7498617266899781，共享库）— 3/3 串行成功
+- 严格串行（create_media → COS 上传 → add_knowledge 逐步完成后再下一个），REPLACE 去重
+- W38-daily-digest-2026-09-17.md → 27,401B，media_state 入库 ✅
+- W38-岗位全景与学习路径索引.md → 185,646B，media_state 入库 ✅
+- W38-克隆企业级项目测试报告.md → 43,413B，media_state 入库 ✅
+- 临时 COS 凭证文件（cre_*.json）已清理，未入库
+
+## 安全
+- 未 git add -A；.tmp_automation/ 内含 cos_cred_*.json 等凭证，均未提交
+- 临时 create_media 凭证（cre_dd/cre_docs30/cre_docs20.json）已删除
+
+## 待办（下期/手动）
+- [ ] GitHub push 补推（本地 ahead 1：b01aca2；建议探测 7890 代理后重试）
+- [ ] ima 旧周前缀残留人工清理（W35/W36/W37 系列，无删除接口，需人工）
+- [ ] 脚本改进：尾部队列 GitHub API 限流 → 改用 shields.io 兜底 + 缓存预填，避免 stars=None
