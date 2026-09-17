@@ -127,6 +127,38 @@ REPOS = [
     ("DS4SD/docling", "docling", "AI 垂域知识工程师/领域语料：Docling（IBM 文档解析 → AI-ready 结构化语料，PDF/Office/HTML/图片 → JSON/MD，RAG + 微调语料生产核心基础设施）"),
 ]
 
+def _parse_shields_count(s):
+    """shields.io 把 stars 渲染成 '28.3k' / '1.2m' 这类人类可读串，解析回整数。"""
+    s = str(s).strip().lower().replace(",", "")
+    try:
+        if s.endswith("k"):
+            return int(float(s[:-1]) * 1000)
+        if s.endswith("m"):
+            return int(float(s[:-1]) * 1_000_000)
+        return int(float(s))
+    except Exception:
+        return None
+
+
+def _shields_meta(full_name):
+    """GitHub API 60/hr 限流兜底：shields.io 不计入该配额，可稳定取 stars / 主语言。"""
+    try:
+        su = f"https://img.shields.io/github/stars/{full_name}.json"
+        with urllib.request.urlopen(urllib.request.Request(su, headers={"User-Agent": "test-harness"}), timeout=15) as r:
+            sd = json.load(r)
+        val = sd.get("value") or sd.get("message") or ""
+        stars = _parse_shields_count(val)
+        lu = f"https://img.shields.io/github/languages/top/{full_name}.json"
+        with urllib.request.urlopen(urllib.request.Request(lu, headers={"User-Agent": "test-harness"}), timeout=15) as r:
+            ld = json.load(r)
+        lang = ld.get("message") or ld.get("value") or None
+        if stars is None and lang is None:
+            return None
+        return stars, lang
+    except Exception:
+        return None
+
+
 def api_meta(full_name):
     url = f"https://api.github.com/repos/{full_name}"
     try:
@@ -138,6 +170,14 @@ def api_meta(full_name):
         _save_cache()
         return meta
     except Exception as e:
+        # 限流兜底：shields.io 不计 GitHub 60/hr 配额，可稳定取到 stars/主语言
+        s_meta = _shields_meta(full_name)
+        if s_meta is not None and (s_meta[0] is not None or s_meta[1] is not None):
+            stars, lang = s_meta
+            meta = (stars, lang, "（shields.io 兜底获取 stars/语言，描述暂缺）")
+            _STARS_CACHE[full_name] = list(meta)
+            _save_cache()
+            return meta
         if full_name in _STARS_CACHE:
             c = _STARS_CACHE[full_name]
             return c[0], c[1], str(c[2]) + "（缓存值，API 限流回读）"
