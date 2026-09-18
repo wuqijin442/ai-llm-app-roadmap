@@ -1,0 +1,41 @@
+# 自动化执行日志 · 2026-09-18（W38 周五 · 第 19 期）
+
+## 模式
+工作日（周五，W38 第 5 天，第 19 期）
+
+## 主线
+AI 模型的「训练 → 服务 → 运维」交付链（模型交付工程化）
+——前 18 期讲「模型外的系统」，第 19 期补「模型本身怎么变成生产资产」：
+① LLM 微调/训练工程师（DGX 本地 Qwen3.8:27b + Unsloth 微调，领域数据→领域模型）
+② 模型服务工程师（vLLM/BentoML 封装高并发低延迟推理 API，本质=带 GPU 的后端服务）
+③ MLOps/LLMOps 工程师（Metaflow 串训练→评估→部署→监控流水线，3:1 供需缺口）
+三者构成 Harness「模型资产生命周期治理」闭环。
+
+## 岗位（3 个，均 5/5）
+1. LLM 微调/训练工程师：careermatch entry ~$82K / median $136K / top $215K，+40% YoY；techwelo ML Engineer 资深 $230–270K；aidevdayindia fine-tuning 专家 $150–250K+；印度 median ₹26 LPA。对标 unsloth（76,274★）。
+2. 模型服务工程师：国内「大模型推理部署工程师」2.5–4 万×15 薪（zrc-sme）；「AI 模型服务化工程师」要求 vLLM/Triton+容器+K8s+OTel（quanzhi）；US LLM Inference base $160–260K（jobsbyculture）。对标 bentoml（8,847★）。
+3. MLOps/LLMOps 工程师：US base $110–145K / senior $230–320K TC / LLMOps 专项 $280–350K（jobsbyculture）；llmhire mid $170–240K / staff $290–420K；中位总包 $241K（landed）；3:1 供需缺口。对标 metaflow（10,273★）。
+累计：85 岗位 / 18 期 / 70 仓库。
+
+## 企业级对标仓库 clone + test（必做）
+- 3 仓库真实克隆（Clash 代理 127.0.0.1:7890 本时段不可用 → codeload.github.com tarball fallback，实测出口可用，无 .git 目录）：
+  - unslothai/unsloth：2718 .py，2718/2718 ✅（0 失败），1 .ipynb 合法，Dockerfile ✅
+  - bentoml/BentoML：441 .py，441/441 ✅（0 失败），docker-compose + Dockerfile ✅
+  - Netflix/metaflow：712 .py，712/712 ✅（0 失败），6 .ipynb 合法
+- scripts/test_cloned_projects.py 已登记 3 条 REPOS（在 DS4SD/docling 之后）。
+- 全量 70 仓库重跑：后台任务 zsS4Ys，托管 Python 3.13.12，**RC=0，耗时 19m40s**。
+- B 级总通过率 **99.983%**（59,693/59,703，67 个 Python 仓库；失败 10 个集中在 langflow 等历史仓库，非本期新增）。
+- docs/20 自动重写（43,512 字节，含本期 3 仓库条目）。
+
+## 文档同步
+- daily-digest/2026-09-18.md：3 岗位 schema 完整 + 三·补测试结论表回填（3 仓全 100% 编译通过 + 关键发现）。
+- docs/30-岗位全景与学习路径索引.md：索引条目补第 19 期 3 岗表 + 累计统计（85 岗/18 期/70 仓）+ 5/5 补 3 岗（MLOps/LLM Fine-tuning 由 4/5 升级 5/5）+ 十九层视角 + 关键新增信号。
+- README.md 第 7 节：标题 64→70（修历史不一致）、累计 67→70 + 第 19 期 3 仓表 + 模型交付工程化三件套描述。
+
+## 双通道同步
+- GitHub：commit（仅 stage 内容文件，未含 .tmp_automation 凭证/tarball）→ push（代理 127.0.0.1:7890，按退出码判定）。[见下方结果]
+- ima 知识库 7498617266899781：W38- 前缀 3 文件串行推送（daily-digest / 岗位索引 / 克隆报告），REPLACE 去重，核对 file_size。
+
+## 纪律校验
+- README 第 7 节项目总数（70）= docs/20（70）= docs/30（70）✅ 三方一致。
+- 未提交 .tmp_automation（含 cos_cred_*.json / cred_*.json 凭证）✅。

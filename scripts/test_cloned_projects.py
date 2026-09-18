@@ -125,6 +125,10 @@ REPOS = [
     ("HumanSignal/label-studio", "label-studio", "AI Trainer/数据标注负责人：Label Studio（开源多类型数据标注与标注平台，图像/文本/音频/NLP 标注 + RLHF 偏好数据生产，SFT/RLHF/评测数据生产核心基础设施）"),
     ("argilla-io/distilabel", "distilabel", "合成数据工程师：Distilabel（Argilla 合成数据与 LLM 蒸馏 pipeline 框架，用 LLM 生成偏好/训练/评测数据，Synthetic Data Engineer 核心基础设施）"),
     ("DS4SD/docling", "docling", "AI 垂域知识工程师/领域语料：Docling（IBM 文档解析 → AI-ready 结构化语料，PDF/Office/HTML/图片 → JSON/MD，RAG + 微调语料生产核心基础设施）"),
+    # —— 第 19 期（2026-09-18）：3 个（AI 模型交付链：微调/训练 + 模型服务 + MLOps 治理对标仓库）——
+    ("unslothai/unsloth", "unsloth", "LLM 微调/训练工程师：Unsloth（本地 LLM 微调加速器，LoRA/QLoRA 2x 速度 + 70% 显存，支持 Qwen3.8/DeepSeek/GGUF，DGX 本地训练核心基础设施）"),
+    ("bentoml/BentoML", "bentoml", "模型服务工程师：BentoML（模型推理 API + 任务队列 + 多模型 pipeline + 自适应批处理 + 容器化部署，model serving 核心基础设施）"),
+    ("Netflix/metaflow", "metaflow", "MLOps/LLMOps 工程师：Metaflow（生产级 ML/LLM 流水线编排 + 版本/血缘/人机协同 + 云编排，模型全生命周期治理核心基础设施）"),
 ]
 
 def _parse_shields_count(s):
